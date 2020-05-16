@@ -1,20 +1,5 @@
-## 项目名称
+## 泰岳链开发者平台
     mkdocs.yml    # The configuration file.
     docs/
-    Impawn-CLI.md  # Other markdown pages, images and other files.
-### Commands
+    TaiYueChain.md # Other markdown pages, images and other files.
 
-* [Installation Instructions](https://github.com/taiyuechain/taipublicchain/wiki/Building-Truechain)
-* [Developer/Management API](https://github.com/taiyuechain/taipublicchain/wiki/Management-API)
-* [Managing Accounts](https://github.com/taiyuechain/taipublicchain/wiki/Managing-your-accounts)
-* [Command Line Options](https://github.com/taiyuechain/taipublicchain/wiki/Command-Line-Options)
-* [Developers' Guide](https://github.com/taiyuechain/taipublicchain/wiki/Developers-Guide)
-* [JSON RPC API](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API)
-### 项目
-    mkdocs.yml    # The configuration file.
-    docs/
-    Impawn-CLI.md  # Other markdown pages, images and other files.
-##操作流程
-    mkdocs.yml    # The configuration file.
-    docs/
-    Impawn-CLI.md  # Other markdown pages, images and other files.

@@ -1,5 +1,5 @@
 site_name: 泰岳区块链
 nav:
-  - 泰岳公共链: index.md
+  - 泰岳公共链: TaiYueChain.md
 theme: readthedocs
 repo_url: https://github.com/example/repository/

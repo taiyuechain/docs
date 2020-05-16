@@ -1,24 +1,41 @@
 
 # 开发者平台
-## 安装和编译
+## Install and build
     mkdocs.yml    # The configuration file.
-    docs/
-    index.md  # Other markdown pages, images and other files.
-### 安装泰岳公共链流程：
-* [Installation Instructions](https://github.com/taiyuechain/taipublicchain/wiki/Building-Truechain)
-* [Developer/Management API](https://github.com/taiyuechain/taipublicchain/wiki/Management-API)
-* [Managing Accounts](https://github.com/taiyuechain/taipublicchain/wiki/Managing-your-accounts)
-* [Command Line Options](https://github.com/taiyuechain/taipublicchain/wiki/Command-Line-Options)
-* [Developers' Guide](https://github.com/taiyuechain/taipublicchain/wiki/Developers-Guide)
-* [JSON RPC API](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API)
-### 开发者指南
-### 开发者指南
+    docs/source/taiyuepublic
+    Building-taiyuechain.md  # Other markdown pages, images and other files.
+### Installing Truechain：
+        mkdocs.yml    # The configuration file.
+         docs/source/taiyuepublic
+        Installation-Instructions-for-Mac-OS-X.md 
+        Installation-Instructions-for-Ubuntu.md
+        Installation-Instructions-for-Centos.md# Other markdown pages, images and other files.
+### Developers' Guide
     mkdocs.yml    # The configuration file.
-    docs/
-    index.md  # Other markdown pages, images and other files.
-### 接口文档
+    docs/source/taiyuepublic
+    Staking-Guide.md # Other markdown pages, images and other files.
+## Interface Documentation
+  ### Command Line Options
+      mkdocs.yml    # The configuration file.
+      docs/source/taiyuepublic
+      Command-Line-Options.md  # Other markdown pages, images and other files.
+  ### Management API
+      mkdocs.yml    # The configuration file.
+      docs/source/taiyuepublic
+      index.md  # Other markdown pages, images and other files.
+  ### JSON RPC API
     mkdocs.yml    # The configuration file.
-    docs/
+    docs/source/taiyuepublic
     index.md  # Other markdown pages, images and other files.
 
-### 使用指南
+## Usage
+  ### Managing Accounts
+      mkdocs.yml    # The configuration file.
+      docs/source/taiyuepublic
+      index.md  # Other markdown pages, images and other files.
+  ### Mining
+      mkdocs.yml    # The configuration file.
+      docs/source/taiyuepublic
+      index.md  # Other markdown pages, images and other files.
+
+  

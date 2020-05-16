@@ -3,7 +3,7 @@
 ## Install and build
     mkdocs.yml    # The configuration file.
     docs/source/taiyuepublic
-    Building-taiyuechain.md  # Other markdown pages, images and other files.
+    [Building-taiyuechain] Building-taiyuechain.md  # Other markdown pages, images and other files.
 ### Installing Truechain：
         mkdocs.yml    # The configuration file.
          docs/source/taiyuepublic

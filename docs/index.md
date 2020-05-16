@@ -12,7 +12,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 * [Developers' Guide](https://github.com/taiyuechain/taipublicchain/wiki/Developers-Guide)
 * [JSON RPC API](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API)
 
-## Project layout
+### Project layout
 
     mkdocs.yml    # The configuration file.
     docs/
@@ -20,7 +20,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
        
 		Installation-Instructions-for-Centos.md
 
-## 项目名称
+### 项目名称
     mkdocs.yml    # The configuration file.
     docs/
     Impawn-CLI.md  # Other markdown pages, images and other files.
@@ -36,7 +36,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     mkdocs.yml    # The configuration file.
     docs/
     Impawn-CLI.md  # Other markdown pages, images and other files.
-##操作流程
+###操作流程
     mkdocs.yml    # The configuration file.
     docs/
     Impawn-CLI.md  # Other markdown pages, images and other files.

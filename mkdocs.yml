@@ -1,0 +1,7 @@
+site_name: 泰岳链
+nav:
+  - 泰岳公共链: Home.md  
+  - 泰岳联盟链: index.md
+   
+theme: readthedocs
+repo_url: https://github.com/example/repository/

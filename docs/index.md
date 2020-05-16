@@ -1,42 +1,39 @@
 
-# Welcome to MkDocs
-
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* [Installation Instructions](https://github.com/taiyuechain/taipublicchain/wiki/Building-Truechain)
-* [Developer/Management API](https://github.com/taiyuechain/taipublicchain/wiki/Management-API)
-* [Managing Accounts](https://github.com/taiyuechain/taipublicchain/wiki/Managing-your-accounts)
-* [Command Line Options](https://github.com/taiyuechain/taipublicchain/wiki/Command-Line-Options)
-* [Developers' Guide](https://github.com/taiyuechain/taipublicchain/wiki/Developers-Guide)
-* [JSON RPC API](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API)
-
-### Project layout
-
+# 开发者平台
+## Install and build
     mkdocs.yml    # The configuration file.
-    docs/
-        Home.md  # The documentation homepage.
-       
-		Installation-Instructions-for-Centos.md
+    docs/source/taiyuepublic
+    Building-taiyuechain.md  # Other markdown pages, images and other files.
+### Installing Truechain：
+        mkdocs.yml    # The configuration file.
+         docs/source/taiyuepublic
+        Installation-Instructions-for-Mac-OS-X.md 
+        Installation-Instructions-for-Ubuntu.md
+        Installation-Instructions-for-Centos.md# Other markdown pages, images and other files.
+### Developers' Guide
+    mkdocs.yml    # The configuration file.
+    docs/source/taiyuepublic
+    Staking-Guide.md # Other markdown pages, images and other files.
+## Interface Documentation
+  ### Command Line Options
+      mkdocs.yml    # The configuration file.
+      docs/source/taiyuepublic
+      Command-Line-Options.md  # Other markdown pages, images and other files.
+  ### Management API
+      mkdocs.yml    # The configuration file.
+      docs/source/taiyuepublic
+      index.md  # Other markdown pages, images and other files.
+  ### JSON RPC API
+    mkdocs.yml    # The configuration file.
+    docs/source/taiyuepublic
+    index.md  # Other markdown pages, images and other files.
 
-### 项目名称
-    mkdocs.yml    # The configuration file.
-    docs/
-    Impawn-CLI.md  # Other markdown pages, images and other files.
-### Commands
-
-* [Installation Instructions](https://github.com/taiyuechain/taipublicchain/wiki/Building-Truechain)
-* [Developer/Management API](https://github.com/taiyuechain/taipublicchain/wiki/Management-API)
-* [Managing Accounts](https://github.com/taiyuechain/taipublicchain/wiki/Managing-your-accounts)
-* [Command Line Options](https://github.com/taiyuechain/taipublicchain/wiki/Command-Line-Options)
-* [Developers' Guide](https://github.com/taiyuechain/taipublicchain/wiki/Developers-Guide)
-* [JSON RPC API](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API)
-### 项目
-    mkdocs.yml    # The configuration file.
-    docs/
-    Impawn-CLI.md  # Other markdown pages, images and other files.
-###操作流程
-    mkdocs.yml    # The configuration file.
-    docs/
-    Impawn-CLI.md  # Other markdown pages, images and other files.
+## Usage
+  ### Managing Accounts
+      mkdocs.yml    # The configuration file.
+      docs/source/taiyuepublic
+      index.md  # Other markdown pages, images and other files.
+  ### Mining
+      mkdocs.yml    # The configuration file.
+      docs/source/taiyuepublic
+      index.md  # Other markdown pages, images and other files.

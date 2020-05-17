@@ -1,6 +1,16 @@
-site_name: 泰岳区块链
+site_name: TaiBlockChain
 nav:
-  - 泰岳公共链: index.md
+  - TaiBlockChain :
+      - TaiPublicChain :
+          - TaiPublicChainEN :
+              - Developer Platform :
+                  - Install and build : Building-taiyuechain.md
+                  - Interface Documentation : InterfaceDocumentation.md
+                  - Usage : Usage.md
+          - TaiPublicChainZN :  TaiYueChain.md
+      - TaiUnionChain :
+          - TaiUnionChainEN :  Building-taiyuechain.md
+          - TaiUnionChainZN :  Building-taiyuechain.md
 theme: readthedocs
 repo_url: https://github.com/example/repository/
 

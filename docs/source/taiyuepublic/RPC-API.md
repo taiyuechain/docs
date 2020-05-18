@@ -259,7 +259,7 @@ Ggtai  has experimental pub/sub support. See [this](https://github.com/taiyuecha
 
 ## JavaScript API
 
-To talk to an truechain node from inside a JavaScript application use the [web3.js](https://github.com/taipublicchain/web3.js) library, which gives a convenient interface for the RPC methods.
+To talk to an taipublicchain node from inside a JavaScript application use the [web3.js](https://github.com/taipublicchain/web3.js) library, which gives a convenient interface for the RPC methods.
 
 ## JSON-RPC Endpoint
 
@@ -304,7 +304,7 @@ The following methods have an extra default block parameter:
 - [impawn_getAllCancelableAsset](#impawn_getAllCancelableAsset)
 - [impawn_getStakingAccount](#impawn_getStakingAccount)
 
-When requests are made that act on the state of truechain, the last default block parameter determines the height of the block.
+When requests are made that act on the state of taipublicchain, the last default block parameter determines the height of the block.
 
 The following options are possible for the defaultBlock parameter:
 
@@ -527,14 +527,14 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":
 
 #### gtai_protocolVersion
 
-Returns the current truechain protocol version.
+Returns the current taipublicchain protocol version.
 
 ##### Parameters
 none
 
 ##### Returns
 
-`String` - The current truechain protocol version.
+`String` - The current taipublicchain protocol version.
 
 ##### Example
 ```js
@@ -3208,4 +3208,4 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"impawn_getStakingAccount","param
 ```
 
 ## Eth
-In order for more developers to participate in the truechain ecosystem and be friendly to developers, truechain is compatible with ethereum. Please refer to the instructions of [ethereum](https://github.com/ethereum/wiki/wiki/JSON-RPC) for detailed rules of use
+In order for more developers to participate in the taipublicchain ecosystem and be friendly to developers, taipublicchain is compatible with ethereum. Please refer to the instructions of [ethereum](https://github.com/ethereum/wiki/wiki/JSON-RPC) for detailed rules of use

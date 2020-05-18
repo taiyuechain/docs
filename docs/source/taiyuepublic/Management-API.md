@@ -118,7 +118,7 @@ The `datadir` administrative property can be queried for the absolute path the r
 
 ```
 > admin.datadir
-"/home/truechain/truechain-engineering-code/cmd/ taipublic/data"
+"/home/taiyuechain/taipublicchain/cmd/ taipublic/data"
 ```
 
 ### admin_nodeInfo

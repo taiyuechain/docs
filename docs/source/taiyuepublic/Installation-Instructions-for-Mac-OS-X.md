@@ -5,7 +5,7 @@
 Clone the repository to a directory of your choosing:
 
 ```shell
-git clone Taipublic
+git clone https://github.com/taiyuechain/taipublicchain.git
 ```
 
 Building `taipublic` requires the Go compiler:
@@ -16,8 +16,8 @@ brew install go
 
 Finally, build the `taipublic` program using the following command.
 ```shell
-cd taipublicchain-engineering-code
-git checkout release/2.0
+cd taiyuechain/taipublicchain
+git checkout master
 make taipublic
 ```
 

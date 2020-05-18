@@ -31,5 +31,5 @@ docker run -it -p 30313:30313 taiyuechain/taipublic console
 
 To persist downloaded blockchain data between container starts, use Docker [data volumes](https://docs.docker.com/engine/tutorials/dockervolumes/#/mount-a-host-directory-as-a-data-volume). Replace `/path/on/host` with the location you want to store the data in.
 
-    docker run -it -p 30313:30313 -v /path/on/host:/root/.truechain truechain/getrue
+    docker run -it -p 30313:30313 -v /path/on/host:/root/.taipublic taipublicchain/build/bin/tai
 

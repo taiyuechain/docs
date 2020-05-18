@@ -4,7 +4,7 @@ Remember your password.
 If you lose the password you use to encrypt your account, you will not be able to access that account.
 Repeat: It is NOT possible to access your account without a password and there is no _forgot my password_ option here. Do not forget it.
 
-The truechain CLI `taipublic` provides account management via the `account` command:
+The taipublicchain CLI `taipublic` provides account management via the `account` command:
 
 ```
 $ taipublic account <command> [options...] [arguments...]
@@ -34,7 +34,7 @@ order of accounts when listing, is lexicographic, but as a consequence of the ti
 format, it is actually order of creation
 
 It is safe to transfer the entire directory or the individual keys therein between
-truechain nodes. Note that in case you are adding keys to your node from a different node,
+taipublicchain nodes. Note that in case you are adding keys to your node from a different node,
 the order of accounts may change. So make sure you do not rely or change the index in your
 scripts or code snippets.
 
@@ -56,7 +56,7 @@ list [command options] [arguments...]
 Print a short summary of all accounts
 
 OPTIONS:
-  --datadir "/home/bas/.truechain"  Data directory for the databases and keystore
+  --datadir "/home/bas/.taipublic"  Data directory for the databases and keystore
   --keystore                       Directory for the keystore (default = inside the datadir)
 ```
 
@@ -181,7 +181,7 @@ For non-interactive use the passphrase can be specified with the `--password` fl
 taipublic account import --password <passwordfile> <keyfile>
 ```
 
-**Note**: Since you can directly copy your encrypted accounts to another truechain
+**Note**: Since you can directly copy your encrypted accounts to another taipublicchain
 instance, this import/export mechanism is not needed when you transfer an account between
 nodes.
 

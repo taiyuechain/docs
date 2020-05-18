@@ -5,7 +5,7 @@
 Clone the repository to a directory of your choosing:
 
 ```shell
-git clone github.com/taiyuechain/taipublicchain
+git clone https://github.com/taiyuechain/taipublicchain.git
 ```
 
 
@@ -20,8 +20,8 @@ sudo apt-get install -y build-essential
 
 Checkout the lasted release branch: 
 ```shell
-cd taipublicchain
-git checkout release/2.0
+cd taiyuechain/taipublicchain
+git checkout master
 ```
 
 Finally, build the `taipublic` program using the following command.

@@ -48,7 +48,7 @@ taipublic --coinbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff' --minefruit 2>
 
 You can reset your coinbase on the console too:
 ```
-miner.setCoinbase(etrue.accounts[2])
+miner.setCoinbase(tai.accounts[2])
 ```
 
 Note that your coinbase does not need to be an address of a local account, just an existing one. 
@@ -56,7 +56,7 @@ Note that your coinbase does not need to be an address of a local account, just 
 There is an option to add extra Data (32 bytes only) to your mined blocks. By convention this is interpreted as a unicode string, so you can set your short vanity tag.
 
 ```
-miner.setExtra("trueminer")
+miner.setExtra("taiminer")
 ...
 debug.printBlock(131805)
 BLOCK(be465b020fdbedc4063756f0912b5a89bbb4735bd1d1df84363e05ade0195cb1): Size: 531.00 B TD: 643485290485 {
@@ -66,7 +66,7 @@ Header:
 ...
         Miner:           a4d8e9cae4d04b093aac82e6cd355b6b963fb7ff
         Number:             131805
-        Extra:              trueminer
+        Extra:              taiminer
 ...
 }
 ```
@@ -81,14 +81,14 @@ You can check your hashrate with miner.getHashRate(), the result is in H/s (Hash
 After you successfully mined some blocks, you can check the true balance of your coinbase account. Now assuming your coinbase is a local account:
 
 ```
-> tai.getBalance(etrue.coinbase).toNumber();
+> tai.getBalance(tai.coinbase).toNumber();
 '34698870000000' 
 ```
 
 In order to spend your earnings you will need to have this account unlocked.
 
 ```
-> personal.unlockAccount(etrue.coinbase)
+> personal.unlockAccount(tai.coinbase)
 Password
 true
 ```
@@ -99,11 +99,11 @@ You can check which blocks are mined by a particular miner (address) with the fo
 function minedBlocks(lastn, addr) {
   addrs = [];
   if (!addr) {
-    addr = etrue.coinbase
+    addr = tai.coinbase
   }
-  limit = etrue.blockNumber - lastn
-  for (i = etrue.blockNumber; i >= limit; i--) {
-    if (etrue.getBlock(i).miner == addr) {
+  limit = tai.blockNumber - lastn
+  for (i = tai.blockNumber; i >= limit; i--) {
+    if (tai.getBlock(i).miner == addr) {
       addrs.push(i)
     }
   }
@@ -111,7 +111,7 @@ function minedBlocks(lastn, addr) {
 }
 // scans the last 1000 blocks and returns the blocknumbers of blocks mined by your coinbase 
 // (more precisely blocks the mining reward for which is sent to your coinbase).   
-minedBlocks(1000, etrue.coinbase);
+minedBlocks(1000, tai.coinbase);
 //[352708, 352655, 352559]
 ```
 
@@ -121,8 +121,8 @@ Mining success depends on the set block difficulty. Block difficulty dynamically
 
 **INCORRECT...CHECKING**
 ```
-etrue = etrue.getBlock("latest").difficulty/miner.getHashRate(); // estimated time in seconds
-Math.floor(etrue / 3600.) + "h " + Math.floor((etrue % 3600)/60) + "m " +  Math.floor(etrue % 60) + "s";
+tai = tai.getBlock("latest").difficulty/miner.getHashRate(); // estimated time in seconds
+Math.floor(tai / 3600.) + "h " + Math.floor((tai % 3600)/60) + "m " +  Math.floor(tai % 60) + "s";
 // 1h 3m 30s
 ```
 
@@ -147,14 +147,14 @@ apt-get install nvidia-418 nvidia-418-dev nvidia-opencl-dev nvidia-opencl-icd-41
 
 ## Mining  Software
 
-The official release of `taipublic` only supports a CPU miner natively. We are working on a [GPU miner](https://github.com/taipublicchain/trueminer), taipublic however can be used in conjunction with `trueminer`, using the standalone miner as workers and `taipublic` as scheduler communicating via [JSON-RPC](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API). 
+The official release of `taipublic` only supports a CPU miner natively. We are working on a [GPU miner](https://github.com/taipublicchain/taiminer), taipublic however can be used in conjunction with `taiminer`, using the standalone miner as workers and `taipublic` as scheduler communicating via [JSON-RPC](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API). 
 
 Trueminer 0n Linux:
 ```
 git clone https://github.com/taipublicchain/taiminer.git
 ```
 
-## GPU mining with trueminer 
+## GPU mining with taiminer 
 To  miner with `taipublic`:
 
 ```
@@ -168,7 +168,7 @@ the detail 'taipublic' you can reference [CPU_mine](#CPU_Mining)
 To install and build GPU `taiminer` from source:
 
 ```
-cd trueminer
+cd taiminer
 mkdir build
 cd build
 cmake ..
@@ -189,7 +189,7 @@ make install
 ```
 
 
-The detail `taiminer` install  [trueminer readme.md](https://github.com/taiyuechain/taipublicchain/taiminer/blob/master/README.md)
+The detail `taiminer` install  [taiminer readme.md](https://github.com/taiyuechain/taipublicchain/taiminer/blob/master/README.md)
 
 To set up GPU mining you need a coinbase account. It can be an account created locally or remotely. 
 
@@ -198,7 +198,7 @@ To set up GPU mining you need a coinbase account. It can be an account created l
 * start `taipublic` to support remote mining
 
 ```
-./taipublic  --datadir ./data --config ./data/config  --rpc --rpcaddr 0.0.0.0 --rpcapi "etrue,:net,web3,miner" --mine --remote --coinbase <coinbase> console
+./taipublic  --datadir ./data --config ./data/config  --rpc --rpcaddr 0.0.0.0 --rpcapi "tai,:net,web3,miner" --mine --remote --coinbase <coinbase> console
 ```
 
 `taipublic` will listen all ip address when giving `--rpcaddr 0.0.0.0`, you can give the exact ip address that want miner to connect, or `--rpcaddr 127.0.01` only allow the miner running on the host to connect `taipublic`.

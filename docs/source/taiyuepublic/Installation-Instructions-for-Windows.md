@@ -35,8 +35,8 @@ Then that means that the `setx` command will fail, and proceeding will truncate 
 2 C:\Users\xxx> set "Path=%USERPROFILE%\bin;%Path%"
 3 C:\Users\xxx> setx GOPATH "%GOPATH%"
 4 C:\Users\xxx> setx Path "%Path%"
-5 C:\Users\xxx> mkdir src\github.com\truechain
-6 C:\Users\xxx> git clone https://github.com/truechain/truechain-engineering-code src\github.com/taiyuechain/taipublicchain
+5 C:\Users\xxx> mkdir src\github.com\taiyuechain
+6 C:\Users\xxx> git clone https://github.com/taiyuechain//taipublicchain.git src\github.com/taiyuechain/taipublicchain
 7 C:\Users\xxx> cd src\github.com/taiyuechain/taipublicchain
 8 C:\Users\xxx> go get -u -v golang.org/x/net/context
 ```

@@ -6,7 +6,7 @@ nav :
             - Installing TaiPublicChain  :
                 - Mac-OS-X : ./source/taiyuepublic/Installation-Instructions-for-Mac-OS-X.md
                 - Windows : ./source/taiyuepublic/Installation-Instructions-for-Windows.md
-                - Ubuntu : ./source/taiyuepublic/Installation-Instructions-for-Ubuntu.md
+                - Ubuntu : ./taiyuepublic/Installation-Instructions-for-Ubuntu.md
                 - Centos : ./source/taiyuepublic/Installation-Instructions-for-Centos.md
 
         - Interface Documentation :

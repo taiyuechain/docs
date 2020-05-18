@@ -16,6 +16,6 @@ nav :
         - Usage :
             - Managing Accounts : ./source/taiyuepublic/Managing-your-accounts.md
             - Mining : ./source/taiyuepublic/Mining.md
-theme: readthedocs
-repo_url: https://github.com/example/repository/
+theme : readthedocs
+repo_url : https://github.com/example/repository/
 

@@ -4,18 +4,18 @@ nav :
     - Developer Platform :
         - Install and build :
             - Installing TaiPublicChain  :
-                - Mac-OS-X : source/taiyuepublic/Installation-Instructions-for-Mac-OS-X.md
-                - Windows : source/taiyuepublic/Installation-Instructions-for-Windows.md
-                - Ubuntu : source/taiyuepublic/Installation-Instructions-for-Ubuntu.md
-                - Centos : source/taiyuepublic/Installation-Instructions-for-Centos.md
+                - Mac-OS-X : ./source/taiyuepublic/Installation-Instructions-for-Mac-OS-X.md
+                - Windows : ./source/taiyuepublic/Installation-Instructions-for-Windows.md
+                - Ubuntu : ./source/taiyuepublic/Installation-Instructions-for-Ubuntu.md
+                - Centos : ./source/taiyuepublic/Installation-Instructions-for-Centos.md
 
         - Interface Documentation :
-            - Command Line Options: source/taiyuepublic/Command-Line-Options.md
-            - Management API: source/taiyuepublic/Management-API.md
-            - JSON RPC API: source/taiyuepublic/RPC-API.md
+            - Command Line Options: ./source/taiyuepublic/Command-Line-Options.md
+            - Management API: ./source/taiyuepublic/Management-API.md
+            - JSON RPC API: ./source/taiyuepublic/RPC-API.md
         - Usage :
-            - Managing Accounts : source/taiyuepublic/Managing-your-accounts.md
-            - Mining : source/taiyuepublic/Mining.md
+            - Managing Accounts : ./source/taiyuepublic/Managing-your-accounts.md
+            - Mining : ./source/taiyuepublic/Mining.md
 theme: readthedocs
 repo_url: https://github.com/example/repository/
 

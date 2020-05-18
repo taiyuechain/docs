@@ -1,5 +1,5 @@
 site_name: TaiBlockChain
-nav :
+pages :
 - TaiPublicChain :
     - Developer Platform :
         - Install and build :

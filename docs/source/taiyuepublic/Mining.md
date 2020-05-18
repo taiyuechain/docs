@@ -1,11 +1,11 @@
 # CPU Mining with taipublic
 #### CPU_Mining
-To mine at truechain, you'll just need truechain client, Getrue. 
+To mine at taipublicchain, you'll just need taipublicchain client, taipublic. 
 
 
 _**NOTE:** Ensure your blockchain is fully synchronised with the main chain before starting to mine, otherwise you will not be mining on the main chain._
 
-When you start up your taipublicchain node with `getrue` it is not mining by default. To start it in mining mode, you use the `--mine` [command line option](https://github.com/truechain/truechain-engineering-code/wiki/Command-Line-Options). The `-minerthreads` parameter can be used to set the number parallel mining threads (defaulting to the total number of processor cores). 
+When you start up your taipublicchain node with `taipublic` it is not mining by default. To start it in mining mode, you use the `--mine` [command line option](https://github.com/taipublicchain/taipublicchain-engineering-code/wiki/Command-Line-Options). The `-minerthreads` parameter can be used to set the number parallel mining threads (defaulting to the total number of processor cores). 
 
 `taipublic --mine --minerthreads=4`
 
@@ -30,20 +30,20 @@ null
 true
 ```
 
-Note that mining for real TRUE only makes sense if you are in sync with the network (since you mine on top of the consensus block). Therefore the truechain downloader/synchroniser will delay mining until syncing is complete, and after that mining automatically starts unless you cancel your intention with `miner.stop()`.
+Note that mining for real TRUE only makes sense if you are in sync with the network (since you mine on top of the consensus block). Therefore the taipublicchain downloader/synchroniser will delay mining until syncing is complete, and after that mining automatically starts unless you cancel your intention with `miner.stop()`.
 
-In order to earn TRUE you must have your **coinbase** address set. This coinbase defaults to your [primary account](https://github.com/taiyuechain/taipublicchain/wiki/Managing-your-accounts). If you don't have an coinbase address, then `Getrue --mine` or `Getrue --minefruit`will not start up.
+In order to earn TRUE you must have your **coinbase** address set. This coinbase defaults to your [primary account](https://github.com/taiyuechain/taipublicchain/wiki/Managing-your-accounts). If you don't have an coinbase address, then `taipublic --mine` or `taipublic --minefruit`will not start up.
 
 You can set your coinbase on the command line:
 
 ```
-taipublic --coinbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff' --mine 2>> getrue.log
+taipublic --coinbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff' --mine 2>> taipublic.log
 ```
 
 or
 
 ```
-taipublic --coinbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff' --minefruit 2>> getrue.log
+taipublic --coinbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff' --minefruit 2>> taipublic.log
 ```
 
 You can reset your coinbase on the console too:
@@ -147,7 +147,7 @@ apt-get install nvidia-418 nvidia-418-dev nvidia-opencl-dev nvidia-opencl-icd-41
 
 ## Mining  Software
 
-The official release of `getrue` only supports a CPU miner natively. We are working on a [GPU miner](https://github.com/taipublicchain/trueminer), Getrue however can be used in conjunction with `trueminer`, using the standalone miner as workers and `getrue` as scheduler communicating via [JSON-RPC](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API). 
+The official release of `taipublic` only supports a CPU miner natively. We are working on a [GPU miner](https://github.com/taipublicchain/trueminer), taipublic however can be used in conjunction with `trueminer`, using the standalone miner as workers and `taipublic` as scheduler communicating via [JSON-RPC](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API). 
 
 Trueminer 0n Linux:
 ```
@@ -155,14 +155,14 @@ git clone https://github.com/taipublicchain/taiminer.git
 ```
 
 ## GPU mining with trueminer 
-To  miner with `getrue`:
+To  miner with `taipublic`:
 
 ```
 wget https://github.com/taiyuechain/taipublicchain/releases/download/v1.0.2/taipublic-linux-amd64-1.0.2-758c849.tar.gz
-tar -zxvf getrue-linux-amd64-1.0.2-758c849.tar.gz
+tar -zxvf taipublic-linux-amd64-1.0.2-758c849.tar.gz
 
 ```
-the detail 'getrue' you can reference [CPU_mine](#CPU_Mining) 
+the detail 'taipublic' you can reference [CPU_mine](#CPU_Mining) 
 
 
 To install and build GPU `taiminer` from source:
@@ -201,7 +201,7 @@ To set up GPU mining you need a coinbase account. It can be an account created l
 ./taipublic  --datadir ./data --config ./data/config  --rpc --rpcaddr 0.0.0.0 --rpcapi "etrue,:net,web3,miner" --mine --remote --coinbase <coinbase> console
 ```
 
-`taipublic` will listen all ip address when giving `--rpcaddr 0.0.0.0`, you can give the exact ip address that want miner to connect, or `--rpcaddr 127.0.01` only allow the miner running on the host to connect `getrue`.
+`taipublic` will listen all ip address when giving `--rpcaddr 0.0.0.0`, you can give the exact ip address that want miner to connect, or `--rpcaddr 127.0.01` only allow the miner running on the host to connect `taipublic`.
 
 `taiminer` communicates with `taipublic` on port 8545 . You also can change port by giving the [rpcport option](https://github.com/taiyuechain/taipublicchain/wiki/Command-Line-Options)  to `taipublic`.
 
@@ -234,7 +234,7 @@ When running `taiminer` with `-M` (benchmark), you should see something like:
     Benchmarking on platform: { "platform": "Apple", "device": "Intel(R) Xeon(R) CPU E5-1620 v2 @ 3.70GHz", "version": "OpenCL 1.2 " }
 
 
-### Using taiminer with getrue on stratum mode 
+### Using taiminer with taipublic on stratum mode 
 
 * taiminer stratum mode using CPU
 ```

@@ -1,6 +1,6 @@
 # Source
 
-## Compiling getrue with tools from chocolatey
+## Compiling taipublic with tools from chocolatey
 
 The Chocolatey package manager provides an easy way to get
 the required build tools installed. If you don't have chocolatey yet,
@@ -48,7 +48,7 @@ C:\Users\xxx> git clone https://github.com/golang/net.git net
 C:\Users\xxx> go install net
 ```
 
-Finally, the command to compile getrue is:
+Finally, the command to compile taipublic is:
 
 ```text
 C:\Users\xxx\src\github.com/taiyuechain/taipublicchain> go install -v ./cmd/...

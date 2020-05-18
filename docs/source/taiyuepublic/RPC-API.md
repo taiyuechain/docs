@@ -28,200 +28,200 @@
         - [Parameters](#parameters-4)
         - [Returns](#returns-4)
         - [Example](#example-4)
-      - [etrue_protocolVersion](#etrue_protocolversion)
+      - [gtai_protocolVersion](#gtai_protocolversion)
         - [Parameters](#parameters-5)
         - [Returns](#returns-5)
         - [Example](#example-5)
-      - [etrue_syncing](#etrue_syncing)
+      - [gtai_syncing](#gtai_syncing)
         - [Parameters](#parameters-6)
         - [Returns](#returns-6)
         - [Example](#example-6)
-      - [etrue_coinbase](#etrue_coinbase)
+      - [gtai_coinbase](#gtai_coinbase)
         - [Parameters](#parameters-7)
         - [Returns](#returns-7)
         - [Example](#example-7)
-      - [etrue_mining](#etrue_mining)
+      - [gtai_mining](#gtai_mining)
         - [Parameters](#parameters-8)
         - [Returns](#returns-8)
         - [Example](#example-8)
-      - [etrue_hashrate](#etrue_hashrate)
+      - [gtai_hashrate](#gtai_hashrate)
         - [Parameters](#parameters-9)
         - [Returns](#returns-9)
         - [Example](#example-9)
-      - [etrue_gasPrice](#etrue_gasprice)
+      - [gtai_gasPrice](#gtai_gasprice)
         - [Parameters](#parameters-10)
         - [Returns](#returns-10)
         - [Example](#example-10)
-      - [etrue_accounts](#etrue_accounts)
+      - [gtai_accounts](#gtai_accounts)
         - [Parameters](#parameters-11)
         - [Returns](#returns-11)
         - [Example](#example-11)
-      - [etrue_blockNumber](#etrue_blocknumber)
+      - [gtai_blockNumber](#gtai_blocknumber)
         - [Parameters](#parameters-12)
         - [Returns](#returns-12)
         - [Example](#example-12)
-      - [etrue_getBalance](#etrue_getbalance)
+      - [gtai_getBalance](#gtai_getbalance)
         - [Parameters](#parameters-13)
         - [Returns](#returns-13)
         - [Example](#example-13)
-      - [etrue_getStorageAt](#etrue_getstorageat)
+      - [gtai_getStorageAt](#gtai_getstorageat)
         - [Parameters](#parameters-14)
         - [Returns](#returns-14)
         - [Example](#example-14)
-      - [etrue_getTransactionCount](#etrue_gettransactioncount)
+      - [gtai_getTransactionCount](#gtai_gettransactioncount)
         - [Parameters](#parameters-15)
         - [Returns](#returns-15)
         - [Example](#example-15)
-      - [etrue_getBlockTransactionCountByHash](#etrue_getblocktransactioncountbyhash)
+      - [gtai_getBlockTransactionCountByHash](#gtai_getblocktransactioncountbyhash)
         - [Parameters](#parameters-16)
         - [Returns](#returns-16)
         - [Example](#example-16)
-      - [etrue_getBlockTransactionCountByNumber](#etrue_getblocktransactioncountbynumber)
+      - [gtai_getBlockTransactionCountByNumber](#gtai_getblocktransactioncountbynumber)
         - [Parameters](#parameters-17)
         - [Returns](#returns-17)
         - [Example](#example-17)
-      - [etrue_getCode](#etrue_getcode)
+      - [gtai_getCode](#gtai_getcode)
         - [Parameters](#parameters-18)
         - [Returns](#returns-18)
         - [Example](#example-18)
-      - [etrue_sign](#etrue_sign)
+      - [gtai_sign](#gtai_sign)
         - [Parameters](#parameters-19)
         - [Returns](#returns-19)
         - [Example](#example-19)
-      - [etrue_sendTransaction](#etrue_sendtransaction)
+      - [gtai_sendTransaction](#gtai_sendtransaction)
         - [Parameters](#parameters-20)
         - [Returns](#returns-20)
         - [Example](#example-20)
-      - [etrue_sendRawTransaction](#etrue_sendrawtransaction)
+      - [gtai_sendRawTransaction](#gtai_sendrawtransaction)
         - [Parameters](#parameters-21)
         - [Returns](#returns-21)
         - [Example](#example-21)
-      - [etrue_call](#etrue_call)
+      - [gtai_call](#gtai_call)
         - [Parameters](#parameters-22)
         - [Returns](#returns-22)
         - [Example](#example-22)
-      - [etrue_estimateGas](#etrue_estimategas)
+      - [gtai_estimateGas](#gtai_estimategas)
         - [Parameters](#parameters-23)
         - [Returns](#returns-23)
         - [Example](#example-23)
-      - [etrue_getBlockByHash](#etrue_getblockbyhash)
+      - [gtai_getBlockByHash](#gtai_getblockbyhash)
         - [Parameters](#parameters-24)
         - [Returns](#returns-24)
         - [Example](#example-24)
-      - [etrue_getBlockByNumber](#etrue_getblockbynumber)
+      - [gtai_getBlockByNumber](#gtai_getblockbynumber)
         - [Parameters](#parameters-25)
         - [Returns](#returns-25)
         - [Example](#example-25)
-      - [etrue_getTransactionByHash](#etrue_gettransactionbyhash)
+      - [gtai_getTransactionByHash](#gtai_gettransactionbyhash)
         - [Parameters](#parameters-26)
         - [Returns](#returns-26)
         - [Example](#example-26)
-      - [etrue_getTransactionByBlockHashAndIndex](#etrue_gettransactionbyblockhashandindex)
+      - [gtai_getTransactionByBlockHashAndIndex](#gtai_gettransactionbyblockhashandindex)
         - [Parameters](#parameters-27)
         - [Returns](#returns-27)
         - [Example](#example-27)
-      - [etrue_getTransactionByBlockNumberAndIndex](#etrue_gettransactionbyblocknumberandindex)
+      - [gtai_getTransactionByBlockNumberAndIndex](#gtai_gettransactionbyblocknumberandindex)
         - [Parameters](#parameters-28)
         - [Returns](#returns-28)
         - [Example](#example-28)
-      - [etrue_getTransactionReceipt](#etrue_gettransactionreceipt)
+      - [gtai_getTransactionReceipt](#gtai_gettransactionreceipt)
         - [Parameters](#parameters-29)
         - [Returns](#returns-29)
         - [Example](#example-29) 
-      - [etrue_newFilter](#etrue_newfilter)
+      - [gtai_newFilter](#gtai_newfilter)
         - [A note on specifying topic filters:](#a-note-on-specifying-topic-filters)
         - [Parameters](#parameters-30)
         - [Returns](#returns-30)
         - [Example](#example-30)
-      - [etrue_newBlockFilter](#etrue_newblockfilter)
+      - [gtai_newBlockFilter](#gtai_newblockfilter)
         - [Parameters](#parameters-31)
         - [Returns](#returns-31)
         - [Example](#example-31)
-      - [etrue_newPendingTransactionFilter](#etrue_newpendingtransactionfilter)
+      - [gtai_newPendingTransactionFilter](#gtai_newpendingtransactionfilter)
         - [Parameters](#parameters-32)
         - [Returns](#returns-32)
         - [Example](#example-32)
-      - [etrue_uninstallFilter](#etrue_uninstallfilter)
+      - [gtai_uninstallFilter](#gtai_uninstallfilter)
         - [Parameters](#parameters-33)
         - [Returns](#returns-33)
         - [Example](#example-33)
-      - [etrue_getFilterChanges](#etrue_getfilterchanges)
+      - [gtai_getFilterChanges](#gtai_getfilterchanges)
         - [Parameters](#parameters-34)
         - [Returns](#returns-34)
         - [Example](#example-34)
-      - [etrue_getFilterLogs](#etrue_getfilterlogs)
+      - [gtai_getFilterLogs](#gtai_getfilterlogs)
         - [Parameters](#parameters-35)
         - [Returns](#returns-35)
         - [Example](#example-35)
-      - [etrue_getLogs](#etrue_getlogs)
+      - [gtai_getLogs](#gtai_getlogs)
         - [Parameters](#parameters-36)
         - [Returns](#returns-36)
         - [Example](#example-36)
-      - [etrue_getWork](#etrue_getwork)
+      - [gtai_getWork](#gtai_getwork)
         - [Parameters](#parameters-37)
         - [Returns](#returns-37)
         - [Example](#example-37)
-      - [etrue_submitWork](#etrue_submitwork)
+      - [gtai_submitWork](#gtai_submitwork)
         - [Parameters](#parameters-38)
         - [Returns](#returns-38)
         - [Example](#example-38)
-      - [etrue_submitHashrate](#etrue_submithashrate)
+      - [gtai_submitHashrate](#gtai_submithashrate)
         - [Parameters](#parameters-39)
         - [Returns](#returns-39)
         - [Example](#example-39)
-      - [etrue_committeeNumber](#etrue_committeeNumber)
+      - [gtai_committeeNumber](#gtai_committeeNumber)
         - [Parameters](#parameters-40)
         - [Returns](#returns-40)
         - [Example](#example-40)
-      - [etrue_fruitNumber](#etrue_fruitNumber)
+      - [gtai_fruitNumber](#gtai_fruitNumber)
         - [Parameters](#parameters-41)
         - [Returns](#returns-41)
         - [Example](#example-41)
-      - [etrue_rewardSnailBlock](#etrue_rewardSnailBlock)
+      - [gtai_rewardSnailBlock](#gtai_rewardSnailBlock)
         - [Parameters](#parameters-42)
         - [Returns](#returns-42)
         - [Example](#example-42)
-      - [etrue_snailBlockNumber](#etrue_snailBlockNumber)
+      - [gtai_snailBlockNumber](#gtai_snailBlockNumber)
         - [Parameters](#parameters-43)
         - [Returns](#returns-43)
         - [Example](#example-43)
-      - [etrue_getCommittee](#etrue_getCommittee)
+      - [gtai_getCommittee](#gtai_getCommittee)
         - [Parameters](#parameters-44)
         - [Returns](#returns-44)
         - [Example](#example-44)
-      - [etrue_getFruitByNumber](#etrue_getFruitByNumber)
+      - [gtai_getFruitByNumber](#gtai_getFruitByNumber)
         - [Parameters](#parameters-45)
         - [Returns](#returns-45)
         - [Example](#example-45)
-      - [etrue_getFruitByHash](#etrue_getFruitByHash)
+      - [gtai_getFruitByHash](#gtai_getFruitByHash)
         - [Parameters](#parameters-46)
         - [Returns](#returns-46)
         - [Example](#example-46)
-      - [etrue_getRewardBlock](#etrue_getRewardBlock)
+      - [gtai_getRewardBlock](#gtai_getRewardBlock)
         - [Parameters](#parameters-47)
         - [Returns](#returns-47)
         - [Example](#example-47)
-      - [etrue_getSnailBlockByNumber](#etrue_getSnailBlockByNumber)
+      - [gtai_getSnailBlockByNumber](#gtai_getSnailBlockByNumber)
         - [Parameters](#parameters-48)
         - [Returns](#returns-48)
         - [Example](#example-48)
-      - [etrue_getSnailBlockByHash](#etrue_getSnailBlockByHash)
+      - [gtai_getSnailBlockByHash](#gtai_getSnailBlockByHash)
         - [Parameters](#parameters-49)
         - [Returns](#returns-49)
         - [Example](#example-49)
-      - [etrue_getDataset](#etrue_getDataset)
+      - [gtai_getDataset](#gtai_getDataset)
         - [Parameters](#parameters-50)
         - [Returns](#returns-50)
         - [Example](#example-50)
-      - [etrue_getSnailRewardContent](#etrue_getSnailRewardContent)
+      - [gtai_getSnailRewardContent](#gtai_getSnailRewardContent)
         - [Parameters](#parameters-51)
         - [Returns](#returns-51)
         - [Example](#example-51)
-      - [etrue_getRecentChainRewardContent](#etrue_getRecentChainRewardContent)
+      - [gtai_getRecentChainRewardContent](#gtai_getRecentChainRewardContent)
         - [Parameters](#parameters-52)
         - [Returns](#returns-52)
         - [Example](#example-52)        
-      - [etrue_getChainRewardContent](#etrue_getChainRewardContent)
+      - [gtai_getChainRewardContent](#gtai_getChainRewardContent)
         - [Parameters](#parameters-53)
         - [Returns](#returns-53)
         - [Example](#example-53)        
@@ -254,7 +254,7 @@
 
 [JSON-RPC](http://www.jsonrpc.org/specification) is a stateless, light-weight remote procedure call (RPC) protocol. Primarily this specification defines several data structures and the rules around their processing. It is transport agnostic in that the concepts can be used within the same process, over sockets, over HTTP, or in many various message passing environments. It uses JSON ([RFC 4627](http://www.ietf.org/rfc/rfc4627.txt)) as data format.
 
-Getrue  has experimental pub/sub support. See [this](https://github.com/taiyuechain/taipublicchain/wiki/RPC-PUB-SUB) page for more information.
+Ggtai  has experimental pub/sub support. See [this](https://github.com/taiyuechain/taipublicchain/wiki/RPC-PUB-SUB) page for more information.
 
 
 ## JavaScript API
@@ -293,11 +293,11 @@ JSON-RPC 2.0/ Batch requests/  HTTP/  IPC/  WS
 
 The following methods have an extra default block parameter:
 
-- [tai_getBalance](#etrue_getbalance)
-- [tai_getCode](#etrue_getcode)
-- [tai_getTransactionCount](#etrue_gettransactioncount)
-- [tai_getStorageAt](#etrue_getstorageat)
-- [tai_call](#etrue_call)
+- [tai_getBalance](#gtai_getbalance)
+- [tai_getCode](#gtai_getcode)
+- [tai_getTransactionCount](#gtai_gettransactioncount)
+- [tai_getStorageAt](#gtai_getstorageat)
+- [tai_call](#gtai_call)
 - [impawn_getAllStakingAccount](#impawn_getAllStakingAccount)
 - [impawn_getStakingAsset](#impawn_getStakingAsset)
 - [impawn_getLockedAsset](#impawn_getLockedAsset)
@@ -321,56 +321,56 @@ The examples also do not include the URL/IP & port combination which must be the
 
 ## JSON-RPC methods
 
-|   [etrue](#etrue)   |   [eth](#eth) |[impawn](#impawn) |[web3](#web3) |[net](#net) |
+|   [gtai](#gtai)   |   [eth](#eth) |[impawn](#impawn) |[web3](#web3) |[net](#net) |
 | :------------------: | :-----------------: |:-----------------:|:-----------------: |:-----------------: |
-| [protocolVersion](#etrue_protocolVersion)|[protocolVersion](#eth)|[getAllStakingAccount](#impawn_getAllStakingAccount)|[clientVersion](#web3_clientVersion)|[version](#net_version)|
-|[syncing](#etrue_sycning)|[syncing](#eth)|[getStakingAsset](#impawn_getStakingAsset)|[sha3](#web3_sha3)| [peerCount](#net_peercount)|
-|[coinbase](#etrue_coinbase)|[coinbase](#eth)|[getLockedAsset](#impawn_getLockedAsset)||[listening](#net_listening)|
-|[mining](#etrue_mining)|[mining](#eth)|[getAllCancelableAsset](#impawn_getAllCancelableAsset)|
-|[hashrate](#etrue_hashrate)|[hashrate](#eth)|[getStakingAccount](#impawn_getStakingAccount)|
-|[gasPrice](#etrue_gasPrice)|[gasPrice](#eth)|
-|[accounts](#etrue_accounts)|[accounts](#eth)|
-|[blockNumber](#etrue_blockNumber) |[blockNumber](#eth) |
-|[getBalance](#etrue_getBalance)|[getBalance](#eth)|
-|[getStorageAt](#etrue_getStorageAt)|[getStorageAt](#eth)|
-| [getTransactionCount](#etrue_getTransactionCount)|[getTransactionCount](#eth)|
-| [getBlockTransactionCountByHash](#etrue_getBlockTransactionCountByHash) |[getBlockTransactionCountByHash](#eth) | 
-| [getBlockTransactionCountByNumber](#etrue_getBlockTransactionCountByNumber) |[getBlockTransactionCountByNumber](#eth) |
-|         [getCode](#etrue_getCode)          | [getCode](#eth)          |
-|           [sign](#etrue_sign)           | [sign](#eth)           |
-|     [sendTransaction](#etrue_sendTransaction)      | [sendTransaction](#eth)      |
-|    [sendRawTransaction](#etrue_sendRawTransaction)    |[sendRawTransaction](#eth)    |
-| [sendTrueRawTransaction](#etrue_sendTrueRawTransaction)   | -|
-|           [call](#etrue_call)   | [call](#eth)           |
-|       [estimateGas](#etrue_estimateGas)        | [estimateGas](#eth)        |
-| [getBlockByHash](#etrue_getblockbyhash)         | [getBlockByHash](#eth)|
-| [getBlockByNumber](#etrue_getblockbynumber)         | [getBlockByNumber](#eth)|
-|[getTransactionByHash](#etrue_gettransactionbyhash) | [getTransactionByHash](#eth)|
-|[getTransactionByBlockHashAndIndex](#etrue_gettransactionbyblockhashandindex) | [getTransactionByBlockHashAndIndex](#eth)|
-|[getTransactionByBlockNumberAndIndex](#etrue_gettransactionbyblocknumberandindex) | [getTransactionByBlockNumberAndIndex](#eth)|
-|  [getTransactionReceipt](#etrue_gettransactionreceipt)   |[getTransactionReceipt](#eth)   |
-|[newFilter](#etrue_newfilter)|[newFilter](#eth)|
-|[newBlockFilter](#etrue_newblockfilter)|[newBlockFilter](#eth)|
-|[newPendingTransactionFilter](#etrue_newpendingtransactionfilter)|[newPendingTransactionFilter](#eth)|
-|[uninstallFilter](#etrue_uninstallfilter)|[uninstallFilter](#eth)|
-|[getFilterChanges](#etrue_getfilterchanges)|[getFilterChanges](#eth)|
-|[getFilterLogs](#etrue_getfilterlogs)|[getFilterLogs](#eth)|
-|[getLogs](#etrue_getlogs)|[getLogs](#eth)|
-|[getWork](#etrue_getwork)|[getWork](#eth)|
-|[submitWork](#etrue_submitwork)|[submitWork](#eth)|
-|[submitHashrate](#etrue_submithashrate)|[submitHashrate](#eth)|
-|     [committeeNumber](#etrue_committeeNumber)      |-  |
-|       [fruitNumber](#etrue_fruitNumber)        |-      |
-|     [rewardSnailBlock](#etrue_rewardSnailBlock)     |-     |
-|     [snailBlockNumber](#etrue_snailBlockNumber)     |-    |
-|       [getCommittee](#etrue_getCommittee)       | -   |
-|  [getFruitByNumber](#etrue_getFruitByNumber)         |-|
-|  [getFruitByHash](#etrue_getFruitByHash)         |-|
-|      [getRewardBlock](#etrue_getRewardBlock)      |- |
-|         [getSnailBlockByNumber](#etrue_getSnailBlockByNumber)    | -  |
-|         [getSnailBlockByHash](#etrue_getSnailBlockByHash)    | -   |
-|         [getDataset](#etrue_getDataset)    | -   |
-|         [getSnailRewardContent](#etrue_getSnailRewardContent)    | -   |
+| [protocolVersion](#gtai_protocolVersion)|[protocolVersion](#eth)|[getAllStakingAccount](#impawn_getAllStakingAccount)|[clientVersion](#web3_clientVersion)|[version](#net_version)|
+|[syncing](#gtai_sycning)|[syncing](#eth)|[getStakingAsset](#impawn_getStakingAsset)|[sha3](#web3_sha3)| [peerCount](#net_peercount)|
+|[coinbase](#gtai_coinbase)|[coinbase](#eth)|[getLockedAsset](#impawn_getLockedAsset)||[listening](#net_listening)|
+|[mining](#gtai_mining)|[mining](#eth)|[getAllCancelableAsset](#impawn_getAllCancelableAsset)|
+|[hashrate](#gtai_hashrate)|[hashrate](#eth)|[getStakingAccount](#impawn_getStakingAccount)|
+|[gasPrice](#gtai_gasPrice)|[gasPrice](#eth)|
+|[accounts](#gtai_accounts)|[accounts](#eth)|
+|[blockNumber](#gtai_blockNumber) |[blockNumber](#eth) |
+|[getBalance](#gtai_getBalance)|[getBalance](#eth)|
+|[getStorageAt](#gtai_getStorageAt)|[getStorageAt](#eth)|
+| [getTransactionCount](#gtai_getTransactionCount)|[getTransactionCount](#eth)|
+| [getBlockTransactionCountByHash](#gtai_getBlockTransactionCountByHash) |[getBlockTransactionCountByHash](#eth) | 
+| [getBlockTransactionCountByNumber](#gtai_getBlockTransactionCountByNumber) |[getBlockTransactionCountByNumber](#eth) |
+|         [getCode](#gtai_getCode)          | [getCode](#eth)          |
+|           [sign](#gtai_sign)           | [sign](#eth)           |
+|     [sendTransaction](#gtai_sendTransaction)      | [sendTransaction](#eth)      |
+|    [sendRawTransaction](#gtai_sendRawTransaction)    |[sendRawTransaction](#eth)    |
+| [sendTrueRawTransaction](#gtai_sendTrueRawTransaction)   | -|
+|           [call](#gtai_call)   | [call](#eth)           |
+|       [estimateGas](#gtai_estimateGas)        | [estimateGas](#eth)        |
+| [getBlockByHash](#gtai_getblockbyhash)         | [getBlockByHash](#eth)|
+| [getBlockByNumber](#gtai_getblockbynumber)         | [getBlockByNumber](#eth)|
+|[getTransactionByHash](#gtai_gettransactionbyhash) | [getTransactionByHash](#eth)|
+|[getTransactionByBlockHashAndIndex](#gtai_gettransactionbyblockhashandindex) | [getTransactionByBlockHashAndIndex](#eth)|
+|[getTransactionByBlockNumberAndIndex](#gtai_gettransactionbyblocknumberandindex) | [getTransactionByBlockNumberAndIndex](#eth)|
+|  [getTransactionReceipt](#gtai_gettransactionreceipt)   |[getTransactionReceipt](#eth)   |
+|[newFilter](#gtai_newfilter)|[newFilter](#eth)|
+|[newBlockFilter](#gtai_newblockfilter)|[newBlockFilter](#eth)|
+|[newPendingTransactionFilter](#gtai_newpendingtransactionfilter)|[newPendingTransactionFilter](#eth)|
+|[uninstallFilter](#gtai_uninstallfilter)|[uninstallFilter](#eth)|
+|[getFilterChanges](#gtai_getfilterchanges)|[getFilterChanges](#eth)|
+|[getFilterLogs](#gtai_getfilterlogs)|[getFilterLogs](#eth)|
+|[getLogs](#gtai_getlogs)|[getLogs](#eth)|
+|[getWork](#gtai_getwork)|[getWork](#eth)|
+|[submitWork](#gtai_submitwork)|[submitWork](#eth)|
+|[submitHashrate](#gtai_submithashrate)|[submitHashrate](#eth)|
+|     [committeeNumber](#gtai_committeeNumber)      |-  |
+|       [fruitNumber](#gtai_fruitNumber)        |-      |
+|     [rewardSnailBlock](#gtai_rewardSnailBlock)     |-     |
+|     [snailBlockNumber](#gtai_snailBlockNumber)     |-    |
+|       [getCommittee](#gtai_getCommittee)       | -   |
+|  [getFruitByNumber](#gtai_getFruitByNumber)         |-|
+|  [getFruitByHash](#gtai_getFruitByHash)         |-|
+|      [getRewardBlock](#gtai_getRewardBlock)      |- |
+|         [getSnailBlockByNumber](#gtai_getSnailBlockByNumber)    | -  |
+|         [getSnailBlockByHash](#gtai_getSnailBlockByHash)    | -   |
+|         [getDataset](#gtai_getDataset)    | -   |
+|         [getSnailRewardContent](#gtai_getSnailRewardContent)    | -   |
 |                            |
 
 
@@ -401,7 +401,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],
 {
   "id":67,
   "jsonrpc":"2.0",
-  "result": "Getrue/v1.1.0-unstable-d4c05e98/linux-amd64/go1.10"
+  "result": "Ggtai/v1.1.0-unstable-d4c05e98/linux-amd64/go1.10"
 }
 ```
 
@@ -523,9 +523,9 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"net_peerCount","params":[],"id":
 ```
 
 ***
-## Etrue
+## gtai
 
-#### etrue_protocolVersion
+#### gtai_protocolVersion
 
 Returns the current truechain protocol version.
 
@@ -539,7 +539,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_protocolVersion","params":[],"id":67}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_protocolVersion","params":[],"id":67}'
 
 // Result
 {
@@ -551,7 +551,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_protocolVersion","params":
 
 ***
 
-#### etrue_syncing
+#### gtai_syncing
 
 Returns an object with data about the sync status or `false`.
 
@@ -574,7 +574,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_syncing","params":[],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_syncing","params":[],"id":1}'
 
 // Result
 {
@@ -601,7 +601,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_syncing","params":[],"id":
 
 ***
 
-#### etrue_coinbase
+#### gtai_coinbase
 
 Returns the client coinbase address.
 
@@ -616,7 +616,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_coinbase","params":[],"id":64}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_coinbase","params":[],"id":64}'
 
 // Result
 {
@@ -628,7 +628,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_coinbase","params":[],"id"
 
 ***
 
-#### etrue_mining
+#### gtai_mining
 
 Returns `true` if client is actively mining new blocks.
 
@@ -642,7 +642,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_mining","params":[],"id":71}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_mining","params":[],"id":71}'
 
 // Result
 {
@@ -655,7 +655,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_mining","params":[],"id":7
 
 ***
 
-#### etrue_hashrate
+#### gtai_hashrate
 
 Returns the number of hashes per second that the node is mining with.
 
@@ -669,7 +669,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_hashrate","params":[],"id":71}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_hashrate","params":[],"id":71}'
 
 // Result
 {
@@ -682,7 +682,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_hashrate","params":[],"id"
 
 ***
 
-#### etrue_gasPrice
+#### gtai_gasPrice
 
 Returns the current price per gas in wei.
 
@@ -696,7 +696,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_gasPrice","params":[],"id":73}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_gasPrice","params":[],"id":73}'
 
 // Result
 {
@@ -708,7 +708,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_gasPrice","params":[],"id"
 
 ***
 
-#### etrue_accounts
+#### gtai_accounts
 
 Returns a list of addresses owned by client.
 
@@ -723,7 +723,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_accounts","params":[],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_accounts","params":[],"id":1}'
 
 // Result
 {
@@ -735,7 +735,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_accounts","params":[],"id"
 
 ***
 
-#### etrue_blockNumber
+#### gtai_blockNumber
 
 Returns the number of most recent block.
 
@@ -749,7 +749,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_blockNumber","params":[],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_blockNumber","params":[],"id":1}'
 
 // Result
 {
@@ -761,7 +761,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_blockNumber","params":[],"
 
 ***
 
-#### etrue_getBalance
+#### gtai_getBalance
 
 Returns the balance of the account of given address.
 
@@ -786,7 +786,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getBalance","params":["0xc94770007dda54cF92009BFF0dE90c06F603a09f", "latest"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getBalance","params":["0xc94770007dda54cF92009BFF0dE90c06F603a09f", "latest"],"id":1}'
 
 // Result
 {
@@ -798,7 +798,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getBalance","params":["0xc
 
 ***
 
-#### etrue_getStorageAt
+#### gtai_getStorageAt
 
 Returns the value from a storage position at a given address. 
 
@@ -830,7 +830,7 @@ contract Storage {
 Retrieving the value of pos0 is straight forward:
 
 ```js
-curl -X POST --data '{"jsonrpc":"2.0", "method": "etrue_getStorageAt", "params": ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"], "id": 1}' localhost:8545
+curl -X POST --data '{"jsonrpc":"2.0", "method": "gtai_getStorageAt", "params": ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x0", "latest"], "id": 1}' localhost:8545
 
 {"jsonrpc":"2.0","id":1,"result":"0x00000000000000000000000000000000000000000000000000000000000004d2"}
 ```
@@ -844,7 +844,7 @@ This means to retrieve the storage on pos1["0x391694e7e0b0cce554cb130d723a9d2745
 ```js
 keccak(decodeHex("000000000000000000000000391694e7e0b0cce554cb130d723a9d27458f9298" + "0000000000000000000000000000000000000000000000000000000000000001"))
 ```
-The getrue  console which comes with the web3 library can be used to make the calculation:
+The ggtai  console which comes with the web3 library can be used to make the calculation:
 ```js
 > var key = "000000000000000000000000391694e7e0b0cce554cb130d723a9d27458f9298" + "0000000000000000000000000000000000000000000000000000000000000001"
 undefined
@@ -853,7 +853,7 @@ undefined
 ```
 Now to fetch the storage:
 ```js
-curl -X POST --data '{"jsonrpc":"2.0", "method": "etrue_getStorageAt", "params": ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x6661e9d6d8b923d5bbaab1b96e1dd51ff6ea2a93520fdc9eb75d059238b8c5e9", "latest"], "id": 1}' localhost:8545
+curl -X POST --data '{"jsonrpc":"2.0", "method": "gtai_getStorageAt", "params": ["0x295a70b2de5e3953354a6a8344e616ed314d7251", "0x6661e9d6d8b923d5bbaab1b96e1dd51ff6ea2a93520fdc9eb75d059238b8c5e9", "latest"], "id": 1}' localhost:8545
 
 {"jsonrpc":"2.0","id":1,"result":"0x000000000000000000000000000000000000000000000000000000000000162e"}
 
@@ -861,7 +861,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method": "etrue_getStorageAt", "params":
 
 ***
 
-#### etrue_getTransactionCount
+#### gtai_getTransactionCount
 
 Returns the number of transactions *sent* from an address.
 
@@ -887,7 +887,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getTransactionCount","params":["0xc94770007dda54cF92009BFF0dE90c06F603a09f","latest"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getTransactionCount","params":["0xc94770007dda54cF92009BFF0dE90c06F603a09f","latest"],"id":1}'
 
 // Result
 {
@@ -899,7 +899,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getTransactionCount","para
 
 ***
 
-#### etrue_getBlockTransactionCountByHash
+#### gtai_getBlockTransactionCountByHash
 
 Returns the number of transactions in a block from a block matching the given block hash.
 
@@ -923,7 +923,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getBlockTransactionCountByHash","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getBlockTransactionCountByHash","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
 
 // Result
 {
@@ -935,7 +935,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getBlockTransactionCountBy
 
 ***
 
-#### etrue_getBlockTransactionCountByNumber
+#### gtai_getBlockTransactionCountByNumber
 > > 
 Returns the number of transactions in a block matching the given block number.
 
@@ -958,7 +958,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getBlockTransactionCountByNumber","params":["0xe8"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getBlockTransactionCountByNumber","params":["0xe8"],"id":1}'
 
 // Result
 {
@@ -970,7 +970,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getBlockTransactionCountBy
 
 ***
 
-#### etrue_getCode
+#### gtai_getCode
 
 Returns code at a given address.
 
@@ -996,7 +996,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getCode","params":["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getCode","params":["0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b", "0x2"],"id":1}'
 
 // Result
 {
@@ -1008,7 +1008,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getCode","params":["0xa94f
 
 ***
 
-#### etrue_sign
+#### gtai_sign
 
 The sign method calculates an Truechain specific signature with: `sign(keccak256("\x19Truechain Signed Message:\n" + len(message) + message)))`.
 
@@ -1030,7 +1030,7 @@ account, message
 
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_sign","params":["0x9b2055d370f73ec7d8a03e965129118dc8f5bf83", "0xdeadbeaf"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_sign","params":["0x9b2055d370f73ec7d8a03e965129118dc8f5bf83", "0xdeadbeaf"],"id":1}'
 
 // Result
 {
@@ -1040,11 +1040,11 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_sign","params":["0x9b2055d
 }
 ```
 
-An example how to use solidity ecrecover to verify the signature calculated with `etrue_sign` can be found [here](https://gist.github.com/bas-vk/d46d83da2b2b4721efb0907aecdb7ebd). The contract is deployed on the testnet Ropsten and Rinkeby.
+An example how to use solidity ecrecover to verify the signature calculated with `gtai_sign` can be found [here](https://gist.github.com/bas-vk/d46d83da2b2b4721efb0907aecdb7ebd). The contract is deployed on the testnet Ropsten and Rinkeby.
 
 ***
 
-#### etrue_sendTransaction
+#### gtai_sendTransaction
 
 Creates new message call transaction or a contract creation, if the data field contains code.
 
@@ -1075,12 +1075,12 @@ params: [{
 
 `DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [etrue_getTransactionReceipt](#etrue_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [gtai_getTransactionReceipt](#gtai_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_sendTransaction","params":[{see above}],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_sendTransaction","params":[{see above}],"id":1}'
 
 // Result
 {
@@ -1092,7 +1092,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_sendTransaction","params":
 
 ***
 
-#### etrue_sendRawTransaction
+#### gtai_sendRawTransaction
 
 Creates new message call transaction or a contract creation for signed transactions.
 
@@ -1109,12 +1109,12 @@ params: ["0xd46e8dd67c5d32be8d46e8dd67c5d32be8058bb8eb970870f072445675058bb8eb97
 
 `DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [etrue_getTransactionReceipt](#etrue_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [gtai_getTransactionReceipt](#gtai_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_sendRawTransaction","params":[{see above}],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_sendRawTransaction","params":[{see above}],"id":1}'
 
 // Result
 {
@@ -1126,7 +1126,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_sendRawTransaction","param
 
 ***
 
-#### etrue_sendTrueRawTransaction
+#### gtai_sendTrueRawTransaction
 
 When transaction contain payer or fee,Creates new message call transaction or a contract creation for signed transactions.
 
@@ -1143,12 +1143,12 @@ params: ["0xf8c60183989680834c4b4094bea78fea68dba84363d0f9b79219ddf5991ccb2a880d
 
 `DATA`, 32 Bytes - the transaction hash, or the zero hash if the transaction is not yet available.
 
-Use [etrue_getTransactionReceipt](#etrue_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
+Use [gtai_getTransactionReceipt](#gtai_gettransactionreceipt) to get the contract address, after the transaction was mined, when you created a contract.
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_sendTrueRawTransaction","params":[{see above}],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_sendTrueRawTransaction","params":[{see above}],"id":1}'
 
 // Result
 {
@@ -1160,7 +1160,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_sendTrueRawTransaction","p
 
 ***
 
-#### etrue_call
+#### gtai_call
 
 Executes a new message call immediately without creating a transaction on the block chain.
 
@@ -1170,7 +1170,7 @@ Executes a new message call immediately without creating a transaction on the bl
 1. `Object` - The transaction call object
   - `from`: `DATA`, 20 Bytes - (optional) The address the transaction is sent from.
   - `to`: `DATA`, 20 Bytes  - The address the transaction is directed to.
-  - `gas`: `QUANTITY`  - (optional) Integer of the gas provided for the transaction execution. etrue_call consumes zero gas, but this parameter may be needed by some executions.
+  - `gas`: `QUANTITY`  - (optional) Integer of the gas provided for the transaction execution. gtai_call consumes zero gas, but this parameter may be needed by some executions.
   - `gasPrice`: `QUANTITY`  - (optional) Integer of the gasPrice used for each paid gas
   - `value`: `QUANTITY`  - (optional) Integer of the value sent with this transaction
   - `data`: `DATA`  - (optional) Hash of the method signature and encoded parameters
@@ -1183,7 +1183,7 @@ Executes a new message call immediately without creating a transaction on the bl
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_call","params":[{see etrue_sendTransaction parameter}],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_call","params":[{see gtai_sendTransaction parameter}],"id":1}'
 
 // Result
 {
@@ -1195,13 +1195,13 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_call","params":[{see etrue
 
 ***
 
-#### etrue_estimateGas
+#### gtai_estimateGas
 
 Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.
 
 ##### Parameters
 
-See [etrue_call](#etrue_call) parameters, expect that all properties are optional. If no gas limit is specified getrue  uses the block gas limit from the pending block as an upper bound. As a result the returned estimate might not be enough to executed the call/transaction when the amount of gas is higher than the pending block gas limit.
+See [gtai_call](#gtai_call) parameters, expect that all properties are optional. If no gas limit is specified ggtai  uses the block gas limit from the pending block as an upper bound. As a result the returned estimate might not be enough to executed the call/transaction when the amount of gas is higher than the pending block gas limit.
 
 ##### Returns
 
@@ -1210,7 +1210,7 @@ See [etrue_call](#etrue_call) parameters, expect that all properties are optiona
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_estimateGas","params":[{see etrue_sendTransaction parameter}],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_estimateGas","params":[{see gtai_sendTransaction parameter}],"id":1}'
 
 // Result
 {
@@ -1222,7 +1222,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_estimateGas","params":[{se
 
 ***
 
-#### etrue_getBlockByHash
+#### gtai_getBlockByHash
 
 Returns information about a block by hash.
 
@@ -1272,7 +1272,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getBlockByHash","params":["0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d15273312", true],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getBlockByHash","params":["0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d15273312", true],"id":1}'
 
 // Result
 {
@@ -1304,7 +1304,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getBlockByHash","params":[
 
 ***
 
-#### etrue_getBlockByNumber
+#### gtai_getBlockByNumber
 
 Returns information about a block by block number.
 
@@ -1323,19 +1323,19 @@ params: [
 
 ##### Returns
 
-See [etrue_getBlockByHash](#etrue_getblockbyhash)
+See [gtai_getBlockByHash](#gtai_getblockbyhash)
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getBlockByNumber","params":["0x1b4", true],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getBlockByNumber","params":["0x1b4", true],"id":1}'
 ```
 
-Result see [etrue_getBlockByHash](#etrue_getblockbyhash)
+Result see [gtai_getBlockByHash](#gtai_getblockbyhash)
 
 ***
 
-#### etrue_getTransactionByHash
+#### gtai_getTransactionByHash
 
 Returns the information about a transaction requested by transaction hash.
 
@@ -1380,7 +1380,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getTransactionByHash","params":["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getTransactionByHash","params":["0x88df016429689c079f3b2f6ad39fa052532c56795b733da78a91ebe6a713944b"],"id":1}'
 
 // Result
 {
@@ -1412,7 +1412,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getTransactionByHash","par
 
 ***
 
-#### etrue_getTransactionByBlockHashAndIndex
+#### gtai_getTransactionByBlockHashAndIndex
 
 Returns information about a transaction by block hash and transaction index position.
 
@@ -1432,19 +1432,19 @@ params: [
 
 ##### Returns
 
-See [etrue_getTransactionByHash](#etrue_gettransactionbyhash)
+See [gtai_getTransactionByHash](#gtai_gettransactionbyhash)
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getTransactionByBlockHashAndIndex","params":["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getTransactionByBlockHashAndIndex","params":["0xc6ef2fc5426d6ad6fd9e2a26abeab0aa2411b7ab17f30a99d3cb96aed1d1055b", "0x0"],"id":1}'
 ```
 
-Result see [etrue_getTransactionByHash](#etrue_gettransactionbyhash)
+Result see [gtai_getTransactionByHash](#gtai_gettransactionbyhash)
 
 ***
 
-#### etrue_getTransactionByBlockNumberAndIndex
+#### gtai_getTransactionByBlockNumberAndIndex
 
 Returns information about a transaction by block number and transaction index position.
 
@@ -1464,19 +1464,19 @@ params: [
 
 ##### Returns
 
-See [etrue_getTransactionByHash](#etrue_gettransactionbyhash)
+See [gtai_getTransactionByHash](#gtai_gettransactionbyhash)
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getTransactionByBlockNumberAndIndex","params":["0x29c", "0x0"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getTransactionByBlockNumberAndIndex","params":["0x29c", "0x0"],"id":1}'
 ```
 
-Result see [etrue_getTransactionByHash](#etrue_gettransactionbyhash)
+Result see [gtai_getTransactionByHash](#gtai_gettransactionbyhash)
 
 ***
 
-#### etrue_getTransactionReceipt
+#### gtai_getTransactionReceipt
 
 Returns the receipt of a transaction by transaction hash.
 
@@ -1520,7 +1520,7 @@ It also returns _either_ :
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getTransactionReceipt","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getTransactionReceipt","params":["0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238"],"id":1}'
 
 // Result
 {
@@ -1545,10 +1545,10 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getTransactionReceipt","pa
 
 ***
 
-#### etrue_newFilter
+#### gtai_newFilter
 
 Creates a filter object, based on filter options, to notify when the state changes (logs).
-To check if the state has changed, call [etrue_getFilterChanges](#etrue_getfilterchanges).
+To check if the state has changed, call [gtai_getFilterChanges](#gtai_getfilterchanges).
 
 ##### A note on specifying topic filters:
 Topics are order-dependent. A transaction with a log with topics [A, B] will be matched by the following topic filters:
@@ -1583,7 +1583,7 @@ params: [{
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_newFilter","params":[{"topics":["0x0000000000000000000000000000000000000000000000000000000012341234"]}],"id":73}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_newFilter","params":[{"topics":["0x0000000000000000000000000000000000000000000000000000000012341234"]}],"id":73}'
 
 // Result
 {
@@ -1595,10 +1595,10 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_newFilter","params":[{"top
 
 ***
 
-#### etrue_newBlockFilter
+#### gtai_newBlockFilter
 
 Creates a filter in the node, to notify when a new block arrives.
-To check if the state has changed, call [etrue_getFilterChanges](#etrue_getfilterchanges).
+To check if the state has changed, call [gtai_getFilterChanges](#gtai_getfilterchanges).
 
 ##### Parameters
 None
@@ -1610,7 +1610,7 @@ None
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_newBlockFilter","params":[],"id":73}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_newBlockFilter","params":[],"id":73}'
 
 // Result
 {
@@ -1622,10 +1622,10 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_newBlockFilter","params":[
 
 ***
 
-#### etrue_newPendingTransactionFilter
+#### gtai_newPendingTransactionFilter
 
 Creates a filter in the node, to notify when new pending transactions arrive.
-To check if the state has changed, call [etrue_getFilterChanges](#etrue_getfilterchanges).
+To check if the state has changed, call [gtai_getFilterChanges](#gtai_getfilterchanges).
 
 ##### Parameters
 None
@@ -1637,7 +1637,7 @@ None
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_newPendingTransactionFilter","params":[],"id":73}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_newPendingTransactionFilter","params":[],"id":73}'
 
 // Result
 {
@@ -1649,10 +1649,10 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_newPendingTransactionFilte
 
 ***
 
-#### etrue_uninstallFilter
+#### gtai_uninstallFilter
 
 Uninstalls a filter with given id. Should always be called when watch is no longer needed.
-Additonally Filters timeout when they aren't requested with [etrue_getFilterChanges](#etrue_getfilterchanges) for a period of time.
+Additonally Filters timeout when they aren't requested with [gtai_getFilterChanges](#gtai_getfilterchanges) for a period of time.
 
 
 ##### Parameters
@@ -1673,7 +1673,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_uninstallFilter","params":["0xb"],"id":73}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_uninstallFilter","params":["0xb"],"id":73}'
 
 // Result
 {
@@ -1685,7 +1685,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_uninstallFilter","params":
 
 ***
 
-#### etrue_getFilterChanges
+#### gtai_getFilterChanges
 
 Polling method for a filter, which returns an array of logs which occurred since last poll.
 
@@ -1705,9 +1705,9 @@ params: [
 
 `Array` - Array of log objects, or an empty array if nothing has changed since last poll.
 
-- For filters created with `etrue_newBlockFilter` the return are block hashes (`DATA`, 32 Bytes), e.g. `["0x3454645634534..."]`.
-- For filters created with `etrue_newPendingTransactionFilter ` the return are transaction hashes (`DATA`, 32 Bytes), e.g. `["0x6345343454645..."]`.
-- For filters created with `etrue_newFilter` logs are objects with following params:
+- For filters created with `gtai_newBlockFilter` the return are block hashes (`DATA`, 32 Bytes), e.g. `["0x3454645634534..."]`.
+- For filters created with `gtai_newPendingTransactionFilter ` the return are transaction hashes (`DATA`, 32 Bytes), e.g. `["0x6345343454645..."]`.
+- For filters created with `gtai_newFilter` logs are objects with following params:
 
   - `removed`: `TAG` - `true` when the log was removed, due to a chain reorganization. `false` if its a valid log.
   - `logIndex`: `QUANTITY` - integer of the log index position in the block. `null` when its pending log.
@@ -1722,7 +1722,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getFilterChanges","params":["0x16"],"id":73}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getFilterChanges","params":["0x16"],"id":73}'
 
 // Result
 {
@@ -1745,7 +1745,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getFilterChanges","params"
 
 ***
 
-#### etrue_getFilterLogs
+#### gtai_getFilterLogs
 
 Returns an array of all logs matching filter with given id.
 
@@ -1763,19 +1763,19 @@ params: [
 
 ##### Returns
 
-See [etrue_getFilterChanges](#etrue_getfilterchanges)
+See [gtai_getFilterChanges](#gtai_getfilterchanges)
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getFilterLogs","params":["0x16"],"id":74}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getFilterLogs","params":["0x16"],"id":74}'
 ```
 
-Result see [etrue_getFilterChanges](#etrue_getfilterchanges)
+Result see [gtai_getFilterChanges](#gtai_getfilterchanges)
 
 ***
 
-#### etrue_getLogs
+#### gtai_getLogs
 
 Returns an array of all logs matching a given filter object.
 
@@ -1786,7 +1786,7 @@ Returns an array of all logs matching a given filter object.
   - `toBlock`: `QUANTITY|TAG` - (optional, default: `"latest"`) Integer block number, or `"latest"` for the last mined block or `"pending"`, `"earliest"` for not yet mined transactions.
   - `address`: `DATA|Array`, 20 Bytes - (optional) Contract address or a list of addresses from which logs should originate.
   - `topics`: `Array of DATA`,  - (optional) Array of 32 Bytes `DATA` topics. Topics are order-dependent. Each topic can also be an array of DATA with "or" options.
-  - `blockhash`:  `DATA`, 32 Bytes - (optional) With the addition of EIP-234 (Getrue >= v1.8.13 or Parity >= v2.1.0), `blockHash` is a new filter option which restricts the logs returned to the single block with the 32-byte hash `blockHash`.  Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the block number with hash `blockHash`.  If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
+  - `blockhash`:  `DATA`, 32 Bytes - (optional) With the addition of EIP-234 (Ggtai >= v1.8.13 or Parity >= v2.1.0), `blockHash` is a new filter option which restricts the logs returned to the single block with the 32-byte hash `blockHash`.  Using `blockHash` is equivalent to `fromBlock` = `toBlock` = the block number with hash `blockHash`.  If `blockHash` is present in the filter criteria, then neither `fromBlock` nor `toBlock` are allowed.
 
 ##### Example Parameters
 ```js
@@ -1797,19 +1797,19 @@ params: [{
 
 ##### Returns
 
-See [etrue_getFilterChanges](#etrue_getfilterchanges)
+See [gtai_getFilterChanges](#gtai_getfilterchanges)
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getLogs","params":[{"topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":74}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getLogs","params":[{"topics":["0x000000000000000000000000a94f5374fce5edbc8e2a8697c15331677e6ebf0b"]}],"id":74}'
 ```
 
-Result see [etrue_getFilterChanges](#etrue_getfilterchanges)
+Result see [gtai_getFilterChanges](#gtai_getfilterchanges)
 
 ***
 
-#### etrue_getWork
+#### gtai_getWork
 
 Returns the hash of the current block, the seedHash, and the boundary condition to be met ("target").
 
@@ -1827,7 +1827,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getWork","params":[],"id":73}'
+curl -X POST --data '{"jsonrpc":"2.0","method":"gtai_getWork","params":[],"id":73}'
 
 // Result
 {
@@ -1839,7 +1839,7 @@ curl -X POST --data '{"jsonrpc":"2.0","method":"etrue_getWork","params":[],"id":
 
 ***
 
-#### etrue_submitWork
+#### gtai_submitWork
 
 Used for submitting a proof-of-work solution.
 
@@ -1867,7 +1867,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_submitWork", "params":["0x0000000000000001", "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef", "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"],"id":73}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_submitWork", "params":["0x0000000000000001", "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef", "0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef"],"id":73}'
 
 // Result
 {
@@ -1879,7 +1879,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_submitWork", "params":["0
 
 ***
 
-#### etrue_submitHashrate
+#### gtai_submitHashrate
 
 Used for submitting mining hashrate.
 
@@ -1905,7 +1905,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_submitHashrate", "params":["0x500000", "0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c"],"id":73}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_submitHashrate", "params":["0x500000", "0x59daa26581d0acd1fce254fb7e85952f4c09d0915afd33d3886cd914bc7d283c"],"id":73}'
 
 // Result
 {
@@ -1917,7 +1917,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_submitHashrate", "params"
 
 ***
 
-#### etrue_committeeNumber
+#### gtai_committeeNumber
 
 get current committee number
 
@@ -1933,7 +1933,7 @@ QUANTITY - integer of the current committee number.
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_committeeNumber", "params":[],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_committeeNumber", "params":[],"id":100}'
 
 // Result
 {
@@ -1945,7 +1945,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_committeeNumber", "params
 
 ***
 
-#### etrue_fruitNumber
+#### gtai_fruitNumber
 
 get current fruit number
 
@@ -1961,7 +1961,7 @@ QUANTITY - integer of the current fruit number.
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_fruitNumber", "params":[],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_fruitNumber", "params":[],"id":100}'
 
 // Result
 {
@@ -1973,7 +1973,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_fruitNumber", "params":[]
 
 ***
 
-#### etrue_rewardSnailBlock
+#### gtai_rewardSnailBlock
 
 get current reward snalBlock  infomation
 
@@ -2007,7 +2007,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_rewardSnailBlock", "params":[],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_rewardSnailBlock", "params":[],"id":100}'
 
 // Result
 {
@@ -2037,7 +2037,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_rewardSnailBlock", "param
 
 ***
 
-#### etrue_snailBlockNumber
+#### gtai_snailBlockNumber
 
 get current snail block number
 
@@ -2053,7 +2053,7 @@ QUANTITY - integer of the current snail block number.
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_snailBlockNumber", "params":[],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_snailBlockNumber", "params":[],"id":100}'
 
 // Result
 {
@@ -2065,7 +2065,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_snailBlockNumber", "param
 
 ***
 
-#### etrue_getCommittee
+#### gtai_getCommittee
 
 get committee member infomation
 
@@ -2091,7 +2091,7 @@ params: ["0x1"]
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getCommittee", "params":["0x1"],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getCommittee", "params":["0x1"],"id":100}'
 
 // Result
 {
@@ -2217,7 +2217,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getCommittee", "params":[
 
 ***
 
-#### etrue_getFruitByNumber
+#### gtai_getFruitByNumber
 
 get fruit block by fruit number
 
@@ -2255,7 +2255,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getFruitByNumber", "params":["0x1",false],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getFruitByNumber", "params":["0x1",false],"id":100}'
 
 // Result
 {
@@ -2281,7 +2281,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getFruitByNumber", "param
 
 ***
 
-#### etrue_getFruitByHash
+#### gtai_getFruitByHash
 
 get fruit block by fruit hash
 
@@ -2300,21 +2300,21 @@ params: [
 
 ##### Returns
 
-  See [etrue_getFruitByNumber](#etrue_getFruitByNumber)
+  See [gtai_getFruitByNumber](#gtai_getFruitByNumber)
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getFruitByHash", "params":["0x190c33741f18c86ac9b3b3e1102e35c95a354cb6c9214ccc1f0fa28f950840b5",false],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getFruitByHash", "params":["0x190c33741f18c86ac9b3b3e1102e35c95a354cb6c9214ccc1f0fa28f950840b5",false],"id":100}'
 ```
 
 // Result
-  See [etrue_getFruitByNumber](#etrue_getFruitByNumber)
+  See [gtai_getFruitByNumber](#gtai_getFruitByNumber)
 
 
 ***
 
-#### etrue_getRewardBlock
+#### gtai_getRewardBlock
 
 return the fast block position where the given snail block is rewarded
 
@@ -2356,7 +2356,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getRewardBlock", "params":["0x15"],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getRewardBlock", "params":["0x15"],"id":100}'
 
 // Result
 {
@@ -2413,7 +2413,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getRewardBlock", "params"
 
 ***
 
-#### etrue_getSnailBlockByNumber
+#### gtai_getSnailBlockByNumber
 
 get snail block by number
 
@@ -2455,7 +2455,7 @@ params: [
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getSnailBlockByNumber", "params":["0x19",false],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getSnailBlockByNumber", "params":["0x19",false],"id":100}'
 
 // Result
 {
@@ -2485,7 +2485,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getSnailBlockByNumber", "
 
 ***
 
-#### etrue_getSnailBlockByHash
+#### gtai_getSnailBlockByHash
 
 get snail block by hash
 
@@ -2506,20 +2506,20 @@ params: [
 
 ##### Returns
 
- See [etrue_getSnailBlockByNumber](#etrue_getSnailBlockByNumber)
+ See [gtai_getSnailBlockByNumber](#gtai_getSnailBlockByNumber)
 
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getSnailBlockByHash", "params":["0x6fd8a5f62ec65a6f244be17a32605c705736ed960130bad87b79730312d77741",false],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getSnailBlockByHash", "params":["0x6fd8a5f62ec65a6f244be17a32605c705736ed960130bad87b79730312d77741",false],"id":100}'
 ```
 
 // Result
- See [etrue_getSnailBlockByNumber](#etrue_getSnailBlockByNumber)
+ See [gtai_getSnailBlockByNumber](#gtai_getSnailBlockByNumber)
 
 ***
 
-#### etrue_getDataset
+#### gtai_getDataset
 
 the Minverva algorithm calculates the required source of dataset, and updates the dataset every 12,000
 
@@ -2537,7 +2537,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getDataset", "params":[],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getDataset", "params":[],"id":100}'
 
 // Result
 {
@@ -2551,7 +2551,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getDataset", "params":[],
 
 ***
 
-#### etrue_getSnailRewardContent
+#### gtai_getSnailRewardContent
 
 get snailBlock reward imfomation, including snailBlock miner,fruit miner and committee reward for each fruit 
 
@@ -2570,7 +2570,7 @@ get snailBlock reward imfomation, including snailBlock miner,fruit miner and com
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getSnailRewardContent", "params":["0x1"],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getSnailRewardContent", "params":["0x1"],"id":100}'
 
 // Result
 {
@@ -2728,7 +2728,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getSnailRewardContent", "
 
 ***
 
-#### etrue_getRecentChainRewardContent
+#### gtai_getRecentChainRewardContent
 
 get snailBlock pos reward imfomation, including snailBlock miner,fruit miner and committee reward for each fruit 
 
@@ -2749,7 +2749,7 @@ none
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getRecentChainRewardContent", "params":[],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getRecentChainRewardContent", "params":[],"id":100}'
 
 // Result
 {
@@ -2794,7 +2794,7 @@ curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getRecentChainRewardConte
 
 ***
 
-#### etrue_getChainRewardContent
+#### gtai_getChainRewardContent
 
 get snailBlock pos reward imfomation, including snailBlock miner,fruit miner and committee reward for each fruit 
 
@@ -2820,7 +2820,7 @@ get snailBlock pos reward imfomation, including snailBlock miner,fruit miner and
 ##### Example
 ```js
 // Request
-curl -X POST --data '{"jsonrpc":"2.0", "method":"etrue_getChainRewardContent", "params":["0x9b44","0x0000000000000000000000000000000000000000"],"id":100}'
+curl -X POST --data '{"jsonrpc":"2.0", "method":"gtai_getChainRewardContent", "params":["0x9b44","0x0000000000000000000000000000000000000000"],"id":100}'
 
 // Result
 {

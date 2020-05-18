@@ -8,17 +8,17 @@ Clone the repository to a directory of your choosing:
 git clone Taipublic
 ```
 
-Building `getrue` requires the Go compiler:
+Building `taipublic` requires the Go compiler:
 
 ```shell
 brew install go
 ```
 
-Finally, build the `getrue` program using the following command.
+Finally, build the `taipublic` program using the following command.
 ```shell
-cd truechain-engineering-code
+cd taipublicchain-engineering-code
 git checkout release/2.0
-make getrue
+make taipublic
 ```
 
 If you see some errors related to header files of Mac OS system library, install XCode Command Line Tools, and try again.
@@ -27,4 +27,4 @@ If you see some errors related to header files of Mac OS system library, install
 xcode-select --install
 ```
 
-You can now run `build/bin/getrue` to start your node.
+You can now run `build/bin/taipublic` to start your node.

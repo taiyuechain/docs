@@ -1,16 +1,16 @@
 site_name: TaiBlockChain
 nav:
+  - TaiBlockChain: index.md
   - TaiBlockChain :
-      - Home : Home.md
       - TaiPublicChain :
           - TaiPublicChainEN :
               - Developer Platform :
                   - Install and build : Building-taiyuechain.md
                   - Interface Documentation : InterfaceDocumentation.md
                   - Usage : Usage.md
-          - TaiPublicChainZN :  TaiYueChain.md
+          - TaiPublicChainZN : TaiYueChain.md
       - TaiUnionChain :
-          - TaiUnionChainEN :  index3.md
+          - TaiUnionChainEN :  index.md
           - TaiUnionChainZN :  index4.md
 theme: readthedocs
 repo_url: https://github.com/example/repository/

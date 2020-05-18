@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Impawn CLI - TaiBlockChain</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Impawn CLI";
+    var mkdocs_page_input_path = "source\\taiyuepublic\\Impawn-CLI.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> TaiBlockChain</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">TaiBlockChain</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">TaiBlockChain</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiPublicChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">TaiPublicChainEN</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="#">Developer Platform</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Building-taiyuechain/">Install and build</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../InterfaceDocumentation/">Interface Documentation</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Usage/">Usage</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TaiYueChain/">TaiPublicChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiUnionChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../..">TaiUnionChainEN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../index4/">TaiUnionChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">TaiBlockChain</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Impawn CLI</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/example/repository/edit/master/docs/source/taiyuepublic/Impawn-CLI.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="impawn-cli">Impawn CLI</h2>
+<p>TaipublicChain Impawn CLI is a tool, which can call deposit contract participate in POS.</p>
+<p><a href="https://github.com/taiyuechain/taipublicchain/blob/master/COPYING"><img src="https://img.shields.io/badge/license-GPL%20%20truechain-lightgrey.svg"></a></p>
+<h2 id="building-the-source">Building the source</h2>
+<p>Building impawn requires both a Go (version 1.9 or later) and a C compiler.
+You can install them using your favourite package manager.
+Once the dependencies are installed, run</p>
+<pre><code>go build -o impawn  main.go query_stake.go impawn.go
+</code></pre>
+<h3 id="command">Command</h3>
+<p>The impawn project comes with several Sub Command.</p>
+<table>
+<thead>
+<tr>
+<th align="center">SubCommand</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>append</code></td>
+<td>After deposit, if you want continue to participate in deposit, you can use append command, no fix fee and pubkey.</td>
+</tr>
+<tr>
+<td align="center"><code>cancel</code></td>
+<td>If you want withdraw you money, First of all, you must cancel it.</td>
+</tr>
+<tr>
+<td align="center"><code>delegate</code></td>
+<td>You can find a validator address to delegate, contain sub command <code>deposit</code>,<code>cancel</code>,<code>withdraw</code>.</td>
+</tr>
+<tr>
+<td align="center"><code>querystaking</code></td>
+<td>If you want withdraw you money, you should send tx after lock height,which will print this height.</td>
+</tr>
+<tr>
+<td align="center"><code>querytx</code></td>
+<td>If there no have validator to process your transaction, you can waiting some minutes and use it to query.</td>
+</tr>
+<tr>
+<td align="center"><code>send</code></td>
+<td>If you want send no contract transaction, you can use send command.</td>
+</tr>
+<tr>
+<td align="center"><code>updatefee</code></td>
+<td>If you want modify delegate fee, you only use this.</td>
+</tr>
+<tr>
+<td align="center"><code>withdraw</code></td>
+<td>After send a cancel transaction, you can withdraw you money in correct height.</td>
+</tr>
+<tr>
+<td align="center">### Flag</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">* <code>--key</code> If you use private key, you need specify a file which contains private key.</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">* <code>--keystore</code> If you use private key, you need specify a file which contains private key.</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">* <code>--rpcaddr</code> HTTP-RPC server listening interface (default: <code>localhost</code>)</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">* <code>--rpcport</code> HTTP-RPC server listening port (default: <code>8545</code>)</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">* <code>--value</code> Staking value units one true no wei</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">* <code>--fee</code> Staking fee 0 - 10000(default: 0)</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">* <code>--address</code> Transfer address or validator address in delegate</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">* <code>--txhash</code> query tx exec result</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">## Running CLI</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="impawn">Impawn</h3>
+<pre><code>$ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 --value 50000 --fee 100
+
+</code></pre>
+
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node, this node should you run validator node, because of it will use your local bft pk to election.</li>
+<li>Deposit 50000 true to staking address, fee(0-10000) set to 100, feeRate = fee / 10000.</li>
+<li>If you want become a validator candidate, you must deposit balance &gt; 50000(true). </li>
+</ul>
+<h3 id="cancel">Cancel</h3>
+<pre><code>$ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 --value 10  cancel
+
+</code></pre>
+
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node.</li>
+<li>Due to withdraw must call cancel first, sub command cancel represent you will cancel 10 true to locked state, next epoch you can withdraw. </li>
+</ul>
+<h3 id="withdraw">withdraw</h3>
+<pre><code>$ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 --value 10 withdraw
+
+</code></pre>
+
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node.</li>
+<li>Sub command append represent you want withdraw 10 true to your address. </li>
+</ul>
+<h3 id="append">Append</h3>
+<pre><code>$ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 --value 10 append
+
+</code></pre>
+
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node, and deposit 10 true to staking address.</li>
+<li>Sub command append represent you want continue staking after already having deposit.  </li>
+</ul>
+<h3 id="updatefee">UpdateFee</h3>
+<pre><code>$ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 --fee 10 updatefee
+
+</code></pre>
+
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node.</li>
+<li>Sub command only update validator fee(0-10000), which will influence delegator benefit.</li>
+</ul>
+<h3 id="send">Send</h3>
+<pre><code>$ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 --value 10 --address 0x3f944d3f12e904e1A647E5FF9f531B8deE2346B2 send 
+
+</code></pre>
+
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node.</li>
+<li>Sub command send is send normal transaction not contract,value is transfer value, address is To address.</li>
+</ul>
+<h3 id="querystaking">QueryStaking</h3>
+<pre><code>$ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 querystaking
+
+</code></pre>
+
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node.</li>
+<li>querystaking will print in staking count(Staked), already cancel count(Locked), can withdraw count(Unlocked).</li>
+<li>Print withdraw height, after this, you can call withdraw. </li>
+</ul>
+<h3 id="querytx">QueryTx</h3>
+<pre><code>$ impawn  --rpcaddr 39.100.97.129 --rpcport 8545 --txhash 0x40c78769add225421c45fa2e9dc206c1d9a03199f78c34644f3c0bf274f3066b querytx
+
+</code></pre>
+
+<p>This command will:</p>
+<ul>
+<li>Connect http://39.100.97.129:8545 node, and use querytx command specify txhash to query.</li>
+</ul>
+<h3 id="delegate-deposit">Delegate deposit</h3>
+<p>```
+ $ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 --value 10 --address 0x3f944d3f12e904e1A647E5FF9f531B8deE2346B2 delegate deposit</p>
+<p>```</p>
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node, and delegate 10 true to staking address.</li>
+<li>Sub command delegate deposit express this is delegate call, address is you select validator address.</li>
+</ul>
+<h3 id="delegate-cancel">Delegate cancel</h3>
+<p>```
+ $ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 --value 10 --address 0x3f944d3f12e904e1A647E5FF9f531B8deE2346B2 delegate deposit</p>
+<p>```</p>
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node, and delegate 10 true to staking address.</li>
+<li>Sub command delegate cancel express this is cancel call, address is you select validator address.  </li>
+</ul>
+<h3 id="delegate-withdraw">Delegate withdraw</h3>
+<p>```
+ $ impawn --key key/bftkey --rpcaddr 39.100.97.129 --rpcport 8545 --value 10 --address 0x3f944d3f12e904e1A647E5FF9f531B8deE2346B2 delegate withdraw</p>
+<p>```</p>
+<p>This command will:</p>
+<ul>
+<li>Load private key in key/bftkey file, connect http://39.100.97.129:8545 node, and delegate 10 true to staking address.</li>
+<li>Sub command delegate withdraw express this is withdraw call, address is you select validator address.  </li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/example/repository/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

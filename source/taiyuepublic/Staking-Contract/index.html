@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Staking Contract - TaiBlockChain</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Staking Contract";
+    var mkdocs_page_input_path = "source\\taiyuepublic\\Staking-Contract.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> TaiBlockChain</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">TaiBlockChain</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">TaiBlockChain</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiPublicChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">TaiPublicChainEN</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="#">Developer Platform</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Building-taiyuechain/">Install and build</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../InterfaceDocumentation/">Interface Documentation</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Usage/">Usage</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TaiYueChain/">TaiPublicChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiUnionChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../..">TaiUnionChainEN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../index4/">TaiUnionChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">TaiBlockChain</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Staking Contract</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/example/repository/edit/master/docs/source/taiyuepublic/Staking-Contract.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="contract-address">Contract Address</h2>
+<p>TaipublicChain staking contract is deployed at address:</p>
+<pre><code>0x000000000000000000747275657374616b696E67
+</code></pre>
+
+<h2 id="contract-json-abi">Contract json ABI</h2>
+<p>Refer to <a href="https://github.com/taiyuechain/taipublicchain/wiki/Staking-ABI">Staking ABI</a></p>
+<h2 id="interact-with-contract-interface">Interact with contract interface</h2>
+<h3 id="deposit">deposit</h3>
+<p>One node can participate as a validator to proposal new blocks with <code>deposit</code> function. To
+create your validator, you need to <code>deposit</code> some <code>true</code> coin and register you validator 
+public key.  Delegators can bond their coin to the validator account and shares block reward
+by their portion. Validator can charge for additional <code>fee</code> rate from the delegators reward.</p>
+<p>The feeRate calculation:</p>
+<pre><code>feeRate = fee / 10000
+</code></pre>
+
+<p>After deposit, the node becomes a validator candidate. Only if the deposit balance &gt; 50000(true),
+the validator can be selected as a candidate.</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pubkey</td>
+<td>bytes</td>
+<td>BFT public key of 65 bytes</td>
+</tr>
+<tr>
+<td>fee</td>
+<td>uint256</td>
+<td>percent of reward charged for delegate, the rate = fee / 10000</td>
+</tr>
+<tr>
+<td>value</td>
+<td>wei</td>
+<td><code>true</code> token to deposit</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cancel">cancel</h3>
+<p>Validator can cancel a portion of the deposit from staking balance. With the <code>cancel</code> transaction executed, the cancelled portion is locked in the contract for about 2 weeks. 
+After the period, validator can withdraw the canceled coins.</p>
+<table>
+<thead>
+<tr>
+<th align="left">parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">value</td>
+<td>uint256</td>
+<td>unlock a portion of deposit, the unit is <code>wei</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="append">append</h3>
+<p>Validator can deposit extra <code>true</code> token to the deposit contract by <code>append</code> function.</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>wei</td>
+<td>amout of coin staked by the deposit account</td>
+</tr>
+</tbody>
+</table>
+<h3 id="withdraw">withdraw</h3>
+<p>Validator can withdraw the unlocked token after a locking period of 2 weeks. All the deposit balance can be retrived by <code>getDeposit</code> function.</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>uint256(wei)</td>
+<td>amount of value withdrawed to the owner</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getdeposit">getDeposit</h3>
+<p>Validator can query deposit balance by <code>getDeposit</code> function. there are 3 states for the
+deposit: <code>staked</code>, <code>locked</code>, <code>unlocked</code></p>
+<ul>
+<li>staked: token which validator bond to stake contract and may receive block reward</li>
+<li>locked: token which were canceld but are still locked in the deposit util 2 weeks.</li>
+<li>unlocked: valdator use withdraw token of unlocked state</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>owner</td>
+<td>address</td>
+<td>address of deposit validator</td>
+</tr>
+</tbody>
+</table>
+<p><code>getDeposit</code> function outputs  <code>uint256</code> tuple of 3 items:(staked, locked, unlocked)</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>staked</td>
+<td>uint256</td>
+<td>amount which is staked in deposit</td>
+</tr>
+<tr>
+<td>locked</td>
+<td>uint256</td>
+<td>amount which is cancelled but still is in lock period</td>
+</tr>
+<tr>
+<td>unlocked</td>
+<td>uint256</td>
+<td>amount which validator can withdraw</td>
+</tr>
+</tbody>
+</table>
+<h3 id="delegate">delegate</h3>
+<p>People who do not want to run a validator full node can deposit their token to a certern
+validator to gain staking reward.</p>
+<p>If the holder's own deposit is less than 50000 true, delegtor can not receive any reward as the
+validator would't be elected as a candidate.</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>holder</td>
+<td>address</td>
+<td>address of a particular validator account</td>
+</tr>
+<tr>
+<td>value</td>
+<td>wei</td>
+<td>amout of coin deposit to the delegator account</td>
+</tr>
+</tbody>
+</table>
+<h3 id="undelegate">undelegate</h3>
+<p>Delegator can cancel a portion of the deposit from a certern validator holder.
+With the <code>undelegate</code> transaction, the cancelled portion is locked in the contract for
+about 2 weeks. After the period, delegator can withdraw the canceled token.</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>holder</td>
+<td>address</td>
+<td>address of the delegator</td>
+</tr>
+<tr>
+<td>value</td>
+<td>uint256</td>
+<td>unlock a portion of delegated coin</td>
+</tr>
+</tbody>
+</table>
+<h3 id="withdrawdelegate">withdrawDelegate</h3>
+<p>Delegator can withdraw the unlocked token from a validtor. All the delegation balance can be retrived by <code>getDelegate</code> function.</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>holder</td>
+<td>address</td>
+<td>address of the delegator</td>
+</tr>
+<tr>
+<td>value</td>
+<td>uint256</td>
+<td>amount of coin withdrawed to the owner</td>
+</tr>
+</tbody>
+</table>
+<h3 id="getdelegate">getDelegate</h3>
+<p><code>getDelegate</code> return the balance state of a delegator. The state of token balance is similar to <code>getDeposit</code></p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>owner</td>
+<td>address</td>
+<td>owner address of the delegated coin</td>
+</tr>
+<tr>
+<td>holder</td>
+<td>address</td>
+<td>address of the delegator</td>
+</tr>
+</tbody>
+</table>
+<p><code>getDelegate</code> function outputs  <code>uint256</code> tuple of 3 items: (staked, locked, unlocked)</p>
+<table>
+<thead>
+<tr>
+<th>parameter</th>
+<th>type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>staked</td>
+<td>uint256</td>
+<td>amount which is staked in deposit</td>
+</tr>
+<tr>
+<td>locked</td>
+<td>uint256</td>
+<td>amount which is cancelled but still is in lock period</td>
+</tr>
+<tr>
+<td>unlocked</td>
+<td>uint256</td>
+<td>amount which coin owner can withdraw</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/example/repository/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

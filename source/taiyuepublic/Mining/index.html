@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>CPU Mining with taipublic - TaiBlockChain</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "CPU Mining with taipublic";
+    var mkdocs_page_input_path = "source\\taiyuepublic\\Mining.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> TaiBlockChain</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">TaiBlockChain</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">TaiBlockChain</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiPublicChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">TaiPublicChainEN</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="#">Developer Platform</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Building-taiyuechain/">Install and build</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../InterfaceDocumentation/">Interface Documentation</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Usage/">Usage</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TaiYueChain/">TaiPublicChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiUnionChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../..">TaiUnionChainEN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../index4/">TaiUnionChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">TaiBlockChain</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>CPU Mining with taipublic</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/example/repository/edit/master/docs/source/taiyuepublic/Mining.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="cpu-mining-with-taipublic">CPU Mining with taipublic</h1>
+<h4 id="cpu_mining">CPU_Mining</h4>
+<p>To mine at truechain, you'll just need truechain client, Getrue. </p>
+<p><em><strong>NOTE:</strong> Ensure your blockchain is fully synchronised with the main chain before starting to mine, otherwise you will not be mining on the main chain.</em></p>
+<p>When you start up your taipublicchain node with <code>getrue</code> it is not mining by default. To start it in mining mode, you use the <code>--mine</code> <a href="https://github.com/truechain/truechain-engineering-code/wiki/Command-Line-Options">command line option</a>. The <code>-minerthreads</code> parameter can be used to set the number parallel mining threads (defaulting to the total number of processor cores). </p>
+<p><code>taipublic --mine --minerthreads=4</code></p>
+<p>only mine fruit</p>
+<p><code>taipublic --minefruit --minerthreads=4</code></p>
+<p>You can also start and stop CPU mining at runtime using the console. <code>miner.start</code> takes an optional parameter for the number of miner threads.</p>
+<pre><code>&gt; miner.start(8)
+null
+&gt; miner.stop()
+true
+</code></pre>
+
+<p>or</p>
+<pre><code>&gt; miner.startFruit(8)
+null
+&gt; miner.stop()
+true
+</code></pre>
+
+<p>Note that mining for real TRUE only makes sense if you are in sync with the network (since you mine on top of the consensus block). Therefore the truechain downloader/synchroniser will delay mining until syncing is complete, and after that mining automatically starts unless you cancel your intention with <code>miner.stop()</code>.</p>
+<p>In order to earn TRUE you must have your <strong>coinbase</strong> address set. This coinbase defaults to your <a href="https://github.com/taiyuechain/taipublicchain/wiki/Managing-your-accounts">primary account</a>. If you don't have an coinbase address, then <code>Getrue --mine</code> or <code>Getrue --minefruit</code>will not start up.</p>
+<p>You can set your coinbase on the command line:</p>
+<pre><code>taipublic --coinbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff' --mine 2&gt;&gt; getrue.log
+</code></pre>
+
+<p>or</p>
+<pre><code>taipublic --coinbase '0xa4d8e9cae4d04b093aac82e6cd355b6b963fb7ff' --minefruit 2&gt;&gt; getrue.log
+</code></pre>
+
+<p>You can reset your coinbase on the console too:</p>
+<pre><code>miner.setCoinbase(etrue.accounts[2])
+</code></pre>
+
+<p>Note that your coinbase does not need to be an address of a local account, just an existing one. </p>
+<p>There is an option to add extra Data (32 bytes only) to your mined blocks. By convention this is interpreted as a unicode string, so you can set your short vanity tag.</p>
+<pre><code>miner.setExtra(&quot;trueminer&quot;)
+...
+debug.printBlock(131805)
+BLOCK(be465b020fdbedc4063756f0912b5a89bbb4735bd1d1df84363e05ade0195cb1): Size: 531.00 B TD: 643485290485 {
+NoNonce: ee48752c3a0bfe3d85339451a5f3f411c21c8170353e450985e1faab0a9ac4cc
+Header:
+[
+...
+        Miner:           a4d8e9cae4d04b093aac82e6cd355b6b963fb7ff
+        Number:             131805
+        Extra:              trueminer
+...
+}
+</code></pre>
+
+<p>You can check your hashrate with miner.getHashRate(), the result is in H/s (Hash operations per second).</p>
+<pre><code>&gt; miner.getHashRate()
+30
+</code></pre>
+
+<p>After you successfully mined some blocks, you can check the true balance of your coinbase account. Now assuming your coinbase is a local account:</p>
+<pre><code>&gt; tai.getBalance(etrue.coinbase).toNumber();
+'34698870000000' 
+</code></pre>
+
+<p>In order to spend your earnings you will need to have this account unlocked.</p>
+<pre><code>&gt; personal.unlockAccount(etrue.coinbase)
+Password
+true
+</code></pre>
+
+<p>You can check which blocks are mined by a particular miner (address) with the following code snippet on the console:</p>
+<pre><code>function minedBlocks(lastn, addr) {
+  addrs = [];
+  if (!addr) {
+    addr = etrue.coinbase
+  }
+  limit = etrue.blockNumber - lastn
+  for (i = etrue.blockNumber; i &gt;= limit; i--) {
+    if (etrue.getBlock(i).miner == addr) {
+      addrs.push(i)
+    }
+  }
+  return addrs
+}
+// scans the last 1000 blocks and returns the blocknumbers of blocks mined by your coinbase 
+// (more precisely blocks the mining reward for which is sent to your coinbase).   
+minedBlocks(1000, etrue.coinbase);
+//[352708, 352655, 352559]
+</code></pre>
+
+<p>Note that it will happen often that you find a block yet it never makes it to the canonical chain. This means when you locally include your mined block, the current state will show the mining reward credited to your account, however, after a while, the better chain is discovered and we switch to a chain in which your block is not included and therefore no mining reward is credited. Therefore it is quite possible that as a miner monitoring their coinbase balance will find that it may fluctuate quite a bit. </p>
+<p>Mining success depends on the set block difficulty. Block difficulty dynamically adjusts each block in order to regulate the network hashing power to produce a 10 minute blocktime. Your chances of finding a block therefore follows from your hashrate relative to difficulty. The time you need to wait you are expected to find a block can be estimated with the following code:</p>
+<p><strong>INCORRECT...CHECKING</strong></p>
+<pre><code>etrue = etrue.getBlock(&quot;latest&quot;).difficulty/miner.getHashRate(); // estimated time in seconds
+Math.floor(etrue / 3600.) + &quot;h &quot; + Math.floor((etrue % 3600)/60) + &quot;m &quot; +  Math.floor(etrue % 60) + &quot;s&quot;;
+// 1h 3m 30s
+</code></pre>
+
+<h1 id="gpu-mining">GPU mining</h1>
+<hr />
+<h2 id="hardware">Hardware</h2>
+<p>The GPU miner is implemented in OpenCL，to get openCL for your chipset and platform, try:
+* <a href="http://developer.amd.com/tools-and-sdks/opencl-zone/amd-accelerated-parallel-processing-app-sdk">AMD SDK openCL</a>
+* <a href="https://developer.nvidia.com/cuda-downloads">NVIDIA CUDA openCL</a></p>
+<h2 id="on-ubuntu">On Ubuntu</h2>
+<h3 id="nvidia">NVIDIA</h3>
+<pre><code>add-apt-repository ppa:graphics-drivers/ppa
+apt-get install nvidia-418 nvidia-418-dev nvidia-opencl-dev nvidia-opencl-icd-418
+</code></pre>
+
+<h2 id="mining-software">Mining  Software</h2>
+<p>The official release of <code>getrue</code> only supports a CPU miner natively. We are working on a <a href="https://github.com/taipublicchain/trueminer">GPU miner</a>, Getrue however can be used in conjunction with <code>trueminer</code>, using the standalone miner as workers and <code>getrue</code> as scheduler communicating via <a href="https://github.com/taiyuechain/taipublicchain/wiki/RPC-API">JSON-RPC</a>. </p>
+<p>Trueminer 0n Linux:</p>
+<pre><code>git clone https://github.com/taipublicchain/taiminer.git
+</code></pre>
+
+<h2 id="gpu-mining-with-trueminer">GPU mining with trueminer</h2>
+<p>To  miner with <code>getrue</code>:</p>
+<pre><code>wget https://github.com/taiyuechain/taipublicchain/releases/download/v1.0.2/taipublic-linux-amd64-1.0.2-758c849.tar.gz
+tar -zxvf getrue-linux-amd64-1.0.2-758c849.tar.gz
+
+</code></pre>
+
+<p>the detail 'getrue' you can reference <a href="#CPU_Mining">CPU_mine</a> </p>
+<p>To install and build GPU <code>taiminer</code> from source:</p>
+<pre><code>cd trueminer
+mkdir build
+cd build
+cmake ..
+cmake -budid .
+make install
+</code></pre>
+
+<p>To install and build CPU <code>taiminer</code> from source:</p>
+<pre><code>cd taiminer
+mkdir build
+cd build
+cmake .. -DETHASHCL=OFF -DBINKERN=OFF -DETHASHCUDA=OFF -DAPICORE=ON -DETHASHCPU=ON
+cmake -budid .
+make install
+</code></pre>
+
+<p>The detail <code>taiminer</code> install  <a href="https://github.com/taiyuechain/taipublicchain/taiminer/blob/master/README.md">trueminer readme.md</a></p>
+<p>To set up GPU mining you need a coinbase account. It can be an account created locally or remotely. </p>
+<h3 id="using-taiminer-with-taipublic-on-solo-mode">Using taiminer with taipublic  on solo mode</h3>
+<ul>
+<li>start <code>taipublic</code> to support remote mining</li>
+</ul>
+<pre><code>./taipublic  --datadir ./data --config ./data/config  --rpc --rpcaddr 0.0.0.0 --rpcapi &quot;etrue,:net,web3,miner&quot; --mine --remote --coinbase &lt;coinbase&gt; console
+</code></pre>
+
+<p><code>taipublic</code> will listen all ip address when giving <code>--rpcaddr 0.0.0.0</code>, you can give the exact ip address that want miner to connect, or <code>--rpcaddr 127.0.01</code> only allow the miner running on the host to connect <code>getrue</code>.</p>
+<p><code>taiminer</code> communicates with <code>taipublic</code> on port 8545 . You also can change port by giving the <a href="https://github.com/taiyuechain/taipublicchain/wiki/Command-Line-Options">rpcport option</a>  to <code>taipublic</code>.</p>
+<p>taiminer will find taipublic on any port. Note that you need to set the param with <code>hostname:port</code> to connect the <code>taipublic</code> . </p>
+<p>Also note that you do <strong>have</strong> need to give <code>taipublic</code> the <code>--mine</code> option to start the miner , and also need use <code>--remote</code> to support remote getwork . </p>
+<ul>
+<li>taiminer solo mode using CPU</li>
+</ul>
+<pre><code>taiminer --cpu -P http://hostname:port
+
+</code></pre>
+
+<ul>
+<li>taiminer solo mode using GPU </li>
+</ul>
+<pre><code>taiminer -G -P http://hostname:port
+
+</code></pre>
+
+<p>Use <code>taiminer -H</code> get taiminer a full list of available commands.</p>
+<p>If the default command <code>taiminer</code> does not work, try to specify the OpenCL device with: <code>--opencl-device X</code> where X is 0, 1, 2, etc.
+When running <code>taiminer</code> with <code>-M</code> (benchmark), you should see something like:</p>
+<pre><code>Benchmarking on platform: { "platform": "NVIDIA CUDA", "device": "GeForce GTX 750 Ti", "version": "OpenCL 1.1 CUDA" }
+
+
+Benchmarking on platform: { "platform": "Apple", "device": "Intel(R) Xeon(R) CPU E5-1620 v2 @ 3.70GHz", "version": "OpenCL 1.2 " }
+</code></pre>
+<h3 id="using-taiminer-with-getrue-on-stratum-mode">Using taiminer with getrue on stratum mode</h3>
+<ul>
+<li>taiminer stratum mode using CPU</li>
+</ul>
+<pre><code>taiminer --cpu -P stratum+tcp://WALLET.WORKER@hostname:port
+</code></pre>
+
+<ul>
+<li>taiminer stratum mode using GPU</li>
+</ul>
+<pre><code>taiminer -G -P stratum+tcp://WALLET.WORKER@hostname:port
+</code></pre>
+
+<p><code>taiminer</code> use stratum protocl to connect the mining pool , the  <strong>hostname:port</strong> is pool hostname and port</p>
+<p><strong>Note</strong> hashrate info is not available in <code>taipublic</code> ,you have use  <code>taiminer</code>need add params  <code>-R</code>. </p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/example/repository/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

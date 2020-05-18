@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Managing your accounts - TaiBlockChain</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Managing your accounts";
+    var mkdocs_page_input_path = "source\\taiyuepublic\\Managing-your-accounts.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> TaiBlockChain</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">TaiBlockChain</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">TaiBlockChain</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiPublicChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">TaiPublicChainEN</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="#">Developer Platform</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Building-taiyuechain/">Install and build</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../InterfaceDocumentation/">Interface Documentation</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Usage/">Usage</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TaiYueChain/">TaiPublicChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiUnionChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../..">TaiUnionChainEN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../index4/">TaiUnionChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">TaiBlockChain</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Managing your accounts</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/example/repository/edit/master/docs/source/taiyuepublic/Managing-your-accounts.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>WARNING</strong>
+Remember your password. </p>
+<p>If you lose the password you use to encrypt your account, you will not be able to access that account.
+Repeat: It is NOT possible to access your account without a password and there is no <em>forgot my password</em> option here. Do not forget it.</p>
+<p>The truechain CLI <code>taipublic</code> provides account management via the <code>account</code> command:</p>
+<pre><code>$ taipublic account &lt;command&gt; [options...] [arguments...]
+</code></pre>
+
+<p>Manage accounts lets you create new accounts, list all existing accounts, import a private
+key into a new account, migrate to newest key format and change your password.</p>
+<p>It supports interactive mode, when you are prompted for password as well as
+non-interactive mode where passwords are supplied via a given password file.
+Non-interactive mode is only meant for scripted use on test networks or known safe
+environments.</p>
+<p>Make sure you remember the password you gave when creating a new account (with new, update
+or import). Without it you are not able to unlock your account.</p>
+<p>Note that exporting your key in unencrypted format is NOT supported.</p>
+<p>Keys are stored under <code>&lt;DATADIR&gt;/keystore</code>. Make sure you backup your keys regularly! See
+<a href="https://github.com/taiyuechain/taipublicchain/wiki/Backup-&amp;-restore">DATADIR backup &amp; restore</a>
+for more information.
+If a custom datadir and keystore option are given the keystore
+option takes preference over the datadir option.</p>
+<p>The newest format of the keyfiles is: <code>UTC--&lt;created_at UTC ISO8601&gt;-&lt;address hex&gt;</code>. The
+order of accounts when listing, is lexicographic, but as a consequence of the timespamp
+format, it is actually order of creation</p>
+<p>It is safe to transfer the entire directory or the individual keys therein between
+truechain nodes. Note that in case you are adding keys to your node from a different node,
+the order of accounts may change. So make sure you do not rely or change the index in your
+scripts or code snippets.</p>
+<p>And again. <strong>DO NOT FORGET YOUR PASSWORD</strong></p>
+<pre><code>COMMANDS:
+     list    Print summary of existing accounts
+     new     Create a new account
+     update  Update an existing account
+     import  Import a private key into a new account
+</code></pre>
+
+<p>You can get info about subcommands by <code>taipublic account &lt;command&gt; --help</code>.</p>
+<pre><code>$ taipublic account list --help
+list [command options] [arguments...]
+
+Print a short summary of all accounts
+
+OPTIONS:
+  --datadir &quot;/home/bas/.truechain&quot;  Data directory for the databases and keystore
+  --keystore                       Directory for the keystore (default = inside the datadir)
+</code></pre>
+
+<h2 id="examples">Examples</h2>
+<h3 id="interactive-use">Interactive use</h3>
+<h4 id="creating-an-account">creating an account</h4>
+<pre><code>$ taipublic account new
+Your new account is locked with a password. Please give a password. Do not forget this password.
+Passphrase:
+Repeat Passphrase:
+Address: {168bc315a2ee09042d83d7c5811b533620531f67}
+</code></pre>
+
+<h4 id="listing-accounts-in-a-custom-keystore-directory">Listing accounts in a custom keystore directory</h4>
+<pre><code>$ taipublic account list --keystore /tmp/mykeystore/
+Account #0: {5afdd78bdacb56ab1dad28741ea2a0e47fe41331} keystore:///tmp/mykeystore/UTC--2017-04-28T08-46-27.437847599Z--5afdd78bdacb56ab1dad28741ea2a0e47fe41331
+Account #1: {9acb9ff906641a434803efb474c96a837756287f} keystore:///tmp/mykeystore/UTC--2017-04-28T08-46-52.180688336Z--9acb9ff906641a434803efb474c96a837756287f
+
+</code></pre>
+
+<h4 id="import-private-key-into-a-node-with-a-custom-datadir">Import private key into a node with a custom datadir</h4>
+<pre><code>$ taipublic account import --datadir /someOtherEthDataDir ./key.prv
+The new account will be encrypted with a passphrase.
+Please enter a passphrase now.
+Passphrase:
+Repeat Passphrase:
+Address: {7f444580bfef4b9bc7e14eb7fb2a029336b07c9d}
+</code></pre>
+
+<h4 id="account-update">Account update</h4>
+<pre><code>$ taipublic account update a94f5374fce5edbc8e2a8697c15331677e6ebf0b
+Unlocking account a94f5374fce5edbc8e2a8697c15331677e6ebf0b | Attempt 1/3
+Passphrase:
+0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b
+Account 'a94f5374fce5edbc8e2a8697c15331677e6ebf0b' unlocked.
+Please give a new password. Do not forget this password.
+Passphrase:
+Repeat Passphrase:
+0xa94f5374fce5edbc8e2a8697c15331677e6ebf0b
+</code></pre>
+
+<h3 id="non-interactive-use">Non-interactive use</h3>
+<p>You supply a plaintext password file as argument to the <code>--password</code> flag. The data in the
+file consists of the raw characters of the password, followed by a single newline.</p>
+<p><strong>Note</strong>: Supplying the password directly as part of the command line is not recommended,
+but you can always use shell trickery to get round this restriction.</p>
+<pre><code>$ taipublic account new --password /path/to/password 
+
+$ taipublic account import  --datadir /someOtherEthDataDir --password /path/to/anotherpassword ./key.prv
+</code></pre>
+
+<h1 id="creating-accounts">Creating accounts</h1>
+<h2 id="creating-a-new-account">Creating a new account</h2>
+<pre><code>$ taipublic account new
+$ taipublic account new --password /path/to/passwdfile
+$ taipublic account new --password &lt;(echo $mypassword)
+
+</code></pre>
+
+<p>Creates a new account and prints the address.</p>
+<p>On the console, use:</p>
+<pre><code>&gt; personal.NewAccount()
+... you will be prompted for a password ...
+
+or
+
+&gt; personal.newAccount(&quot;passphrase&quot;)
+
+</code></pre>
+
+<p>The account is saved in encrypted format. You <strong>must</strong> remember this passphrase to unlock
+your account in the future.</p>
+<p>For non-interactive use the passphrase can be specified with the <code>--password</code> flag:</p>
+<pre><code>taipublic account new --password &lt;passwordfile&gt; 
+</code></pre>
+
+<p>Note, this is meant to be used for testing only, it is a bad idea to save your
+password to file or expose in any other way.</p>
+<h2 id="creating-an-account-by-importing-a-private-key">Creating an account by importing a private key</h2>
+<pre><code>    taipublic account import &lt;keyfile&gt;
+</code></pre>
+
+<p>Imports an unencrypted private key from <code>&lt;keyfile&gt;</code> and creates a new account and prints
+the address.</p>
+<p>The keyfile is assumed to contain an unencrypted private key as canonical EC raw bytes
+encoded into hex.</p>
+<p>The account is saved in encrypted format, you are prompted for a passphrase.</p>
+<p>You must remember this passphrase to unlock your account in the future.</p>
+<p>For non-interactive use the passphrase can be specified with the <code>--password</code> flag:</p>
+<pre><code>taipublic account import --password &lt;passwordfile&gt; &lt;keyfile&gt;
+</code></pre>
+
+<p><strong>Note</strong>: Since you can directly copy your encrypted accounts to another truechain
+instance, this import/export mechanism is not needed when you transfer an account between
+nodes.</p>
+<p><strong>Warning:</strong> when you copy keys into an existing node's keystore, the order of accounts
+you are used to may change. Therefore you make sure you either do not rely on the account
+order or doublecheck and update the indexes used in your scripts.</p>
+<p><strong>Warning:</strong> If you use the password flag with a password file, best to make sure the file
+is not readable or even listable for anyone but you. You achieve this with:</p>
+<pre><code>touch /path/to/password 
+chmod 700 /path/to/password
+cat &gt; /path/to/password
+&gt;I type my pass here^D
+</code></pre>
+
+<h2 id="updating-an-existing-account">Updating an existing account</h2>
+<p>You can update an existing account on the command line with the <code>update</code> subcommand with
+the account address or index as parameter. You can specify multiple accounts at once.</p>
+<pre><code>taipublic account update 5afdd78bdacb56ab1dad28741ea2a0e47fe41331 9acb9ff906641a434803efb474c96a837756287f
+taipublic account update 0 1 2
+</code></pre>
+
+<p>The account is saved in the newest version in encrypted format, you are prompted
+for a passphrase to unlock the account and another to save the updated file.</p>
+<p>This same command can therefore be used to migrate an account of a deprecated
+format to the newest format or change the password for an account.</p>
+<p>After a successful update, all previous formats/versions of that same key are removed!</p>
+<h1 id="importing-your-presale-wallet">Importing your presale wallet</h1>
+<p>Importing your presale wallet is very easy. If you remember your password that is:</p>
+<pre><code>taipublic wallet import /path/to/my/presale.wallet
+</code></pre>
+
+<p>will prompt for your password and imports your tai presale account. It can be used
+non-interactively with the --password option taking a passwordfile as argument containing
+the wallet password in cleartext.</p>
+<h1 id="listing-accounts-and-checking-balances">Listing accounts and checking balances</h1>
+<h3 id="listing-your-current-accounts">Listing your current accounts</h3>
+<p>From the command line, call the CLI with:</p>
+<pre><code>$ taipublic account list
+Account #0: {5afdd78bdacb56ab1dad28741ea2a0e47fe41331} keystore:///tmp/mykeystore/UTC--2017-04-28T08-46-27.437847599Z--5afdd78bdacb56ab1dad28741ea2a0e47fe41331
+Account #1: {9acb9ff906641a434803efb474c96a837756287f} keystore:///tmp/mykeystore/UTC--2017-04-28T08-46-52.180688336Z--9acb9ff906641a434803efb474c96a837756287f
+</code></pre>
+
+<p>to list your accounts in order of creation. </p>
+<p><strong>Note</strong>:
+This order can change if you copy keyfiles from other nodes, so make sure you either do not rely on indexes or make sure if you copy keys you check and update your account indexes in your scripts. </p>
+<p>When using the console:</p>
+<pre><code>&gt; tai.accounts
+[&quot;0x5afdd78bdacb56ab1dad28741ea2a0e47fe41331&quot;, &quot;0x9acb9ff906641a434803efb474c96a837756287f&quot;]
+</code></pre>
+
+<p>or via RPC:</p>
+<pre><code># Request
+$ curl -X POST --data '{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;tai_accounts&quot;,&quot;params&quot;:[],&quot;id&quot;:1} http://127.0.0.1:8545'
+
+# Result
+{
+  &quot;id&quot;:1,
+  &quot;jsonrpc&quot;: &quot;2.0&quot;,
+  &quot;result&quot;: [&quot;0x5afdd78bdacb56ab1dad28741ea2a0e47fe41331&quot;, &quot;0x9acb9ff906641a434803efb474c96a837756287f&quot;]
+}
+</code></pre>
+
+<p>If you want to use an account non-interactively, you need to unlock it. You can do this on
+the command line with the <code>--unlock</code> option which takes a comma separated list of accounts
+(in hex or index) as argument so you can unlock the accounts programmatically for one
+session. This is useful if you want to use your account from Dapps via RPC. <code>--unlock</code>
+will unlock the first account. This is useful when you created your account
+programmatically, you do not need to know the actual account to unlock it.</p>
+<p>Create account and start node with account unlocked:</p>
+<pre><code>taipublic account new --password &lt;(echo this is not secret!) 
+taipublic --password &lt;(echo this is not secret!) --unlock primary --rpccorsdomain localhost --verbosity 6 2&gt;&gt; taipublic.log 
+</code></pre>
+
+<p>Instead of the account address, you can use integer indexes which refers to the address
+position in the account listing (and corresponds to order of creation)</p>
+<p>The command line allows you to unlock multiple accounts. In this case the argument to
+unlock is a comma delimited list of accounts addresses or indexes.</p>
+<pre><code>taipublic --unlock &quot;0x407d73d8a49eeb85d32cf465507dd71d507100c1,0,5,e470b1a7d2c9c5c6f03bbaa8fa20db6d404a0c32&quot;
+</code></pre>
+
+<p>If this construction is used non-interactively, your password file will need to contain
+the respective passwords for the accounts in question, one per line.</p>
+<p>On the console you can also unlock accounts (one at a time) for a duration (in seconds).</p>
+<pre><code>personal.unlockAccount(address, &quot;password&quot;, 300)
+</code></pre>
+
+<p>Note that we do NOT recommend using the password argument here, since the console history
+is logged, so you may compromise your account. You have been warned.</p>
+<h3 id="checking-account-balances">Checking account balances</h3>
+<p>To check your the coinbase account balance:</p>
+<pre><code>&gt; web3.fromWei(tai.getBalance(tai.coinbase), &quot;true&quot;)
+6.5
+</code></pre>
+
+<p>Print all balances with a JavaScript function:</p>
+<pre><code>function checkAllBalances() {
+    var totalBal = 0;
+    for (var acctNum in tai.accounts) {
+        var acct = tai.accounts[acctNum];
+        var acctBal = web3.fromWei(tai.getBalance(acct), &quot;true&quot;);
+        totalBal += parseFloat(acctBal);
+        console.log(&quot;  tai.accounts[&quot; + acctNum + &quot;]: \t&quot; + acct + &quot; \tbalance: &quot; + acctBal + &quot; true&quot;);
+    }
+    console.log(&quot;  Total balance: &quot; + totalBal + &quot; true&quot;);
+};
+</code></pre>
+
+<p>That can then be executed with:</p>
+<pre><code>&gt; checkAllBalances();
+  tai.accounts[0]: 0xd1ade25ccd3d550a7eb532ac759cac7be09c2719   balance: 63.11848 true
+  tai.accounts[1]: 0xda65665fc30803cb1fb7e6d86691e20b1826dee0   balance: 0 true
+  tai.accounts[2]: 0xe470b1a7d2c9c5c6f03bbaa8fa20db6d404a0c32   balance: 1 true
+  tai.accounts[3]: 0xf4dd5c3794f1fd0cdc0327a83aa472609c806e99   balance: 6 true
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/example/repository/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Source - TaiBlockChain</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Source";
+    var mkdocs_page_input_path = "source\\taiyuepublic\\Installation-Instructions-for-Windows.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> TaiBlockChain</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">TaiBlockChain</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">TaiBlockChain</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiPublicChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">TaiPublicChainEN</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="#">Developer Platform</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Building-taiyuechain/">Install and build</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../InterfaceDocumentation/">Interface Documentation</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Usage/">Usage</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TaiYueChain/">TaiPublicChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiUnionChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../..">TaiUnionChainEN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../index4/">TaiUnionChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">TaiBlockChain</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Source</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/example/repository/edit/master/docs/source/taiyuepublic/Installation-Instructions-for-Windows.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="source">Source</h1>
+<h2 id="compiling-getrue-with-tools-from-chocolatey">Compiling getrue with tools from chocolatey</h2>
+<p>The Chocolatey package manager provides an easy way to get
+the required build tools installed. If you don't have chocolatey yet,
+follow the instructions on https://chocolatey.org to install it first.</p>
+<p>Then open an Administrator command prompt and install the build tools
+we need:</p>
+<pre><code class="text">C:\Windows\system32&gt; choco install git
+C:\Windows\system32&gt; choco install golang
+C:\Windows\system32&gt; choco install mingw
+</code></pre>
+
+<p>Installing these packages will set up the <code>Path</code> environment variable.
+Open a new command prompt to get the new <code>Path</code>. The following steps don't
+need Administrator privileges.</p>
+<p>Please ensure that the installed Go version is 1.8 (or any later version).</p>
+<p>First we'll create and set up a Go workspace directory layout,
+then clone the source.</p>
+<p><strong><em>OBS</em></strong> If, during the commands below, you get the following message: </p>
+<pre><code> WARNING: The data being saved is truncated to 1024 characters.
+</code></pre>
+
+<p>Then that means that the <code>setx</code> command will fail, and proceeding will truncate the <code>Path</code>/<code>GOPATH</code>. If this happens, it's better to abort, and try to make some more room in <code>Path</code> before trying again. </p>
+<pre><code class="text">1 C:\Users\xxx&gt; set &quot;GOPATH=%USERPROFILE%&quot;
+2 C:\Users\xxx&gt; set &quot;Path=%USERPROFILE%\bin;%Path%&quot;
+3 C:\Users\xxx&gt; setx GOPATH &quot;%GOPATH%&quot;
+4 C:\Users\xxx&gt; setx Path &quot;%Path%&quot;
+5 C:\Users\xxx&gt; mkdir src\github.com\truechain
+6 C:\Users\xxx&gt; git clone https://github.com/truechain/truechain-engineering-code src\github.com/taiyuechain/taipublicchain
+7 C:\Users\xxx&gt; cd src\github.com/taiyuechain/taipublicchain
+8 C:\Users\xxx&gt; go get -u -v golang.org/x/net/context
+</code></pre>
+
+<p>if the step 8 ran error, can execute the next commands:</p>
+<pre><code>C:\Users\xxx&gt; mkdir -p &quot;%GOPATH%&quot;/src/golang.org/x/
+C:\Users\xxx&gt; cd &quot;%GOPATH%&quot;/src/golang.org/x/
+C:\Users\xxx&gt; git clone https://github.com/golang/net.git net
+C:\Users\xxx&gt; go install net
+</code></pre>
+
+<p>Finally, the command to compile getrue is:</p>
+<pre><code class="text">C:\Users\xxx\src\github.com/taiyuechain/taipublicchain&gt; go install -v ./cmd/...
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/example/repository/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

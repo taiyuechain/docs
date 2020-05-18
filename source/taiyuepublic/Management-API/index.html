@@ -1,0 +1,3326 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Management API - TaiBlockChain</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../../../css/theme.css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Management API";
+    var mkdocs_page_input_path = "source\\taiyuepublic\\Management-API.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> TaiBlockChain</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../..">TaiBlockChain</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">TaiBlockChain</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiPublicChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">TaiPublicChainEN</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="#">Developer Platform</a>
+    <ul>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Building-taiyuechain/">Install and build</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../InterfaceDocumentation/">Interface Documentation</a>
+                </li>
+                <li class="toctree-l4"><a class="reference internal" href="../../../Usage/">Usage</a>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../TaiYueChain/">TaiPublicChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="#">TaiUnionChain</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../..">TaiUnionChainEN</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../../index4/">TaiUnionChainZN</a>
+                </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">TaiBlockChain</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Management API</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/example/repository/edit/master/docs/source/taiyuepublic/Management-API.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>The APIs supported by TaipublicChain are mainly based on function modules: admin, miner, personal, etc. These APIs are provided using JSON-RPC.</p>
+<h2 id="enabling-the-management-apis">Enabling the management APIs</h2>
+<p>Taipublic comes with a JavaScript console that supports all of the APIs described here. To provide these APIs through  taipublic RPC, specify them with the --${interface}api command line argument. Where ${interface} can be HTTP rpc, WebSocket ws and Unix socket ipc or Windows pipe</p>
+<p>For example:  taipublic --ipcapi admin, tai,miner --rpc api tai,web3 --rpc</p>
+<ol>
+<li>Enable administrators, official DApp and miner APIs via IPC interface</li>
+<li>Enable official DApp and web3 API via HTTP interface</li>
+</ol>
+<p>The HTTP RPC interface must be explicitly enabled using the <code>--rpc</code> flag.</p>
+<p>Please note, offering an API over the HTTP (<code>rpc</code>) or WebSocket (<code>ws</code>) interfaces will give everyone access to the APIs who can access this interface (DApps, browser tabs, etc). Be careful which APIs you enable. By default  taipublic enables all APIs over the IPC (<code>ipc</code>) interface and only the <code>db</code>, <code>tai</code>, <code>net</code> and <code>web3</code> APIs over the HTTP and WebSocket interfaces.</p>
+<p>To determine which APIs an interface provides, the <code>modules</code> JSON-RPC method can be invoked. For example over an <code>ipc</code> interface on unix systems:</p>
+<pre><code>echo '{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;rpc_modules&quot;,&quot;params&quot;:[],&quot;id&quot;:1}' | nc -U $datadir/ taipublic.ipc
+</code></pre>
+
+<p>will give all enabled modules including the version number:</p>
+<pre><code>{  
+   &quot;id&quot;:1,
+   &quot;jsonrpc&quot;:&quot;2.0&quot;,
+   &quot;result&quot;:{  
+      &quot;admin&quot;:&quot;1.0&quot;,
+      &quot;debug&quot;:&quot;1.0&quot;,
+      &quot;tai&quot;:&quot;1.0&quot;,
+      &quot;miner&quot;:&quot;1.0&quot;,
+      &quot;net&quot;:&quot;1.0&quot;,
+      &quot;personal&quot;:&quot;1.0&quot;,
+      &quot;rpc&quot;:&quot;1.0&quot;,
+      &quot;txpool&quot;:&quot;1.0&quot;,
+      &quot;web3&quot;:&quot;1.0&quot;
+   }
+}
+</code></pre>
+
+<h2 id="api-list">API List</h2>
+<table>
+<thead>
+<tr>
+<th align="center"><a href="#admin">admin</a></th>
+<th align="center"><a href="#debug">debug</a></th>
+<th align="center"><a href="#miner">miner</a></th>
+<th align="center"><a href="#personal">personal</a></th>
+<th align="center"><a href="#Txpool">Txpool</a></th>
+<th align="center"><a href="#fruitpool">fruitpool</a></th>
+<th align="center"><a href="#tai">tai</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><a href="#admin_addPeer">addPeer</a></td>
+<td align="center"><a href="#debug_backtraceAt">backtraceAt</a></td>
+<td align="center"><a href="#miner_setExtra">setExtra</a></td>
+<td align="center"><a href="#personal_listAccounts">listAccounts</a></td>
+<td align="center"><a href="#Txpool_content">content</a></td>
+<td align="center"><a href="#fruitpool_content">content</a></td>
+<td align="center"><a href="#tai_protocolVersion">protocolVersion</a></td>
+</tr>
+<tr>
+<td align="center"><a href="#admin_datadir">datadir</a></td>
+<td align="center"><a href="#debug_blockProfile">blockProfile</a></td>
+<td align="center"><a href="#miner_setGasPrice">setGasPrice</a></td>
+<td align="center"><a href="#personal_lockAccount">lockAccount</a></td>
+<td align="center"><a href="#Txpool_inspect">inspect</a></td>
+<td align="center"><a href="#fruitpool_inspect">inspect</a></td>
+<td align="center"><a href="#tai_syncing">syncing</a></td>
+</tr>
+<tr>
+<td align="center"><a href="#admin_nodeInfo">nodeInfo</a></td>
+<td align="center"><a href="#debug_cpuProfile">cpuProfile</a></td>
+<td align="center"><a href="#miner_start">start</a></td>
+<td align="center"><a href="#personal_newAccount">newAccount</a></td>
+<td align="center"><a href="#Txpool_status">status</a></td>
+<td align="center"><a href="#fruitpool_status">status</a></td>
+<td align="center"><a href="#tai_coinbase">coinbase</a></td>
+</tr>
+<tr>
+<td align="center"><a href="#admin_peers">peers</a></td>
+<td align="center"><a href="#debug_dumpBlock">dumpBlock</a></td>
+<td align="center"><a href="#miner_stop">stop</a></td>
+<td align="center"><a href="#personal_unlockAccount">unlockAccount</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_mining">mining</a></td>
+</tr>
+<tr>
+<td align="center"><a href="#admin_startRPC">startRPC</a></td>
+<td align="center"><a href="#debug_gcStats">gcStats</a></td>
+<td align="center"><a href="#miner_setCoinbase">setCoinbase</a></td>
+<td align="center"><a href="#personal_sign">sign</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_hashrate">hashrate</a></td>
+</tr>
+<tr>
+<td align="center"><a href="#admin_startWS">startWS</a></td>
+<td align="center"><a href="#debug_getBlockRlp">getBlockRlp</a></td>
+<td align="center"><a href="#miner_setElection">setElection</a></td>
+<td align="center"><a href="#personal_ecRecover">ecRecover</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_gasPrice">gasPrice</a></td>
+</tr>
+<tr>
+<td align="center"><a href="#admin_stopRPC">stopRPC</a></td>
+<td align="center"><a href="#debug_goTrace">goTrace</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_accounts">accounts</a></td>
+</tr>
+<tr>
+<td align="center"><a href="#admin_stopWS">stopWS</a></td>
+<td align="center"><a href="#debug_memStats">memStats</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_blockNumber">blockNumber</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_seedHash">seedHash</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getBalance">getBalance</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_setHead">setHead</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getStorageAt">getStorageAt</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_setBlockProfileRate">setBlockProfileRate</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getTransactionCount">getTransactionCount</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_stacks">stacks</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getBlockTransactionCount">getBlockTransactionCount</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_startCPUProfile">startCPUProfile</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getCode">getCode</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_startGoTrace">startGoTrace</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_sign">sign</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_stopCPUProfile">stopCPUProfile</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_sendTransaction">sendTransaction</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_stopGoTrace">stopGoTrace</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_sendRawTransaction">sendRawTransaction</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_traceBlock">traceBlock</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_call">call</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_traceBlockByNumber">traceBlockByNumber</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_estimateGas">estimateGas</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_traceBlockByHash">traceBlockByHash</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getBlock">getBlock</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_traceBlockFromFile">traceBlockFromFile</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getTransaction">getTransaction</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_traceTransaction">traceTransaction</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getTransactionReceipt">getTransactionReceipt</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_verbosity">verbosity</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_compile">compile</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_vmodule">vmodule</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getWork">getWork</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_writeBlockProfile">writeBlockProfile</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_defaultBlock">defaultBlock</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"><a href="#debug_writeMemProfile">writeMemProfile</a></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_pendingTransactions">pendingTransactions</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_fruitNumber">fruitNumber</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_rewardSnailBlock">rewardSnailBlock</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_snailBlockNumber">snailBlockNumber</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getCommittee">getCommittee</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_committeeNumber">committeeNumber</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getCurrentState">getCurrentState</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getFruit">getFruit</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getRewardBlock">getRewardBlock</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_getSnail">getSnall</a></td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><a href="#tai_snailBlockNumber">snailBlockNumber</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="admin">Admin</h2>
+<p>The <code>admin</code> API gives you access to several non-standard RPC methods, which will allow you to have a fine grained control over your  taipublic instance, including but not limited to network peer and RPC endpoint management.</p>
+<h3 id="admin_addpeer">admin_addPeer</h3>
+<p>The <code>addPeer</code> administrative method requests adding a new remote node to the list of tracked static nodes. The node will try to maintain connectivity to these nodes at all times, reconnecting every once in a while if the remote connection goes down.</p>
+<p>The method accepts a single argument, the enode URL of the remote peer to start tracking and returns a <code>BOOL</code> indicating whether the peer was accepted for tracking or some error occurred.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>admin.AddPeer(url string) (bool, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>admin.addPeer(url)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "admin_addPeer", "params": [url]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example">Example</h4>
+<pre><code>&gt; admin.addPeer(&quot;enode://0adc97d2046e0b96956feed699b92fc34d2e5ba1f7ab411c884786ded213f70c0e78f0acce7a548ab32e1c2a817b63c43d0d7209f3f9050749a0720825631b55@192.168.46.59:30313&quot;)
+true
+</code></pre>
+
+<h3 id="admin_datadir">admin_datadir</h3>
+<p>The <code>datadir</code> administrative property can be queried for the absolute path the running  taipublic node currently uses to store all its databases.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>admin.Datadir() (string, error</code>)</td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>admin.datadir</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "admin_datadir"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_1">Example</h4>
+<pre><code>&gt; admin.datadir
+&quot;/home/truechain/truechain-engineering-code/cmd/ taipublic/data&quot;
+</code></pre>
+
+<h3 id="admin_nodeinfo">admin_nodeInfo</h3>
+<p>The <code>nodeInfo</code> administrative property can be queried for all the information known about the running  taipublic  node at the networking granularity. These include general information about the node itself as a participant of the P2P overlay protocol, as well as specialized information added by each of the running application protocols (e.g. <code>tai</code>, <code>les</code>, <code>shh</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>admin.NodeInfo() (*p2p.NodeInfo, error</code>)</td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>admin.nodeInfo</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "admin_nodeInfo"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_2">Example</h4>
+<pre><code>&gt; admin.nodeInfo
+{
+  enode: &quot;enode://44826a5d6a55f88a18298bca4773fca5749cdc3a5c9f308aa7d810e9b31123f3e7c5fba0b1d70aac5308426f47df2a128a6747040a3815cc7dd7167d03be320d@[::]:30303&quot;,
+  id: &quot;44826a5d6a55f88a18298bca4773fca5749cdc3a5c9f308aa7d810e9b31123f3e7c5fba0b1d70aac5308426f47df2a128a6747040a3815cc7dd7167d03be320d&quot;,
+  ip: &quot;::&quot;,
+  listenAddr: &quot;[::]:30303&quot;,
+  name: &quot; taipublic/v0.7.2-unstable-46f28475/linux-amd64/go1.10.1&quot;,
+  ports: {
+    discovery: 30303,
+    listener: 30303
+  },
+  protocols: {
+    tai: {
+      difficulty: null,
+      genesis: &quot;0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3&quot;,
+      head: &quot;0xb83f73fbe6220c111136aefd27b160bf4a34085c65ba89f24246b3162257c36a&quot;,
+      network: 20
+    }
+  }
+}
+</code></pre>
+
+<h3 id="admin_peers">admin_peers</h3>
+<p>You can query the peers property for information about all remote nodes that are connected.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>admin.Peers() ([]*p2p.PeerInfo, error</code>)</td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>admin.peers</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "admin_peers"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_3">Example</h4>
+<pre><code>&gt; admin.peers
+[{
+    caps: [&quot;tai/61&quot;, &quot;tai/62&quot;, &quot;tai/63&quot;],
+    id: &quot;08a6b39263470c78d3e4f58e3c997cd2e7af623afce64656cfc56480babcea7a9138f3d09d7b9879344c2d2e457679e3655d4b56eaff5fd4fd7f147bdb045124&quot;,
+    name: &quot; taipublic/v0.7.2-unstable-46f28475/linux-amd64/go1.10.1&quot;,
+    network: {
+      localAddress: &quot;192.168.0.104:51068&quot;,
+      remoteAddress: &quot;71.62.31.72:30303&quot;
+    },
+    protocols: {
+      tai: {
+        difficulty: null,
+        head: &quot;5794b768dae6c6ee5366e6ca7662bdff2882576e09609bf778633e470e0e7852&quot;,
+        version: 63
+      }
+    }
+}, /* ... */ {
+    caps: [&quot;tai/61&quot;, &quot;tai/62&quot;, &quot;tai/63&quot;],
+    id: &quot;fcad9f6d3faf89a0908a11ddae9d4be3a1039108263b06c96171eb3b0f3ba85a7095a03bb65198c35a04829032d198759edfca9b63a8b69dc47a205d94fce7cc&quot;,
+    name: &quot; taipublic/v0.7.2-unstable-46f28475/linux-amd64/go1.10.1&quot;,
+    network: {
+      localAddress: &quot;192.168.0.104:55968&quot;,
+      remoteAddress: &quot;121.196.232.205:30303&quot;
+    },
+    protocols: {
+      tai: {
+        difficulty: null,
+        head: &quot;5794b768dae6c6ee5366e6ca7662bdff2882576e09609bf778633e470e0e7852&quot;,
+        version: 63
+      }
+    }
+}]
+</code></pre>
+
+<h3 id="admin_startrpc">admin_startRPC</h3>
+<p>The <code>startRPC</code> administrative method starts an HTTP based JSON RPC API webserver to handle client requests. All the parameters are optional:</p>
+<ul>
+<li><code>host</code>: network interface to open the listener socket on (defaults to <code>"localhost"</code>)</li>
+<li><code>port</code>: network port to open the listener socket on (defaults to <code>8545</code>)</li>
+<li><code>cors</code>: cross-origin resource sharing header to use (defaults to <code>""</code>)</li>
+<li><code>apis</code>: API modules to offer over this interface (defaults to <code>"tai,net,web3"</code>)</li>
+</ul>
+<p>The method returns a boolean flag specifying whether the HTTP RPC listener was opened or not. Please note, only one HTTP endpoint is allowed to be active at any time.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>admin.StartRPC(host *string, port *rpc.HexNumber, cors *string, apis *string) (bool, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>admin.startRPC(host, port, cors, apis)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "admin_startRPC", "params": [host, port, cors, apis]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_4">Example</h4>
+<pre><code>&gt; admin.startRPC(&quot;127.0.0.1&quot;, 8545)
+true
+</code></pre>
+
+<h3 id="admin_startws">admin_startWS</h3>
+<p>The <code>startWS</code> administrative method starts an WebSocket based  JSON RPC  API webserver to handle client requests. All the parameters are optional:</p>
+<ul>
+<li><code>host</code>: network interface to open the listener socket on (defaults to <code>"localhost"</code>)</li>
+<li><code>port</code>: network port to open the listener socket on (defaults to <code>8546</code>)</li>
+<li><code>cors</code>: cross-origin resource sharing header to use (defaults to <code>""</code>)</li>
+<li><code>apis</code>: API modules to offer over this interface (defaults to <code>"tai,net,web3"</code>)</li>
+</ul>
+<p>The method returns a boolean flag specifying whether the WebSocket RPC listener was opened or not. Please note, only one WebSocket endpoint is allowed to be active at any time.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>admin.StartWS(host *string, port *rpc.HexNumber, cors *string, apis *string) (bool, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>admin.startWS(host, port, cors, apis)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "admin_startWS", "params": [host, port, cors, apis]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_5">Example</h4>
+<pre><code>&gt; admin.startWS(&quot;127.0.0.1&quot;, 8546)
+true
+</code></pre>
+
+<h3 id="admin_stoprpc">admin_stopRPC</h3>
+<p>The <code>stopRPC</code> administrative method closes the currently open HTTP RPC endpoint. As the node can only have a single HTTP endpoint running, this method takes no parameters, returning a boolean whether the endpoint was closed or not.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>admin.StopRPC() (bool, error</code>)</td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>admin.stopRPC()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "admin_stopRPC"</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_6">Example</h4>
+<pre><code>&gt; admin.stopRPC()
+true
+</code></pre>
+
+<h3 id="admin_stopws">admin_stopWS</h3>
+<p>The <code>stopWS</code> administrative method closes the currently open WebSocket RPC endpoint. As the node can only have a single WebSocket endpoint running, this method takes no parameters, returning a boolean whether the endpoint was closed or not.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>admin.StopWS() (bool, error</code>)</td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>admin.stopWS()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "admin_stopWS"</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_7">Example</h4>
+<pre><code>&gt; admin.stopWS()
+true
+</code></pre>
+
+<h2 id="miner">Miner</h2>
+<p>The <code>miner</code> API allows you to remote control the node's mining operation and set various mining specific settings.</p>
+<h3 id="miner_setextra">miner_setExtra</h3>
+<p>Sets the extra data string that is included when this miner mines a block.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>miner.setExtra(extra string) (bool, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>miner.setExtra(string)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "miner_setExtra", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_8">Example</h4>
+<pre><code>&gt; miner.setExtra(&quot;it's my block&quot;)
+true
+</code></pre>
+
+<h3 id="miner_setgasprice">miner_setGasPrice</h3>
+<p>Sets the minimal accepted gas price when mining transactions. Any transactions that are below this limit are excluded from the mining process.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>miner.setGasPrice(number *rpc.HexNumber) bool</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>miner.setGasPrice(number)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "miner_setGasPrice", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_9">Example</h4>
+<pre><code>&gt; miner.setGasPrice(10000000)
+true
+</code></pre>
+
+<h3 id="miner_start">miner_start</h3>
+<p>Start the CPU mining process with the given number of threads and generate a new DAG if need be.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>miner.Start(threads *rpc.HexNumber) (bool, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>miner.start(number)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "miner_start", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_10">Example</h4>
+<pre><code>&gt; miner.start(8)
+null
+</code></pre>
+
+<h3 id="miner_stop">miner_stop</h3>
+<p>Stop the CPU mining operation.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>miner.Stop() bool</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>miner.stop()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "miner_stop", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_11">Example</h4>
+<pre><code>&gt; miner.stop()
+true
+</code></pre>
+
+<h3 id="miner_setcoinbase">miner_setCoinbase</h3>
+<p>Sets the coinbase, where mining rewards will go.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>miner.Setcoinbase(common.Address) bool</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>miner.setCoinbase(address)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "miner_setcoinbase", "params": [address]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_12">Example</h4>
+<pre><code>&gt; miner.setCoinbase(&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;)
+true
+</code></pre>
+
+<h3 id="miner_setelection">miner_setElection</h3>
+<p>Sets the election,To vote or not to vote</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>miner.SetElection(toElect bool, pubkey []byte) (bool, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>miner.setElection(toElect，pubkey)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "miner_setElection", "params": [toElect,pubkey]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_13">Example</h4>
+<pre><code>&gt; miner.setElection(true,&quot;0x04044308742b61976de7344edb8662d6d10be1c477dd46e8e4c433c1288442a79183480894107299ff7b0706490f1fb9c9b7c9e62ae62d57bd84a1e469460d8ac1&quot;)
+true
+</code></pre>
+
+<h2 id="personal">Personal</h2>
+<h3 id="personal_listaccounts">personal_listAccounts</h3>
+<p>Returns all the Truechain account addresses of all keys in the key store.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>personal.listAccounts</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "personal_listAccounts", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_14">Example</h4>
+<pre><code>&gt; personal.listAccounts
+[&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;, &quot;0xaf1dd3a5135bcdd38079927a80c75ad05cfd140b&quot;, &quot;0x4a98debf425a2fd4f56ef6674c72c3606b615e75&quot;]
+</code></pre>
+
+<h3 id="personal_lockaccount">personal_lockAccount</h3>
+<p>Removes the private key with given address from memory. The account can no longer be used to send transactions.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>personal.lockAccount(address)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "personal_lockAccount", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_15">Example</h4>
+<pre><code>&gt; personal.lockAccount(&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;)
+true
+</code></pre>
+
+<h3 id="personal_newaccount">personal_newAccount</h3>
+<p>Generates a new private key and stores it in the key store directory. The key file is encrypted with the given passphrase. Returns the address of the new account.</p>
+<p>At the  taipublic console, <code>newAccount</code> will prompt for a passphrase when it is not supplied as the argument.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>personal.newAccount()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "personal_newAccount", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_16">Example</h4>
+<pre><code>&gt; personal.newAccount()
+Passphrase: 
+Repeat passphrase: 
+&quot;0x5e97870f263700f46aa00d967821199b9bc5a120&quot;
+</code></pre>
+
+<p>The passphrase can also be supplied as a string.</p>
+<pre><code>&gt; personal.newAccount(&quot;h4ck3r&quot;)
+&quot;0x3d80b31a78c30fc628f20b2c89d7ddbf6e53cedc&quot;
+</code></pre>
+
+<h3 id="personal_unlockaccount">personal_unlockAccount</h3>
+<p>Decrypts the key with the given address from the key store.</p>
+<p>Both passphrase and unlock duration are optional when using the JavaScript console. If the passphrase is not supplied as an argument, the console will prompt for the passphrase interactively.</p>
+<p>The unencrypted key will be held in memory until the unlock duration expires. If the unlock duration defaults to 300 seconds. An explicit duration of zero seconds unlocks the key until  taipublic exits.</p>
+<p>The account can be used with <code>tai_sign</code> and <code>tai_sendTransaction</code> while it is unlocked.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>personal.unlockAccount(address, passphrase, duration)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "personal_unlockAccount", "params": [string, string, number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples">Examples</h4>
+<pre><code>&gt; personal.unlockAccount(&quot;0x5e97870f263700f46aa00d967821199b9bc5a120&quot;)
+Unlock account 0x5e97870f263700f46aa00d967821199b9bc5a120
+Passphrase: 
+true
+</code></pre>
+
+<p>Supplying the passphrase and unlock duration as arguments:</p>
+<pre><code>&gt; personal.unlockAccount(&quot;0x5e97870f263700f46aa00d967821199b9bc5a120&quot;, &quot;foo&quot;, 30)
+true
+</code></pre>
+
+<p>If you want to type in the passphrase and stil override the default unlock duration, pass <code>null</code> as the passphrase.</p>
+<pre><code>&gt; personal.unlockAccount(&quot;0x5e97870f263700f46aa00d967821199b9bc5a120&quot;, null, 30)
+Unlock account 0x5e97870f263700f46aa00d967821199b9bc5a120
+Passphrase: 
+true
+</code></pre>
+
+<h3 id="personal_sendtransaction">personal_sendTransaction</h3>
+<p>Validate the given passphrase and submit transaction.</p>
+<p>The transaction is the same argument as for <code>tai_sendTransaction</code> and contains the <code>from</code>address. If the passphrase can be used to decrypt the private key belogging to <code>tx.from</code> the transaction is verified, signed and send onto the network. The account is not unlocked globally in the node and cannot be used in other RPC calls.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>personal.sendTransaction(tx, passphrase)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "personal_sendTransaction", "params": [tx, string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples_1">Examples</h4>
+<pre><code>&gt; var tx = {from: &quot;0x391694e7e0b0cce554cb130d723a9d27458f9298&quot;, to: &quot;0xafa3f8684e54059998bc3a7b0d2b0da075154d66&quot;, value: web3.toWei(1.23, &quot;true&quot;)}
+undefined
+&gt; personal.sendTransaction(tx, &quot;passphrase&quot;)
+0x8474441674cdd47b35b875fd1a530b800b51a5264b9975fb21129eeb8c18582f
+</code></pre>
+
+<h3 id="personal_sign">personal_sign</h3>
+<p>The sign method calculates an Truechain specific signature with:<code>sign(keccack256("\x19TrueCchain Signed Message:\n" + len(message) + message)))</code>.</p>
+<p>By adding a prefix to the message makes the calculated signature recognisable as an Truechain specific signature. This prevents misuse where a malicious DApp can sign arbitrary data (e.g. transaction) and use the signature to impersonate the victim.</p>
+<p>See ecRecover to verify the signature.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>personal.sign(message, account, [password])</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "personal_sign", "params": [message, account, password]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples_2">Examples</h4>
+<pre><code>&gt; personal.sign(&quot;0xdeadbeaf&quot;, &quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;, &quot;&quot;)
+&quot;0x0d7d2150b38dc30ba0aa8db9171abb1bd31b6cf39f4edf2b93de0a2b6ba05a81034aa81b462fb5b8b09c74dba29172c9ad098607d7898a3aa8412b40ef2686841b&quot;
+</code></pre>
+
+<h3 id="personal_ecrecover">personal_ecRecover</h3>
+<p><code>ecRecover</code> returns the address associated with the private key that was used to calculate the signature in <code>personal_sign</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>personal.ecRecover(message, signature)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "personal_ecRecover", "params": [message, signature]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples_3">Examples</h4>
+<pre><code>&gt; personal.sign(&quot;0xdeadbeaf&quot;, &quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;, &quot;&quot;)
+&quot;0x0d7d2150b38dc30ba0aa8db9171abb1bd31b6cf39f4edf2b93de0a2b6ba05a81034aa81b462fb5b8b09c74dba29172c9ad098607d7898a3aa8412b40ef2686841b&quot;
+&gt; personal.ecRecover(&quot;0xdeadbeaf&quot;, &quot;0x0d7d2150b38dc30ba0aa8db9171abb1bd31b6cf39f4edf2b93de0a2b6ba05a81034aa81b462fb5b8b09c74dba29172c9ad098607d7898a3aa8412b40ef2686841b&quot;)
+&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;
+</code></pre>
+
+<h2 id="txpool">Txpool</h2>
+<p>The <code>txpool</code> API gives you access to several non-standard RPC methods to inspect the contents of the transaction pool containing all the currently pending transactions as well as the ones queued for future processing.</p>
+<h3 id="txpool_content">txpool_content</h3>
+<p>Content returns the transactions contained within the transaction pool.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>txpool.Content() (map[string]map[string]map[string][]*RPCTransaction)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>txpool.content</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "txpool_content"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_17">Example</h4>
+<pre><code>&gt; txpool.content
+{
+  pending: {
+    0xbE7e39Fa0645F6eaf501Ad02318A7fDa5c4DF6C6: {
+      25421: {
+        blockHash: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+        blockNumber: null,
+        from: &quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;,
+        gas: &quot;0x15f90&quot;,
+        gasPrice: &quot;0x430e23400&quot;,
+        hash: &quot;0xf6d3aefa3bad795a58fbf7afcc82f0cccb4419828c8f4dde5df5c9c2f494affb&quot;,
+        input: &quot;0x&quot;,
+        nonce: &quot;0x634d&quot;,
+        r: &quot;0xf70109404e86563118a585eaf7aa7643549d9bb0e903b7761dac36a1aacb27a3&quot;,
+        s: &quot;0x74d4091f7c18ab01d8c647090d0e77766578f19690390379fdc86e3fd4e0d8ee&quot;,
+        to: &quot;0x3216e8c10ad02ebb828aaf3b2dbc47fdbe24d336&quot;,
+        transactionIndex: &quot;0x0&quot;,
+        v: &quot;0x37&quot;,
+        value: &quot;0x2100&quot;
+      },
+      25465: {
+        blockHash: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+        blockNumber: null,
+        from: &quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;,
+        gas: &quot;0x15f90&quot;,
+        gasPrice: &quot;0x430e23400&quot;,
+        hash: &quot;0x80bc09cd8414a6a9b139860709fedbb0a1714ff72c99ca02f3a28b2c3f387f02&quot;,
+        input: &quot;0x&quot;,
+        nonce: &quot;0x6379&quot;,
+        r: &quot;0x78f88d00d391c5087ad8d7d96451545c3e5ad4edb675bb1162f2bb0953b3c53f&quot;,
+        s: &quot;0x20234bc4790b06863f9d277d5afe4967fc84b9959715fb8b669434a23ac4182a&quot;,
+        to: &quot;0x95e5478957995d52da5f5e01cf907bbd3a739c51&quot;,
+        transactionIndex: &quot;0x0&quot;,
+        v: &quot;0x38&quot;,
+        value: &quot;0x2100&quot;
+      }
+    }
+  },
+  queued: {}
+}
+</code></pre>
+
+<h3 id="txpool_inspect">txpool_inspect</h3>
+<p>The <code>inspect</code> inspection property can be queried to list a textual summary of all the transactions currently pending for inclusion in the next block(s), as well as the ones that are being scheduled for future execution only. This is a method specifically tailored to developers to quickly see the transactions in the pool and find any potential issues.</p>
+<p>The result is an object with two fields <code>pending</code> and <code>queued</code>. Each of these fields are associative arrays, in which each entry maps an origin-address to a batch of scheduled transactions. These batches themselves are maps associating nonces with transactions summary strings.</p>
+<p>Please note, there may be multiple transactions associated with the same account and nonce. This can happen if the user broadcast mutliple ones with varying gas allowances (or even complerely different transactions).</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>txpool.Inspect() (map[string]map[string]map[string][]string)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>txpool.inspect</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "txpool_inspect"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_18">Example</h4>
+<pre><code>&gt; txpool.inspect
+{
+  pending: {},
+  queued: {}
+}
+</code></pre>
+
+<h3 id="txpool_status">txpool_status</h3>
+<p>The <code>status</code> inspection property can be queried for the number of transactions currently pending for inclusion in the next block(s), as well as the ones that are being scheduled for future execution only.</p>
+<p>The result is an object with two fields <code>pending</code> and <code>queued</code>, each of which is a counter representing the number of transactions in that particular state.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>txpool.Status() (map[string]*rpc.HexNumber)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>txpool.status</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "txpool_status"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_19">Example</h4>
+<pre><code>&gt; txpool.status
+{
+  pending: 100,
+  queued: 0
+}
+</code></pre>
+
+<h2 id="fruitpool">Fruitpool</h2>
+<h3 id="fruitpool_content">fruitpool_content</h3>
+<p>Content returns the pendingFruits contained within the snail pool.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>fruitpool.Content() ([]*RPCFruit)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>fruitpool.content</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "fruitpool_content"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_20">Example</h4>
+<pre><code>&gt; fruitpool.content
+
+[{
+    fastHash: &quot;0xbf847397758ea1280a82c667c1cdda7604d12a15f062a3d82e4b8e3b7f372af8&quot;,
+    fastNumber: 126,
+    fruitDifficulty: 2000,
+    fruitHash: &quot;0xbc839c8efd9117a565ba16c0cee9644c83304f7c333be1d28bce282a3a61ae9d&quot;,
+    number: 2,
+    pointerHash: &quot;0x5b445e49ca5b67eeca43a46420d6400a9ba90a3a3520927114d7d734683fa0e2&quot;,
+    pointerNumber: 0,
+    signHash: &quot;0xca046c8d3dfea13c4c5b8224ce3bc2fc4230ea12135483a15de7d11157d40805&quot;
+}, {
+    fastHash: &quot;0x2558e2ef0d0df2ff11353ecc85fb4ae6982da71f464a0ecbf59ec297443aa259&quot;,
+    fastNumber: 127,
+    fruitDifficulty: 2000,
+    fruitHash: &quot;0x608b5237ec8a572c8168ab050981ca840271447a6cae8ac2f9693e7e6680abfc&quot;,
+    number: 3,
+    pointerHash: &quot;0x5b445e49ca5b67eeca43a46420d6400a9ba90a3a3520927114d7d734683fa0e2&quot;,
+    pointerNumber: 0,
+    signHash: &quot;0xe6bd08a4475a566d7e0659697563f7e65d3e6ea633e6908a8f6aa94bdba3632f&quot;
+}, {
+    fastHash: &quot;0xea22558ecc9c92591f6379bc766fec8af55a0641b22508bf5431d5d499b794ce&quot;,
+    fastNumber: 128,
+    fruitDifficulty: 2000,
+    fruitHash: &quot;0xf5e45e78c58061c327782f49fee6cdbf8874d4e20d7082f99cbbb32f06a46bb9&quot;,
+    number: 3,
+    pointerHash: &quot;0x5b445e49ca5b67eeca43a46420d6400a9ba90a3a3520927114d7d734683fa0e2&quot;,
+    pointerNumber: 0,
+    signHash: &quot;0x18e13d804ac9966c48e4d7e70e6ff2d16ac53b0d23d644a54fc3201566ae0857&quot;
+}]
+</code></pre>
+
+<h3 id="fruitpool_inspect">fruitpool_inspect</h3>
+<p>Inspect returns the unVerifiedFruits contained within the snail pool.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>fruitpool.Inspect() ([]*RPCFruit)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>fruitpool.inspect</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "fruitpool_inspect"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_21">Example</h4>
+<pre><code>&gt; fruitpool.inspect
+[{
+    fastHash: &quot;0xa71cfac04c172f29b6c300758df80d2a238f62918616cfe951dbcbb564e075cd&quot;,
+    fastNumber: 153632,
+    fruitDifficulty: 100,
+    fruitHash: &quot;0x0f23c22f5446c696d142a8e582dd255ee622d2f27894305f8fd4ef6ea281c5ee&quot;,
+    number: 2480,
+    pointerHash: &quot;0x0582995b001c00afa5446b6a410b177685fbabb89f69430b5e6a4d9953041377&quot;,
+    pointerNumber: 2472,
+    signHash: &quot;0x7622c3e1c58f83c80565779a5eeeb4d710bd1533d28c130718c8ecb470649856&quot;
+}, {
+    fastHash: &quot;0xde0b0918bb97c9314ae511d141d05b2bf9ba8727c2a9c9b0989acbecb4e2bdce&quot;,
+    fastNumber: 153633,
+    fruitDifficulty: 100,
+    fruitHash: &quot;0xed8890352230a6a9524e090628899a315f7be70f06849d031a48c47cd615b0a9&quot;,
+    number: 2480,
+    pointerHash: &quot;0x0582995b001c00afa5446b6a410b177685fbabb89f69430b5e6a4d9953041377&quot;,
+    pointerNumber: 2472,
+    signHash: &quot;0x54885fc9f07162ecc23e9656f75977e474b41384294b0cc1cfe222a2b1eedede&quot;
+}, {
+    fastHash: &quot;0x9b5d0dd3b3d1b33daf29d007b7f7525f60e4c254979fc8b4ed81e585390eebc7&quot;,
+    fastNumber: 155138,
+    fruitDifficulty: 100,
+    fruitHash: &quot;0xbf25a17ec04585626a6da4ebe6d12dfb26120d99d523bd5a7c199ac6b5fd9af5&quot;,
+    number: 2504,
+    pointerHash: &quot;0xf99a75e82d1ecdb5f55841276aa4708b7425ec9ed93681f20c03392b36b3497b&quot;,
+    pointerNumber: 2496,
+    signHash: &quot;0x4030b0467603334a57bf6b7e76b042dcfb1c06376a214c1c299cb053e48a85c6&quot;
+}]
+</code></pre>
+
+<h3 id="fruitpool_status">fruitpool_status</h3>
+<p>Status returns the number of pending and unVerified Fruits in the pool.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>fruitpool.Status() (map[string]hexutil.Uint)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>fruitpool.status</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "fruitpool_status"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_22">Example</h4>
+<pre><code>&gt; fruitpool.status
+{
+  pending: &quot;0x3f&quot;,
+  unverified: &quot;0x69a&quot;
+}
+</code></pre>
+
+<h2 id="debug">Debug</h2>
+<p>The <code>debug</code> API gives you access to several non-standard RPC methods, which will allow you to inspect, debug and set certain debugging flags during runtime.</p>
+<h3 id="debug_backtraceat">debug_backtraceAt</h3>
+<p>Sets the logging backtrace location. When a backtrace location is set and a log message is emitted at that location, the stack of the goroutine executing the log statement will be printed to stderr.</p>
+<p>The location is specified as <code>&lt;filename&gt;:&lt;line&gt;</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.backtraceAt(string)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_backtraceAt", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<pre><code>&gt; debug.backtraceAt(&quot;server.go:443&quot;)
+</code></pre>
+
+<h3 id="debug_blockprofile">debug_blockProfile</h3>
+<p>Turns on block profiling for the given duration and writes profile data to disk. It uses a profile rate of 1 for most accurate information. If a different rate is desired, set the rate and write the profile manually using <code>debug_writeBlockProfile</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.blockProfile(file, seconds)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_blockProfile", "params": [string, number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_cpuprofile">debug_cpuProfile</h3>
+<p>Turns on CPU profiling for the given duration and writes profile data to disk.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.cpuProfile(file, seconds)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_cpuProfile", "params": [string, number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_dumpblock">debug_dumpBlock</h3>
+<p>Retrieves the state that corresponds to the block number and returns a list of accounts (including storage and code).</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>debug.DumpBlock(number uint64) (state.World, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>debug.traceBlockByHash(number, [options])</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_dumpBlock", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_23">Example</h4>
+<pre><code>&gt; debug.dumpBlock(&quot;0xa&quot;)
+{
+    fff7ac99c8e4feb60c9750054bdc14ce1857f181: {
+      balance: &quot;49358640978154672&quot;,
+      code: &quot;&quot;,
+      codeHash: &quot;c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470&quot;,
+      nonce: 2,
+      root: &quot;56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;,
+      storage: {}
+    },
+    fffbca3a38c3c5fcb3adbb8e63c04c3e629aafce: {
+      balance: &quot;3460945928&quot;,
+      code: &quot;&quot;,
+      codeHash: &quot;c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470&quot;,
+      nonce: 657,
+      root: &quot;56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;,
+      storage: {}
+    }
+  },
+  root: &quot;19f4ed94e188dd9c7eb04226bd240fa6b449401a6c656d6d2816a87ccaf206f1&quot;
+}
+</code></pre>
+
+<h3 id="debug_gcstats">debug_gcStats</h3>
+<p>Returns GC statistics.</p>
+<p>See <a href="https://golang.org/pkg/runtime/debug/#GCStats">https://golang.org/pkg/runtime/debug/#GCStats</a> for information about the fields of the returned object.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.gcStats()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_gcStats", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_getblockrlp">debug_getBlockRlp</h3>
+<p>Retrieves and returns the RLP encoded block by number.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>debug.GetBlockRlp(number uint64) (string, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>debug.getBlockRlp(number, [options])</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_getBlockRlp", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_gotrace">debug_goTrace</h3>
+<p>Turns on Go runtime tracing for the given duration and writes trace data to disk.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.goTrace(file, seconds)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_goTrace", "params": [string, number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_memstats">debug_memStats</h3>
+<p>Returns detailed runtime memory statistics.</p>
+<p>See <a href="https://golang.org/pkg/runtime/#MemStats">https://golang.org/pkg/runtime/#MemStats</a> for information about the fields of the returned object.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.memStats()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_memStats", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_seedhash">debug_seedHash</h3>
+<p>Fetches and retrieves the seed hash of the block by number</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>debug.SeedHash(number uint64) (string, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>debug.seedHash(number, [options])</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_seedHash", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_sethead">debug_setHead</h3>
+<p>Sets the current head of the local snail chain by snailBlock number. <strong>Note</strong>, this is a destructive action and may severely damage your snail chain. Use with <em>extreme</em> caution.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>debug.SetHead(number uint64)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>debug.setHead(number)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_setHead", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<p>warn: it may cause the console quit and may destory the database,just for debug and test.</p>
+<h3 id="debug_setblockprofilerate">debug_setBlockProfileRate</h3>
+<p>Sets the rate (in samples/sec) of goroutine block profile data collection. A non-zero rate enables block profiling, setting it to zero stops the profile. Collected profile data can be written using <code>debug_writeBlockProfile</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.setBlockProfileRate(rate)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_setBlockProfileRate", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_stacks">debug_stacks</h3>
+<p>Returns a printed representation of the stacks of all goroutines. Note that the web3 wrapper for this method takes care of the printing and does not return the string.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.stacks()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_stacks", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_startcpuprofile">debug_startCPUProfile</h3>
+<p>Turns on CPU profiling indefinitely, writing to the given file.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.startCPUProfile(file)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_startCPUProfile", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_startgotrace">debug_startGoTrace</h3>
+<p>Starts writing a Go runtime trace to the given file.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.startGoTrace(file)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_startGoTrace", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_stopcpuprofile">debug_stopCPUProfile</h3>
+<p>Stops an ongoing CPU profile.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.stopCPUProfile()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_stopCPUProfile", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_stopgotrace">debug_stopGoTrace</h3>
+<p>Stops writing the Go runtime trace.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.stopGoTrace()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_stopGoTrace", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_traceblock">debug_traceBlock</h3>
+<p>The <code>traceBlock</code> method will return a full stack trace of all invoked opcodes of all transaction that were included included in this block. <strong>Note</strong>, the parent of this block must be present or it will fail.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>debug.TraceBlock(blockRlp []byte, config. *vm.Config) BlockTraceResult</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>debug.traceBlock(tblockRlp, [options])</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_traceBlock", "params": [blockRlp, {}]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_24">Example</h4>
+<pre><code>&gt; debug.traceBlock(&quot;0xblock_rlp&quot;)
+{
+  gas: 85301,
+  returnValue: &quot;&quot;,
+  structLogs: [{
+      depth: 1,
+      error: &quot;&quot;,
+      gas: 162106,
+      gasCost: 3,
+      memory: null,
+      op: &quot;PUSH1&quot;,
+      pc: 0,
+      stack: [],
+      storage: {}
+  },
+    /* snip */
+  {
+      depth: 1,
+      error: &quot;&quot;,
+      gas: 100000,
+      gasCost: 0,
+      memory: [&quot;0000000000000000000000000000000000000000000000000000000000000006&quot;, &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;, &quot;0000000000000000000000000000000000000000000000000000000000000060&quot;],
+      op: &quot;STOP&quot;,
+      pc: 120,
+      stack: [&quot;00000000000000000000000000000000000000000000000000000000d67cbec9&quot;],
+      storage: {
+        0000000000000000000000000000000000000000000000000000000000000004: &quot;8241fa522772837f0d05511f20caa6da1d5a3209000000000000000400000001&quot;,
+        0000000000000000000000000000000000000000000000000000000000000006: &quot;0000000000000000000000000000000000000000000000000000000000000001&quot;,
+        f652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d3f: &quot;00000000000000000000000002e816afc1b5c0f39852131959d946eb3b07b5ad&quot;
+      }
+  }]
+</code></pre>
+
+<h3 id="debug_traceblockbynumber">debug_traceBlockByNumber</h3>
+<p>Similar to debug_traceBlock， <code>traceBlockByNumber</code> accepts a block number and will replay the block that is already present in the database.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>debug.TraceBlockByNumber(number uint64, config. *vm.Config) BlockTraceResult</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>debug.traceBlockByNumber(number, [options])</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_traceBlockByNumber", "params": [number, {}]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_traceblockbyhash">debug_traceBlockByHash</h3>
+<p>Similar to debug_traceBlock, <code>traceBlockByHash</code> accepts a block hash and will replay the block that is already present in the database.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>debug.TraceBlockByHash(hash common.Hash, config. *vm.Config) BlockTraceResult</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>debug.traceBlockByHash(hash, [options])</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_traceBlockByHash", "params": [hash {}]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_traceblockfromfile">debug_traceBlockFromFile</h3>
+<p>Similar to debug_traceBlock, <code>traceBlockFromFile</code> accepts a file containing the RLP of the block.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>debug.TraceBlockFromFile(fileName string, config. *vm.Config) BlockTraceResult</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>debug.traceBlockFromFile(fileName, [options])</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_traceBlockFromFile", "params": [fileName, {}]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_tracetransaction">debug_traceTransaction</h3>
+<p>The <code>traceTransaction</code> debugging method will attempt to run the transaction in the exact same manner as it was executed on the network. It will replay any transaction that may have been executed prior to this one before it will finally attempt to execute the transaction that corresponds to the given hash.</p>
+<p>In addition to the hash of the transaction you may give it a secondary <em>optional</em> argument, which specifies the options for this specific call. The possible options are:</p>
+<ul>
+<li><code>disableStorage</code>: <code>BOOL</code>. Setting this to true will disable storage capture (default = false).</li>
+<li><code>disableMemory</code>: <code>BOOL</code>. Setting this to true will disable memory capture (default = false).</li>
+<li><code>disableStack</code>: <code>BOOL</code>. Setting this to true will disable stack capture (default = false).</li>
+<li><code>tracer</code>: <code>STRING</code>. Setting this will enable JavaScript-based transaction tracing, described below. If set, the previous four arguments will be ignored.</li>
+<li><code>timeout</code>: <code>STRING</code>. Overrides the default timeout of 5 seconds for JavaScript-based tracing calls. Valid values are described <a href="https://golang.org/pkg/time/#ParseDuration">here</a>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>debug.TraceTransaction(txHash common.Hash, logger *vm.LogConfig) (*ExecutionResurt, error)</code></td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>debug.traceTransaction(txHash, [options])</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_traceTransaction", "params": [txHash, {}]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_25">Example</h4>
+<pre><code>&gt; debug.traceTransaction(&quot;0x2059dd53ecac9827faad14d364f9e04b1d5fe5b506e3acc886eff7a6f88a696a&quot;)
+{
+  gas: 85301,
+  returnValue: &quot;&quot;,
+  structLogs: [{
+      depth: 1,
+      error: &quot;&quot;,
+      gas: 162106,
+      gasCost: 3,
+      memory: null,
+      op: &quot;PUSH1&quot;,
+      pc: 0,
+      stack: [],
+      storage: {}
+  },
+    /* snip */
+  {
+      depth: 1,
+      error: &quot;&quot;,
+      gas: 100000,
+      gasCost: 0,
+      memory: [&quot;0000000000000000000000000000000000000000000000000000000000000006&quot;, &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;, &quot;0000000000000000000000000000000000000000000000000000000000000060&quot;],
+      op: &quot;STOP&quot;,
+      pc: 120,
+      stack: [&quot;00000000000000000000000000000000000000000000000000000000d67cbec9&quot;],
+      storage: {
+        0000000000000000000000000000000000000000000000000000000000000004: &quot;8241fa522772837f0d05511f20caa6da1d5a3209000000000000000400000001&quot;,
+        0000000000000000000000000000000000000000000000000000000000000006: &quot;0000000000000000000000000000000000000000000000000000000000000001&quot;,
+        f652222313e28459528d920b65115c16c04f3efc82aaedc97be59f3f377c0d3f: &quot;00000000000000000000000002e816afc1b5c0f39852131959d946eb3b07b5ad&quot;
+      }
+  }]
+</code></pre>
+
+<h4 id="javascript-based-tracing">JavaScript-based tracing</h4>
+<p>Specifying the <code>tracer</code> option in the second argument enables JavaScript-based tracing. In this mode, <code>tracer</code> is interpreted as a JavaScript expression that is expected to evaluate to an object with (at least) two methods, named <code>step</code> and <code>result</code>.</p>
+<p><code>step</code>is a function that takes two arguments, log and db, and is called for each step of the EVM, or when an error occurs, as the specified transaction is traced.</p>
+<p><code>log</code> has the following fields:</p>
+<ul>
+<li><code>pc</code>: Number, the current program counter</li>
+<li><code>op</code>: Object, an OpCode object representing the current opcode</li>
+<li><code>gas</code>: Number, the amount of gas remaining</li>
+<li><code>gasPrice</code>: Number, the cost in wei of each unit of gas</li>
+<li><code>memory</code>: Object, a structure representing the contract's memory space</li>
+<li><code>stack</code>: array[big.Int], the EVM execution stack</li>
+<li><code>depth</code>: The execution depth</li>
+<li><code>account</code>: The address of the account executing the current operation</li>
+<li><code>err</code>: If an error occured, information about the error</li>
+</ul>
+<p>If <code>err</code> is non-null, all other fields should be ignored.</p>
+<p>For efficiency, the same <code>log</code> object is reused on each execution step, updated with current values; make sure to copy values you want to preserve beyond the current call. For instance, this step function will not work:</p>
+<pre><code>function(log) {
+  this.logs.append(log);
+}
+</code></pre>
+
+<p>But this step function will:</p>
+<pre><code>function(log) {
+  this.logs.append({gas: log.gas, pc: log.pc, ...});
+}
+</code></pre>
+
+<p><code>log.op</code> has the following methods:</p>
+<ul>
+<li><code>isPush()</code> - returns true iff the opcode is a PUSHn</li>
+<li><code>toString()</code> - returns the string representation of the opcode</li>
+<li><code>toNumber()</code> - returns the opcode's number</li>
+</ul>
+<p><code>log.memory</code> has the following methods:</p>
+<ul>
+<li><code>slice(start, stop)</code> - returns the specified segment of memory as a byte slice</li>
+<li><code>length()</code> - returns the length of the memory</li>
+</ul>
+<p><code>log.stack</code> has the following methods:</p>
+<ul>
+<li><code>peek(idx)</code> - returns the idx-th element from the top of the stack (0 is the topmost element) as a big.Int</li>
+<li><code>length()</code> - returns the number of elements in the stack</li>
+</ul>
+<p><code>db</code> has the following methods:</p>
+<ul>
+<li><code>getBalance(address)</code> - returns a <code>big.Int</code> with the specified account's balance</li>
+<li><code>getNonce(address)</code> - returns a Number with the specified account's nonce</li>
+<li><code>getCode(address)</code> - returns a byte slice with the code for the specified account</li>
+<li><code>getState(address, hash)</code> - returns the state value for the specified account and the specified hash</li>
+<li><code>exists(address)</code> - returns true if the specified address exists</li>
+</ul>
+<p>The second function, 'result', takes no arguments, and is expected to return a JSON-serializable value to return to the RPC caller.</p>
+<p>If the step function throws an exception or executes an illegal operation at any point, it will not be called on any further VM steps, and the error will be returned to the caller.</p>
+<p>Note that several values are Golang big.Int objects, not JavaScript numbers or JS bigints. As such, they have the same interface as described in the godocs. Their default serialization to JSON is as a Javascript number; to serialize large numbers accurately call <code>.String()</code> on them. For convenience, <code>big.NewInt(x)</code> is provided, and will convert a uint to a Go BigInt.</p>
+<p>Usage example, returns the top element of the stack at each CALL opcode only:</p>
+<pre><code>debug.traceTransaction(txhash, {tracer: '{data: [], step: function(log) { if(log.op.toString() == &quot;CALL&quot;) this.data.push(log.stack.peek(0)); }, result: function() { return this.data; }}'});
+</code></pre>
+
+<h3 id="debug_verbosity">debug_verbosity</h3>
+<p>Sets the logging verbosity ceiling. Log messages with level up to and including the given level will be printed.</p>
+<p>The verbosity of individual packages and source files can be raised using <code>debug_vmodule</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.verbosity(level)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_vmodule", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_vmodule">debug_vmodule</h3>
+<p>Sets the logging verbosity pattern.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.vmodule(string)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_vmodule", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="examples_4">Examples</h4>
+<p>If you want to see messages from a particular Go package (directory) and all subdirectories, use:</p>
+<pre><code>&gt; debug.vmodule(&quot;tai/*=6&quot;)
+</code></pre>
+
+<p>If you want to restrict messages to a particular package (e.g. p2p) but exclude subdirectories, use:</p>
+<pre><code>&gt; debug.vmodule(&quot;p2p=6&quot;)
+</code></pre>
+
+<p>If you want to see log messages from a particular source file, use</p>
+<pre><code>&gt; debug.vmodule(&quot;server.go=6&quot;)
+</code></pre>
+
+<p>You can compose these basic patterns. If you want to see all output from peer.go in a package below tai (tai/peer.go, tai/downloader/peer.go) as well as output from package p2p at level &lt;= 5, use:</p>
+<pre><code>debug.vmodule(&quot;tai/*/peer.go=6,p2p=5&quot;)
+</code></pre>
+
+<h3 id="debug_writeblockprofile">debug_writeBlockProfile</h3>
+<p>Writes a goroutine blocking profile to the given file.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.writeBlockProfile(file)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_writeBlockProfile", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="debug_writememprofile">debug_writeMemProfile</h3>
+<p>Writes an allocation profile to the given file. Note that the profiling rate cannot be set through the API, it must be set on the command line using the <code>--memprofilerate</code> flag.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>debug.writeMemProfile(file string)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "debug_writeBlockProfile", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tai">tai</h2>
+<h3 id="tai_protocolversion">tai_protocolVersion</h3>
+<p>Returns the current Truechain protocol version.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.protocolVersion</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_protocolVersion"}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tai_syncing">tai_syncing</h3>
+<p>Returns an object with data about the sync status or <code>false</code></p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td><code>tai.syncing() (interface{}, error</code>)</td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>tai.syncing</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_syncing</code>"}`</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_26">Example</h4>
+<pre><code>&gt; tai.syncing
+{
+  currentBlock: 961,
+  highestBlock: 7092,
+  knownStates: 0,
+  pulledStates: 0,
+  startingBlock: 0
+}
+</code></pre>
+
+<h3 id="tai_coinbase">tai_coinbase</h3>
+<p>Returns the client coinbase address.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.coinbase</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_coinbase"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_27">Example</h4>
+<pre><code>&gt; tai.coinbase
+&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;
+</code></pre>
+
+<h3 id="tai_mining">tai_mining</h3>
+<p>Returns <code>true</code> if client is actively mining new blocks.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.mining</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_mining"}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tai_hashrate">tai_hashrate</h3>
+<p>Returns the number of hashes per second that the node is mining with.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.hashrate</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_hashrate"}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tai_gasprice">tai_gasPrice</h3>
+<p>Returns the current price per gas in wei.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.gasPrice</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_gasPrice"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_28">Example</h4>
+<pre><code>&gt; tai.gasPrice
+18000000000
+
+</code></pre>
+
+<h3 id="tai_accounts">tai_accounts</h3>
+<p>Returns a list of addresses owned by client.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.accounts</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_accounts"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_29">Example</h4>
+<pre><code>&gt; tai.accounts
+[&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;, &quot;0xaf1dd3a5135bcdd38079927a80c75ad05cfd140b&quot;, &quot;0x4a98debf425a2fd4f56ef6674c72c3606b615e75&quot;]
+
+</code></pre>
+
+<h3 id="tai_blocknumber">tai_blockNumber</h3>
+<p>Returns the number of most recent block.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.blockNumber</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_blockNumber"}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_30">Example</h4>
+<pre><code>&gt; tai.blockNumber
+82917
+
+</code></pre>
+
+<h3 id="tai_getbalance">tai_getBalance</h3>
+<p>Returns the balance of the account of given address.integer of the current balance in wei.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getBalance(address)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_startCPUProfile", "params": [string, latest]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_31">Example</h4>
+<pre><code>&gt; tai.getBalance(&quot;0xbE7e39Fa0645F6eaf501Ad02318A7fDa5c4DF6C6&quot;)
+10000000000000000000
+
+</code></pre>
+
+<h3 id="tai_getstorageat">tai_getStorageAt</h3>
+<p>GetStorageAt returns the storage from the state at the given address, key and
+block number. The rpc.LatestBlockNumber and rpc.PendingBlockNumber meta block
+numbers are also allowed.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go</td>
+<td>`tai.getStorageAt(address,key,blockNr) (hexutil.Bytes, error)</td>
+</tr>
+<tr>
+<td>Console</td>
+<td><code>tai.getStorageAt(address, key)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getStorageAt", "params": [address, key, latest]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_32">Example</h4>
+<pre><code>&gt; tai.getStorageAt(&quot;0x295a70b2de5e3953354a6a8344e616ed314d7251&quot;,&quot;0x0&quot;,&quot;latest&quot;)
+&quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;
+
+</code></pre>
+
+<h3 id="tai_gettransactioncount">tai_getTransactionCount</h3>
+<p>GetTransactionCount returns the number of transactions the given address has sent for the given block number</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getTransactionCount(address)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getTransactionCount", "params": [address, latest]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_33">Example</h4>
+<pre><code>&gt; tai.getTransactionCount(&quot;0x295a70b2de5e3953354a6a8344e616ed314d7251&quot;)
+12
+
+</code></pre>
+
+<h3 id="tai_getblocktransactioncount">tai_getBlockTransactionCount</h3>
+<p>Returns the number of transactions in a block matching the given block number.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getBlockTransactionCount(number)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getBlockTransactionCountByNumber", "params": [string]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_34">Example</h4>
+<pre><code>&gt; tai.getBlockTransactionCount(12)
+10
+&gt; tai.getBlockTransactionCount(&quot;0xb903239f8543d04b5dc1ba6579132b143087c68db1b2168786408fcbce568238&quot;)
+10
+
+</code></pre>
+
+<h3 id="tai_getcode">tai_getCode</h3>
+<p>Returns code at a given address.
+Divided into ordinary account and contract account address
+Ordinary account return "0x"
+Where the contract account returns the binary code</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getCode(address)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getCode", "params": [address, latest]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_35">Example</h4>
+<pre><code>&gt; tai.getCode(&quot;0xB824adf0Bad5E49bB214922F4499bD2cf08ef519&quot;)
+&quot;0x&quot;
+
+</code></pre>
+
+<h3 id="tai_sign">tai_sign</h3>
+<p>The sign method calculates an Truechain specific signature with: sign(keccak256("\x19Truechain Signed Message:\n" + len(message) + message))).</p>
+<p>By adding a prefix to the message makes the calculated signature recognisable as an Truechain specific signature. This prevents misuse where a malicious DApp can sign arbitrary data (e.g. transaction) and use the signature to impersonate the victim.</p>
+<p>Note the address to sign with must be unlocked.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.sign(address,message)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_sign", "params": [address, message]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_36">Example</h4>
+<pre><code>&gt; personal.unlockAccount(&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;)
+Unlock account 0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6
+Passphrase:
+true
+&gt; tai.sign(&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;,&quot;0xdeadbeaf&quot;)
+&quot;0x0d7d2150b38dc30ba0aa8db9171abb1bd31b6cf39f4edf2b93de0a2b6ba05a81034aa81b462fb5b8b09c74dba29172c9ad098607d7898a3aa8412b40ef2686841b&quot;
+
+</code></pre>
+
+<h3 id="tai_sendtransaction">tai_sendTransaction</h3>
+<p>Creates new message call transaction or a contract creation, if the data field contains code.</p>
+<p>params:</p>
+<p>Object - The transaction object
+from: DATA, 20 Bytes - The address the transaction is send from.
+to: DATA, 20 Bytes - (optional when creating new contract) The address the transaction is directed to.
+gas: QUANTITY - (optional, default: 90000) Integer of the gas provided for the transaction execution. It will return unused gas.
+gasPrice: QUANTITY - (optional, default: To-Be-Determined) Integer of the gasPrice used for each paid gas
+value: QUANTITY - (optional) Integer of the value sent with this transaction
+data: DATA - The compiled code of a contract OR the hash of the invoked method signature and encoded parameters. For details see Truechain Contract ABI
+nonce: QUANTITY - (optional) Integer of a nonce. This allows to overwrite your own pending transactions that use the same nonce.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.sendTransaction(params)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_sendTransaction", "params": [params]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_37">Example</h4>
+<pre><code>&gt; personal.unlockAccount(&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;)
+Unlock account 0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6
+Passphrase:
+true
+&gt; tai.sendTransaction({&quot;from&quot;:&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;,&quot;to&quot;:&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;,&quot;value&quot;:&quot;1000000000000000&quot;})
+&quot;0xcf3d3adb9a6b875e3adb966bc436a963f689f9dbf2ea18a3955fed263d865dd1&quot;
+
+</code></pre>
+
+<h3 id="tai_sendrawtransaction">tai_sendRawTransaction</h3>
+<p>SendRawTransaction will add the signed transaction to the transaction pool.
+The sender is responsible for signing the transaction and using the correct nonce.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.sendRawTransaction(params)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_sendRawTransaction", "params": [params]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_38">Example</h4>
+<pre><code>&gt; tai.sendRawTransaction({see above})
+&quot;0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331&quot;
+</code></pre>
+
+<h3 id="tai_call">tai_call</h3>
+<p>Call executes the given transaction on the state for the given block number.
+It doesn't make and changes in the state/blockchain and is useful to execute and retrieve values.</p>
+<p>Parameters
+Object - The transaction call object
+from: DATA, 20 Bytes - (optional) The address the transaction is sent from.
+to: DATA, 20 Bytes - The address the transaction is directed to.
+gas: QUANTITY - (optional) Integer of the gas provided for the transaction execution. tai_call consumes zero gas, but this parameter may be needed by some executions.
+gasPrice: QUANTITY - (optional) Integer of the gasPrice used for each paid gas
+value: QUANTITY - (optional) Integer of the value sent with this transaction
+data: DATA - (optional) Hash of the method signature and encoded parameters. For details see Truechain Contract ABI
+QUANTITY|TAG - integer block number, or the string "latest", "earliest" or "pending", see the default block parameter</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.call(params)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_call", "params": [params]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_39">Example</h4>
+<pre><code>&gt; tai.call({&quot;to&quot;:&quot;0x199e7f5314d01c19fa19f220bb19f5b55d26dc33&quot;})
+&quot;0x&quot;
+</code></pre>
+
+<h3 id="tai_estimategas">tai_estimateGas</h3>
+<p>Generates and returns an estimate of how much gas is necessary to allow the transaction to complete. The transaction will not be added to the blockchain. Note that the estimate may be significantly more than the amount of gas actually used by the transaction, for a variety of reasons including EVM mechanics and node performance.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.estimateGas(options)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_estimateGasl", "params": [options]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_40">Example</h4>
+<pre><code>&gt; tai.estimateGas({&quot;from&quot;:&quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;})
+53000
+
+</code></pre>
+
+<h3 id="tai_getblock">tai_getBlock</h3>
+<p>Returns information about a block by hash or number</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getBlock(Parameters)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getBlock", "params": [Parameters]}</code></td>
+</tr>
+</tbody>
+</table>
+<p>Parameters can be  integer of a block number,or hash of a block,or the string "earliest", "latest" or "pending".</p>
+<h4 id="example_41">Example</h4>
+<pre><code>&gt; tai.getBlock(2)
+{
+  SnailHash: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+  SnailNumber: &quot;0x0&quot;,
+  difficulty: 0,
+  extraData: &quot;0x&quot;,
+  gasLimit: 21977111,
+  gasUsed: 0,
+  hash: &quot;0xe3af910ef0b1e6385f44b03a88bfa91ae2e6c4409e275151a4fb46670db5c798&quot;,
+  logsBloom: &quot;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,
+  number: 2,
+  parentHash: &quot;0x3247a1fff229e6a3b5f9d48e1dd4f534d59bedc83b8c62f034df7e4421da3392&quot;,
+  receiptsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;,
+  signs: [{
+      result: 1,
+      sign: &quot;0x2575eb8dc39067c35cabc2a803215a93857e5ba63f70b571b188fb5e34c4020863e84ff448ef5cef0bb7a379c50c8a27e30a63ab73714be4ef66ed7402f36f7c01&quot;
+  }],
+  size: 572,
+  stateRoot: &quot;0x47e15682f9a8bad160ae6c983327f7ecf0dc319e35362f7c7a23825f713f9202&quot;,
+  timestamp: 1544147499,
+  transactions: [],
+  transactionsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;
+}
+
+&gt; tai.getBlock(&quot;0xe3af910ef0b1e6385f44b03a88bfa91ae2e6c4409e275151a4fb46670db5c798&quot;)
+{
+  SnailHash: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+  SnailNumber: &quot;0x0&quot;,
+  difficulty: 0,
+  extraData: &quot;0x&quot;,
+  gasLimit: 21977111,
+  gasUsed: 0,
+  hash: &quot;0xe3af910ef0b1e6385f44b03a88bfa91ae2e6c4409e275151a4fb46670db5c798&quot;,
+  logsBloom: &quot;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,
+  number: 2,
+  parentHash: &quot;0x3247a1fff229e6a3b5f9d48e1dd4f534d59bedc83b8c62f034df7e4421da3392&quot;,
+  receiptsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;,
+  signs: [{
+      result: 1,
+      sign: &quot;0x2575eb8dc39067c35cabc2a803215a93857e5ba63f70b571b188fb5e34c4020863e84ff448ef5cef0bb7a379c50c8a27e30a63ab73714be4ef66ed7402f36f7c01&quot;
+  }],
+  size: 572,
+  stateRoot: &quot;0x47e15682f9a8bad160ae6c983327f7ecf0dc319e35362f7c7a23825f713f9202&quot;,
+  timestamp: 1544147499,
+  transactions: [],
+  transactionsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;
+}
+
+&gt; tai.getBlock(&quot;latest&quot;)
+{
+  CommitteeHash: &quot;0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347&quot;,
+  SnailHash: &quot;0x0000000000000000000000000000000000000000000000000000000000000000&quot;,
+  SnailNumber: 0,
+  difficulty: 0,
+  extraData: &quot;0x&quot;,
+  gasLimit: 79272345,
+  gasUsed: 0,
+  hash: &quot;0xd42db5fa19c087b85df80970ad31aa5e1e93080358e210afac7d59098d0cbb73&quot;,
+  logsBloom: &quot;0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,  number: 106178,
+  parentHash: &quot;0xbbc548feed020abba4f22a28f1f91713f1e6be80726d5e65d2ccdaaeea2d59f3&quot;,
+  receiptsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;,
+  signs: [{
+      fastHash: &quot;0xd42db5fa19c087b85df80970ad31aa5e1e93080358e210afac7d59098d0cbb73&quot;,
+      fastHeight: &quot;0x19ec2&quot;,
+      result: 1,
+      sign: &quot;0x4cab89f8ca069f249752c7b9fad1e003e7cbc1a75b593b03364870ad148da04f447a969d6a968b2a72c05ce170ef9236c83b5c27b2c99e171caa1a3d6c4f407e00&quot;
+  }, {
+      fastHash: &quot;0xd42db5fa19c087b85df80970ad31aa5e1e93080358e210afac7d59098d0cbb73&quot;,
+      fastHeight: &quot;0x19ec2&quot;,
+      result: 1,
+      sign: &quot;0xb45a6a6fc093526a40c6949b2b6a8172b84dde26dcdc1f80abedc466bab37478136bf360b940da6faf1ac656b3c7177639d7eb6a4642813614a83424b1aae13001&quot;
+  }, {
+      fastHash: &quot;0xd42db5fa19c087b85df80970ad31aa5e1e93080358e210afac7d59098d0cbb73&quot;,
+      fastHeight: &quot;0x19ec2&quot;,
+      result: 1,
+      sign: &quot;0x50581788f64cc3ca0c8e03d8dad419fd75f53d79ca71970380da86918d45479c636acb60d9c30f1a3ac9d9654c0897d256d73e46ee157542b357856b3532bb0f00&quot;
+  }, {
+      fastHash: &quot;0xd42db5fa19c087b85df80970ad31aa5e1e93080358e210afac7d59098d0cbb73&quot;,
+      fastHeight: &quot;0x19ec2&quot;,
+      result: 1,
+      sign: &quot;0x40d9a42c5906118600df4e6b9fb641bc682769b6f16fe7f39529b0de8e7c4c10773132e7f790b70962a32b27fa7e178de532abeb8e91f119bcc538801f4a671401&quot;
+  }, {
+      fastHash: &quot;0xd42db5fa19c087b85df80970ad31aa5e1e93080358e210afac7d59098d0cbb73&quot;,
+      fastHeight: &quot;0x19ec2&quot;,
+      result: 1,
+      sign: &quot;0xd7dec860b864e680f13ceec2ab9e977a7a1c905a26fa09679557d4665e2c38f74a5436b4d62a607e6490465295d312c7ec480fce521be3da4bbeb8c2e173501b00&quot;
+  }, {
+      fastHash: &quot;0xd42db5fa19c087b85df80970ad31aa5e1e93080358e210afac7d59098d0cbb73&quot;,
+      fastHeight: &quot;0x19ec2&quot;,
+      result: 1,
+      sign: &quot;0xfd151b1ade2601125120a43a7f21284d4ae36d3c68df5d53425baa4985a32f4451906ba5860331cc98f0f093eaf24fb2bfaeef1e253b9af04b488e39f56f6e7100&quot;
+  }, {
+      fastHash: &quot;0xd42db5fa19c087b85df80970ad31aa5e1e93080358e210afac7d59098d0cbb73&quot;,
+      fastHeight: &quot;0x19ec2&quot;,
+      result: 1,
+      sign: &quot;0xfd4e6c2356095a749e686145ce537b4b5216aaf279c08cf0c5ae5b9aa06f01c307ec0817e3a43a7d4c6fbee5008d24e69a7de82572e03b6e46864290e030b20f01&quot;
+  }],
+  size: 1255,
+  stateRoot: &quot;0x7b89895f05fb321ad8fd4f9286c0deb848f7b09e8b1727d870521b9468d805c7&quot;,
+  switchInfos: [],
+  timestamp: 1553064924,
+  transactions: [],
+  transactionsRoot: &quot;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&quot;
+}
+</code></pre>
+
+<h3 id="tai_gettransaction">tai_getTransaction</h3>
+<p>Returns the information about a transaction requested by transaction hash</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getTransaction(hash)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getTransaction", "params": [hash]}</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tai_gettransactionreceipt">tai_getTransactionReceipt</h3>
+<p>Returns the receipt of a transaction by transaction hash.
+Note That the receipt is not available for pending transactions.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getTransactionReceipt(hash)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getTransactionReceipt", "params": [hash]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_42">Example</h4>
+<pre><code>&gt; tai.getTransactionReceipt(&quot;0x389f4ea234928502ab7a3066593a810aa9a03957b806527dfba5c55d67cbf427&quot;)
+{
+  blockHash: &quot;0x5c60cb0ad195b9c35bfb5f4efb2d97bf5d0b91ae05d1072167613e9b1c892454&quot;,
+  blockNumber: 1022,
+  contractAddress: null,
+  cumulativeGasUsed: 21000,
+  from: &quot;0xb824adf0bad5e49bb214922f4499bd2cf08ef519&quot;,
+  gasUsed: 21000,
+  logs: [],
+  logsBloom: &quot;0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,
+  status: &quot;0x1&quot;,
+  to: &quot;0xb42669609d9932f89c16c7c1803cb03130a7b193&quot;,
+  transactionHash: &quot;0x389f4ea234928502ab7a3066593a810aa9a03957b806527dfba5c55d67cbf427&quot;,
+  transactionIndex: 0
+}
+</code></pre>
+
+<h3 id="tai_compile">tai_compile</h3>
+<p>Returns a list of available compilers in the client.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.compile</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_compile", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_43">Example</h4>
+<pre><code>&gt; tai.compile
+{
+  lll: function(),
+  serpent: function(),
+  solidity: function()
+}
+
+</code></pre>
+
+<h3 id="tai_getwork">tai_getWork</h3>
+<p>GetWork returns a work package for external miner. The work package consists of 3 strings
+result[0], 32 bytes hex encoded current block header pow-hash
+result[1], 32 bytes hex encoded seed hash used for DAG
+result[2], 32 bytes hex encoded boundary condition ("target"), 2^256/difficulty</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getWork</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getWork", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_44">Example</h4>
+<pre><code>&gt; tai.getWork
+function()
+
+</code></pre>
+
+<h3 id="tai_defaultblock">tai_defaultBlock</h3>
+<p>Return latest block marking</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.defaultBlock</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_defaultBlock", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_45">Example</h4>
+<pre><code>&gt; tai.defaultBlock
+&quot;latest&quot;
+
+</code></pre>
+
+<h3 id="tai_pendingtransactions">tai_PendingTransactions</h3>
+<p>PendingTransactions returns the transactions that are in the transaction pool
+and have a from address that is one of the accounts this node manages.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.pendingTransactions</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_PendingTransactions", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_46">Example</h4>
+<pre><code>&gt; tai.pendingTransactions
+[]
+</code></pre>
+
+<h3 id="tai_committeenumber">tai_committeeNumber</h3>
+<p>Return the current number of sessions of the committee</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.committeeNumber</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_committeeNumber", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_47">Example</h4>
+<pre><code>&gt; tai.committeeNumber
+41
+</code></pre>
+
+<h3 id="tai_fruitnumber">tai_fruitNumber</h3>
+<p>Returns the height of the current fruit</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.fruitNumber</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_fruitNumber", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_48">Example</h4>
+<pre><code>&gt; tai.fruitNumber
+477899
+</code></pre>
+
+<h3 id="tai_rewardsnailblock">tai_rewardSnailBlock</h3>
+<p>RewardSnailBlock return the latest snail block rewarded.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.rewardSnailBlock</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_rewardSnailBlock", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_49">Example</h4>
+<pre><code>&gt; tai.rewardSnailBlock
+{
+    beginFruitNumber: &quot;0x312e&quot;,
+    difficulty: &quot;0x2934&quot;,
+    endFruitNumber: &quot;0x3169&quot;,
+    extraData: &quot;0xd98209008667657472756588676f312e31302e34856c696e7578&quot;,
+    fruitDifficulty: &quot;0x64&quot;,
+    fruits: [&quot;0xa632b2a2cb8dbea61af5c4061b506013f262c4fcdae6cfcd4539d4fb8d135295&quot;, &quot;0x53e280a0f4566a2a9bc12faec2991059ffd993284e1688b563b95845db0d9d49&quot;, &quot;0x82282660c6b20d778dd1c1667f4fc6bf6c29a38d17a53fc7ba638f4b950e1da8&quot;, &quot;0xcc30df9962ea9cd0184a1a3a4076198b6936d7c79b3025521fc0b787808b9a69&quot;, &quot;0xba1645a82012600e80f3d396da15826152e45c23b25386ac9c828855ef879fc8&quot;, &quot;0x5ad1f91b6b40a386f2a06d6478c60395c70f484947de0491f4bd7c0e717472da&quot;, &quot;0xb93179ddf6004f7f4a7a1a97e278a4c29170f3bb07cf7b41163f16b33d634898&quot;, &quot;0xfbbf8ee6385b4102edfa8a539b91c83e7be2c0aa9a1487e465c6c20fe081d94b&quot;, &quot;0x2bea7825294cdebf9b593bb9271d6d4c051111f470b7719f0b23f8d75ee450a8&quot;, &quot;0x6123b3a6685f0e92f32d05ee437ed0df2f6a3e79a6af43964495c67e8d1f0dd3&quot;, &quot;0xaeb33d2c1eca870093bb9f1f99e67c13411fdddaa598ca12ad1ede94c50ed2ad&quot;, &quot;0x1df10f96d711eb500d9a2c5377ca5dbf2dbbe16df9f3faac12159e83a4b53847&quot;, &quot;0xbbbf861be37e70d07eec9376d30db13c1704d2517d5cc312fe66b0027a27b65e&quot;, &quot;0xf8ba7c14737c7bee419614ad7e2c9bb1ede9efe3cbe6f158d88cc8599c5d7a0b&quot;, &quot;0x5258d8a47c1bea863b31cca6b3862da2e57fb752868358837a28fb32fb5c7864&quot;, &quot;0xc965f1ba667f88a4370f7f40ee9090a1c66a66c2a58136b1e3653521f7892525&quot;, &quot;0xe936d14ef8688abc507e147de72a65f83347273dce93dd19f3b2d55a1d9abe8f&quot;, &quot;0xa8d6040922b821164902a6a33196802dc94feabcc3f82fe765c1d88bed96d662&quot;, &quot;0x30f1f6c414afc24e4ffd1abf7757f583cca31fe187b7184630e8f1ca5dc52f9d&quot;, &quot;0x4e5225be5985de4b6f7a64173d79277d725d236d0448d4d75076aa3ed6e7fa56&quot;, &quot;0x7bd8b912b1e4bbc3fd4c73bde1767f5fe14f86c6b3cb041b317f6ce6f06cd542&quot;, &quot;0xbc77f4d7e1e49f8afc8aa7d596f3d7981b5abe96d4d4a54a7d7a1010244f79b1&quot;, &quot;0xde7998ff1ad4f9871b730d0e720d00153a2c93914d9a16acdad39765f384891f&quot;, &quot;0xf91977e68d726fa08ded0407e0b5d590a85e1768261a9f952e236ed225dbcc75&quot;, &quot;0x81fb25e55f5ccadca129b3b171c31e246aa00fe6bbf296436cfd70fb0e08c1a3&quot;, &quot;0x6b49f2bc587371714436ce122cc137aaf750f394ca3bcf73659960a7b4f571f1&quot;, &quot;0xfd13f6b303f6c6e756bd565d3ca42528e0c8de3aaa770775bc9a099361b3dfb6&quot;, &quot;0x7d5225d125a763a5ae11470025ba9f3b1d68746786ebd384392d0784017be3b9&quot;, &quot;0xb00a74429a42fdc7e407ff38c3a41f10e93709592cf244b861d8cef850cc8927&quot;, &quot;0x90832895a34142519811238c7c115ac2f82f3e2bdf320f9a89ea3cc1fa16a8b3&quot;, &quot;0x093e1df98b9a55add7da1381402adc8658e35e8d883595f3bc569f056af5ce03&quot;, &quot;0x0c6c129571db51f9eaeec3bda70bcb817ab6d09367c33fb013fb09b8388b2c6a&quot;, &quot;0x136f55cc75bb589a2abd9cb093c372c6c581ab30c89404f5384418caf6c5fabc&quot;, &quot;0x6a5b44ad24be50f63e082e3cb64c804450cfd5a9813c5bb86b2daf1596b0db3d&quot;, &quot;0x74e2f61da5829be385aaf3446e4e29a9d1269742c69885fc9188e84187e07a9e&quot;, &quot;0x651921c1da81d4b0969796910593323c3b0b60ca816f2a938fb0d7bcb562f596&quot;, &quot;0xc42a9d609c0bac5b1d91fdca1da86be796902b7be1990bde3a711d720eb0e367&quot;, &quot;0x0dc661bf73cbd9b83b56a1122d7edb431993b3271e8d6ed17467130ca432816f&quot;, &quot;0xc88d51e6a04362f45f0b8a550b33a468ae958f2018e143a295b6b867707688d9&quot;, &quot;0xe0722964ee80138d3d16a7bb13c10b4c472ff6685244b884b6ab906ff38cf6ae&quot;, &quot;0x9f46ce3f8d225182b09047d0c0f0e01085bbb51fb1bdd194cd0155e7543ceb2b&quot;, &quot;0x46fc7058e2b154740d0c049e6d9730dad9dd1a45a33ddc9d9ef89ac32bbfe1f4&quot;, &quot;0xdba7a8c2b4d90c4e2a04c7f500deeacd80670cffab96f4df01574f965a978418&quot;, &quot;0xdc72664ddf9fd72554ea3a23bc2ec5c84a9d893a6cec0488ab9a138c30bc3e46&quot;, &quot;0x5cdd96b3ea923246887057ededac7e5fd443b7acab2e4969195d6b2b206c80d4&quot;, &quot;0xf8b785b944cf4d2ec01b553a9fe6c2821565496aec04601a11e5dbed47eeae6a&quot;, &quot;0x788b53e9fb263765c91b539085d15a125649275d82ca5a7f9763039c473492e9&quot;, &quot;0x1409fa39b9c5cb2275c53c13caf63551fdb42dfb37016d60459dd119ecbeecd2&quot;, &quot;0x84542b65c9e5280f60bac640ce90807abae1a1fcaa66452c6d65035ac73eaf10&quot;, &quot;0x4e0b52178228ed76ebeddb207ad8b736a36ae18c04bf2c9bf4658aba7b2e58a6&quot;, &quot;0x6b7f21f8f28b99df7019ccf3713d948bd7ad0c333682fe3218cd8040d3f4c6b7&quot;, &quot;0x416e7a921069bcd44aa1c9e1e71908ea84b455ba4fe3a780e54ae3d5d9bb75d6&quot;, &quot;0x47dabc583d57ad3a76c6f92fcda8ef339809ba3dbb0d8abeff559bf80eaec92a&quot;, &quot;0x243db458d30bbf33f8bb363b86373523a53bf6020609c753a88018cbff2cab57&quot;, &quot;0xb6c52f12fc0f6d2505e425a7e0800d19ef2bb364f34024a5c3bd004ea37bbe2b&quot;, &quot;0xd325781116caef391b51c25b360e8b3d6555277655ed26d9ab7767250304ce54&quot;, &quot;0xda3eddfaeda14df7e4b764981aef139e7a89250d24a6bec2451db1615a65678e&quot;, &quot;0x160259fc30aabae838bd1ef16f8901caeea8cea856ec60d18b340429d75e02a8&quot;, &quot;0x27a87a5f3728a7b96efbc8c4ccbcdd9238b8b35ecdc85f171dcde05f1a244324&quot;, &quot;0x21fba42ad5a1f5a45dadb70086485f1c97289d7dc8de49eebf490f53ff230dd7&quot;],
+    hash: &quot;0xf81745232836e516bc1b4f6297ea39739b8335d8ac34503cf6378b0d9dcd3426&quot;,
+    miner: &quot;0x04d2252a3e0ca7c2aa81247ca33060855a34a808&quot;,
+    mixHash: &quot;0x000046d43e8286cf44b3c3e07c810646dc04c210268800a7ce005218663bf35b&quot;,
+    nonce: &quot;0x78b361ba385128ed&quot;,
+    number: &quot;0xd1&quot;,
+    parentHash: &quot;0x530de9d24cb1c49faac6f70ad6e52119026e6ad5af397895a27e7e68ca302b76&quot;,
+    sha3Uncles: &quot;0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347&quot;,
+    size: &quot;0xe3bf&quot;,
+    timestamp: &quot;0x5be95387&quot;,
+    uncles: []
+}
+</code></pre>
+
+<h3 id="tai_snailblocknumber">tai_snailBlockNumber</h3>
+<p>SnailBlockNumber returns the block number of the snailchain head.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.snailBlockNumber</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_snailBlockNumber", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_50">Example</h4>
+<pre><code>&gt; tai.snailBlockNumber
+7512
+</code></pre>
+
+<h3 id="tai_getcommittee">tai_getCommittee</h3>
+<p>Returns information about the specified session of the committee</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getCommittee(number)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getCommittee", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_51">Example</h4>
+<pre><code>&gt; tai.getCommittee(41)
+{
+  beginNumber: 475537,
+  beginSnailNumber: 7189,
+  endSnailNumber: 7368,
+  id: 41,
+  memberCount: 4,
+  members: [{
+      PKey: &quot;04a3e174523b1054e14f123580bce258745e65591c2a4ee44764e55eb87a3782c9920d306e6121d4f10f8726800497ad9ca5a0bfdfe0832779dbaf7b95b3bf0111&quot;,
+      coinbase: &quot;0x76ea2f3a002431fede1141b660dbb75c26ba6d97&quot;
+  }, {
+      PKey: &quot;04f67ab0cd48f626da89c718bcd909a04dea393d632d3191891539ef2f5ff6bb1e5d340ebe94cb6d9126b26e1ec64bb4783e9e8ddf31346b53d651d15eb226142e&quot;,
+      coinbase: &quot;0x831151b7eb8e650dc442cd623fbc6ae20279df85&quot;
+  }, {
+      PKey: &quot;04b82f569c74364daf1767b251608950ac49c83256f5dcde771255919c8c8489da550a5c24dcfc8a735b335dff5715ca424672c81bb10e5a55ddac5204f38ab94c&quot;,
+      coinbase: &quot;0x1074f7deccf8c66efcd0106e034d3356b7db3f2c&quot;
+  }, {
+      PKey: &quot;0490bc06f4e4e5af179ea599b0793282070b9abd023a283cdda9b4edf3e596996f32843d37dcb1c3ee3dfebfe05d03dc13cfa19abe7b88a259619ea233d63778f8&quot;,
+      coinbase: &quot;0xd985e9871d1be109af5a7f6407b1d6b686901fff&quot;
+  }]
+}
+</code></pre>
+
+<h3 id="tai_getcurrentstate">tai_getCurrentState</h3>
+<p>Returns the current membership of the committee</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getCurrentState()</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getCurrentState", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_52">Example</h4>
+<pre><code>&gt; tai.getCurrentState()
+null
+</code></pre>
+
+<h3 id="tai_getfruit">tai_getFruit</h3>
+<p>Returns the specified fruit information</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getFruit(number)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getFruit", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_53">Example</h4>
+<pre><code>&gt; tai.getFruit(6)
+{
+  difficulty: &quot;0x4e20&quot;,
+  extraData: &quot;0xd98209008667657472756588676f312e31302e34856c696e7578&quot;,
+  fastHash: &quot;0x8597125fd0f47fa439120ebe74b4c351f5b7c5cc6a1caafdb4c00c8b75454941&quot;,
+  fastNumber: 6,
+  fruitDifficulty: &quot;0x64&quot;,
+  hash: &quot;0x2634dd54c2e3a391b986ab8966373d1fe5b9d808244d52e141cf26124d9a2714&quot;,
+  miner: &quot;0x1074f7deccf8c66efcd0106e034d3356b7db3f2c&quot;,
+  mixHash: &quot;0x1819250f9a0c71736da23f43c7f25fbd0087bd375bdc83d4dc8a7343e23d2586&quot;,
+  nonce: &quot;0x049e8f65e6e153ff&quot;,
+  number: &quot;0x1&quot;,
+  sha3Uncles: &quot;0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347&quot;,
+  signs: 3,
+  size: &quot;0x3b7&quot;,
+  timestamp: &quot;0x5be53627&quot;
+}
+</code></pre>
+
+<h3 id="tai_getrewardblock">tai_getRewardBlock</h3>
+<p>GetRewardBlock return the fast block position where the given snail block is rewarded.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getRewardBlock(number)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getRewardBlock", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_54">Example</h4>
+<pre><code>&gt; tai.getRewardBlock(11)
+</code></pre>
+
+<h3 id="tai_getsnail">tai_getSnail</h3>
+<p>Returns the requested snail block. When blockNr is -1 the chain head is returned.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.getSnail(number)</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_getSnail", "params": [number]}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_55">Example</h4>
+<pre><code>&gt; tai.getSnail(1)
+tai.getSnail(1)
+{
+  beginFruitNumber: 1,
+  difficulty: 256,
+  endFruitNumber: 60,
+  extraData: &quot;0xda8209018667657472756588676f312e31302e338664617277696e&quot;,
+  fruitDifficulty: 50,
+  fruits: 60,
+  hash: &quot;0xb0c1cd521377ba71784573af8b50192c0319fada9d5d381109ea2467c1e2c6c0&quot;,
+  miner: &quot;0xbe7e39fa0645f6eaf501ad02318a7fda5c4df6c6&quot;,
+  mixHash: &quot;0x00974c04ddfe45ae0519128a5926d478ee16d2556af6013b61b3c2723c8c0b94&quot;,
+  nonce: &quot;0x7b2d50ad27c3ec29&quot;,
+  number: 1,
+  parentHash: &quot;0x5b445e49ca5b67eeca43a46420d6400a9ba90a3a3520927114d7d734683fa0e2&quot;,
+  sha3Uncles: &quot;0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347&quot;,
+  size: 45220,
+  timestamp: 1544164238,
+  uncles: []
+}
+
+</code></pre>
+
+<h3 id="tai_snailblocknumber_1">tai_snailBlockNumber</h3>
+<p>SnailBlockNumber returns the block number of the snailchain head.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Method invocation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Console</td>
+<td><code>tai.snailBlockNumber</code></td>
+</tr>
+<tr>
+<td>RPC</td>
+<td><code>{"method": "tai_snailBlockNumber", "params": []}</code></td>
+</tr>
+</tbody>
+</table>
+<h4 id="example_56">Example</h4>
+<pre><code>&gt; tai.snailBlockNumber
+227
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/example/repository/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -13,7 +13,7 @@ The default data directory locations are platform specific:
 
 Accounts are stored in the `keystore` subdirectory. The contents of this directories should be transportable between nodes, platforms, implementations (C++, Go, Python).
 
-To configure the location of the data directory, the `--datadir` parameter can be specified. See [CLI Options](https://github.com/taiyuechain/taipublicchain/wiki/Command-Line-Options) for more details.
+To configure the location of the data directory, the `--datadir` parameter can be specified. See [CLI Options](./Command-Line-Options) for more details.
 
 ## Upgrades
 

@@ -1,35 +1,22 @@
-[TrueChain Developer's Platform](https://dev.truechain.pro)
+[TaipublicChain Developer's Platform](https://dev.TaipublicChain.pro)
 
 ### Install and build  
 
-[Installing Truechain](https://github.com/taiyuechain/taipublicchain/wiki/Building-Truechain)
-
-[Developers' Guide](https://github.com/taiyuechain/taipublicchain/wiki/Developers-Guide)
-
-[Impawn CLI](https://github.com/taiyuechain/taipublicchain/wiki/Impawn-CLI)
+[Installing TaipublicChain](./Building-taiyuechain)
 
 ### Interface Documentation
 
-[Command Line Options](https://github.com/taiyuechain/taipublicchain/wiki/Command-Line-Options)
+[Command Line Options](./Command-Line-Options)
 
-[Management API](https://github.com/taiyuechain/taipublicchain/wiki/Management-API)
+[Management API](./Management-API)
 
-[JSON RPC API](https://github.com/taiyuechain/taipublicchain/wiki/RPC-API)
+[JSON RPC API](./RPC-API)
 
 
 ### Usage
 
-[Managing Accounts](https://github.com/taiyuechain/taipublicchain/wiki/Managing-your-accounts)
+[Managing Accounts](./Managing-your-accounts)
 
-[Mining](https://github.com/taiyuechain/taipublicchain/wiki/Mining)
+[Mining](./Mining)
 
-### Staking
-
-[Staking Contract](https://github.com/taiyuechain/taipublicchain/wiki/Staking-Contract)
-
-[Staking ABI](https://github.com/taiyuechain/taipublicchain/wiki/Staking-ABI)
-
-[Staking Guide](https://github.com/taiyuechain/taipublicchain/wiki/Staking-Guide)
-
-[Staking Guide中文](https://github.com/taiyuechain/taipublicchain/wiki/Staking-Guide_CN)
 

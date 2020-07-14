@@ -56,6 +56,14 @@
     systemDesign/safe.rst
     systemDesign/Authority.rst
 
+.. toctree::
+    :maxdepth: 2
+    :caption: JSON-RPC API
+    :numbered:
+
+    RPCAPI/jsonRPC.rst
+    RPCAPI/cli.rst
+
 
 
 Indices and tables

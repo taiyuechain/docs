@@ -48,7 +48,7 @@
     :numbered:
 
     systemDesign/topDesign.rst
-    systemDesign/p2p.rst
+    systemDesign/p2p.md
     systemDesign/downloader.rst
     systemDesign/consensus.rst
     systemDesign/evm.rst

@@ -48,13 +48,21 @@
     :numbered:
 
     systemDesign/topDesign.rst
-    systemDesign/p2p.rst
+    systemDesign/p2p.md
     systemDesign/downloader.rst
     systemDesign/consensus.rst
     systemDesign/evm.rst
     systemDesign/rpc.rst
     systemDesign/safe.rst
     systemDesign/Authority.rst
+
+.. toctree::
+    :maxdepth: 2
+    :caption: JSON-RPC API
+    :numbered:
+
+    RPCAPI/jsonRPC.rst
+    RPCAPI/cli.rst
 
 
 

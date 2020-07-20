@@ -51,10 +51,11 @@
     systemDesign/p2p.md
     systemDesign/downloader.rst
     systemDesign/consensus.rst
-    systemDesign/evm.rst
+    systemDesign/evm.md
     systemDesign/rpc.rst
     systemDesign/safe.rst
     systemDesign/Authority.rst
+    systemDesign/tbft.md
 
 .. toctree::
     :maxdepth: 2

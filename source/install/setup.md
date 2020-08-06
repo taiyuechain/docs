@@ -1,11 +1,11 @@
-# 编译
+# 编译部署
 linux下获取源码地址后进行如下操作，将在build目录下生成可执行程序。
 
  + git clone
  + cd taiyuechain
  + make taiyue
  
-# CA创建
+## CA创建
 证书的创建可以使用gmssl。
 ```
 git clone https://github.com/taiyuechain/GmSSL.git
@@ -32,7 +32,7 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 # gmssl x509 -req -in site.req -CA CA.pem -CAkey CA.key  -out site.pem -CAcreateserial
 ```
 
-# genesis参数
+## genesis参数
 genesis.json文件指定了创世块的样式。创世中定义了chainid,密码库类型，链奖励参数，在有链奖励时，可以配置预分配地址与余额。
 
 + `CertList`: 创世根证书列表,该参数在json文件中可忽略，由CA列表指定。
@@ -84,7 +84,7 @@ genesis.json文件指定了创世块的样式。创世中定义了chainid,密码
 }
 ```
 
-# 参数配置
+## 参数配置
 config.toml文件配置了链的一些基础参数,下面是一些主要参数的介绍。
 
 + `taiyue.CommitteeKey`: 节点参与委员会的私钥。如果不参与可以忽略。
@@ -152,7 +152,7 @@ BootstrapNodes = ["enode://a979fb575495b8d6db44f750317d0f4622bf4c2aa3365d6af7c28
 
 ```
 
-# 运行
+## 运行
 程序首次运行需要初始化创世区块。
 
 `taiyue --datadir "./data" init genesis.json "./certlist" ` 
@@ -164,7 +164,7 @@ BootstrapNodes = ["enode://a979fb575495b8d6db44f750317d0f4622bf4c2aa3365d6af7c28
 > 注：确保初始化创世时的--datadir指定的目录与config.toml中指定的目录一致，同时根证书的数量与委员会的数量必须保持一致，在国密系统中证书的私钥和委员会的公钥所对应的私钥可以保持一致。
 > 详细可以参见配置部署样例
 
-# 4节点泰岳链配置部署样例
+## 4节点泰岳链配置部署样例
 搭建4节点的泰岳联盟链，首先需要4个根证书，同时这4个节点都将被选入委员会中。
 
 下载代码并编译：

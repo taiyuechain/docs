@@ -1,5 +1,12 @@
 # 编译部署
+
+## 环境要求
+简单的硬件需求配置: 4核CPU,8GB内存,200GB硬盘。
+支持系统:   windows/ubuntu/centos/RHEL；推荐Ubuntu 18.04
+
+## 编译
 linux下获取源码地址后进行如下操作，将在build目录下生成可执行程序。
+要求: golang版本在1.13及以上
 
  + git clone
  + cd taiyuechain

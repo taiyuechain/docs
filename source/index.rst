@@ -19,9 +19,7 @@
     :caption: 安装-部署
     :numbered:
 
-    install/hardwareReq.rst
-    install/installSteps.rst
-    install/config.rst
+    install/setup.md
 
 .. toctree::
     :maxdepth: 2
@@ -47,7 +45,7 @@
     :caption: 系统设计
     :numbered:
 
-    systemDesign/topDesign.rst
+    systemDesign/topDesign.md
     systemDesign/p2p.md
     systemDesign/downloader.rst
     systemDesign/evm.md

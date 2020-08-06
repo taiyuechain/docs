@@ -19,9 +19,7 @@
     :caption: 安装-部署
     :numbered:
 
-    install/hardwareReq.rst
-    install/installSteps.rst
-    install/config.rst
+    install/setup.md
 
 .. toctree::
     :maxdepth: 2

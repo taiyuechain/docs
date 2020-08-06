@@ -11,4 +11,4 @@
 
 泰岳链基于清晰的模块设计，构建了稳定、健壮的区块系统。
 
-![taiyue](https://upload-images.jianshu.io/upload_images/19966461-f835eb93bd8d3475.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](https://upload-images.jianshu.io/upload_images/19966461-f835eb93bd8d3475.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

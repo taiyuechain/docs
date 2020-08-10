@@ -11,7 +11,7 @@ linux下获取源码地址后进行如下操作，将在build目录下生成可�
  + git clone
  + cd taiyuechain
  + make taiyue
- 
+
 ## CA创建
 证书的创建可以使用gmssl。
 ```
@@ -39,7 +39,20 @@ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 # gmssl x509 -req -in site.req -CA CA.pem -CAkey CA.key  -out site.pem -CAcreateserial
 ```
 
+查看私钥：
+
+```
+# gmssl ecparam -in CA.key -text
+```
+
+查看证书：
+
+```
+# gmssl x509 -in CA.pem -noout -text
+```
+
 ## genesis参数
+
 genesis.json文件指定了创世块的样式。创世中定义了chainid,密码库类型，链奖励参数，在有链奖励时，可以配置预分配地址与余额。
 
 + `CertList`: 创世根证书列表,该参数在json文件中可忽略，由CA列表指定。
@@ -99,10 +112,10 @@ config.toml文件配置了链的一些基础参数,下面是一些主要参数�
 + `taiyue.Port`: 节点参与委员会的本机主端口。如果不参与可以忽略。
 + `taiyue.StandbyPort`: 节点参与委员会的本机附端口。如果不参与可以忽略。
 + `taiyue.NodeType`: 节点启动模式，false表示单节点模式。
-
 + `Node.DataDir`:  节点数据目录。
 + `Node.P2P.ListenAddr`： 节点网络通讯地址。
 + `Node.P2P.P2PNodeCertFile`： 节点网络通讯证书文件。
++ `Node.P2P.P2PPrivateKeyFile`：与节点网络通讯证书文件相对应的私钥文件
 + `Node.P2P.P2PKey`：节点网络通讯的nodekey,用于标识节点的身份，也可以忽略改字段，系统会自动生成。
 + `Node.P2P.BootstrapNodes`： 节点初始网络发现的地址。
 
@@ -154,6 +167,7 @@ TrustedNodes = []
 ListenAddr = ":30303"
 EnableMsgEvents = false
 P2PNodeCertFile = "./cert/p2pnodecert.pem"
+P2PPrivateKeyFile = "./key/p2pnodekey.pem"
 P2PKey = "0xd5939c73167cd3a815530fd8b4b13f1f5492c1c75e4eafb5c07e8fb7f4b09c7c"
 BootstrapNodes = ["enode://a979fb575495b8d6db44f750317d0f4622bf4c2aa3365d6af7c284339968eef29b69ad0dce72a4d8db5ebb4968de0e3bec910127f134779fbcb0cb6d3331163c@52.16.188.185:30303", "enode://3f1d12044546b76342d59d4a05532c14b85aa669704bfe1f864fe079415aa2c02d743e03218e57a33fb94523adb54032871a6c51b2cc5514cb7c7e35b3ed0a99@13.93.211.84:30303"]
 
@@ -180,7 +194,7 @@ BootstrapNodes = ["enode://a979fb575495b8d6db44f750317d0f4622bf4c2aa3365d6af7c28
 > cd taiyuechain
 
 > make taiyue
-	
+
 配置创世区块信息：
 + 首先生成4个国密的根证书(上述介绍方法)及4个SM2算法的`私钥`，并将4个根证书放入一个指定目录`./taiyue/certList`和指定一个数据目录`./taiyue/data`。
 + 拥有证书和私钥后，开始构建创世区块，根据源码中的genesis.json模板，拷贝一份并修改如下:

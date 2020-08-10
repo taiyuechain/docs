@@ -1,1 +1,0 @@
-.. _jsonRPC:JSON RPC API======================JSON RPC API

@@ -36,8 +36,8 @@
     :numbered:
 
     appDevelopment/howToStart.rst
-    appDevelopment/JavaSDK.rst
-    appDevelopment/GoSDK.rst
+    appDevelopment/JavaSDK.md
+    appDevelopment/go_sdk.md
     appDevelopment/smartContract.rst
 
 .. toctree::
@@ -49,7 +49,6 @@
     systemDesign/p2p.md
     systemDesign/downloader.rst
     systemDesign/evm.md
-    systemDesign/rpc.rst
     systemDesign/safe.rst
     systemDesign/Authority.rst
     systemDesign/tbft.md
@@ -59,8 +58,7 @@
     :caption: JSON-RPC API
     :numbered:
 
-    RPCAPI/jsonRPC.rst
-    RPCAPI/cli.rst
+    RPCAPI/rpc.md
 
 
 

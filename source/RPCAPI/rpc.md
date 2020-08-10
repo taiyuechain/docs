@@ -1,4 +1,6 @@
-**Contents**
+
+#Contents
+
 - [JSON RPC API](#json-rpc-api)
   - [JavaScript API](#javascript-api)
   - [JSON-RPC Endpoint](#json-rpc-endpoint)
